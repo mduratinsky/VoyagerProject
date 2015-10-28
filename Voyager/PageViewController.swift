@@ -32,6 +32,7 @@ class PageViewController: UIViewController, UIPageViewControllerDataSource {
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
         
+        
     }
 
     
