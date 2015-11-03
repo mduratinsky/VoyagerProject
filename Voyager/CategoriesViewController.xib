@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesViewController" customModule="Voyager" customModuleProvider="target">
+            <connections>
+                <outlet property="categoriesTableView" destination="aCD-fb-H4D" id="ef5-qJ-Zub"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aCD-fb-H4D">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="uR7-vZ-Kio"/>
+                        <outlet property="delegate" destination="-1" id="4Pv-tp-jYS"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.72008576349999998" green="1" blue="0.74487050970000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aCD-fb-H4D" secondAttribute="trailing" id="3IU-vF-rfp"/>
+                <constraint firstItem="aCD-fb-H4D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NV4-us-TEm"/>
+                <constraint firstItem="aCD-fb-H4D" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XPm-yc-JrJ"/>
+                <constraint firstAttribute="bottom" secondItem="aCD-fb-H4D" secondAttribute="bottom" id="gqI-gL-Eo8"/>
+            </constraints>
+            <point key="canvasLocation" x="319" y="227"/>
+        </view>
+    </objects>
+</document>

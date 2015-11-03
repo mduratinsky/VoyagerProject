@@ -1,24 +1,19 @@
 //
-//  DiscoverViewController.swift
+//  NewEventViewController.swift
 //  Voyager
 //
-//  Created by Brett Oberg on 10/19/15.
+//  Created by Brett Oberg on 10/30/15.
 //  Copyright © 2015 Voyager. All rights reserved.
 //
 
 import UIKit
 
-class ContentViewController: UIViewController {
+class NewEventViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    var pageIndex: Int!
-    var titleText: String!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.titleLabel.text = titleText
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +21,10 @@ class ContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        //Dismiss view controller
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
 
     /*
     // MARK: - Navigation
