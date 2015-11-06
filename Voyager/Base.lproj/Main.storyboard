@@ -330,6 +330,7 @@
                                 <state key="normal" title="Add Location"/>
                                 <connections>
                                     <action selector="locationAddButton:" destination="vqD-4a-tCg" eventType="touchUpInside" id="cAE-aO-50E"/>
+                                    <segue destination="YFZ-wI-dkF" kind="show" id="mFC-p6-v95"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSR-lr-hlp">
@@ -350,6 +351,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jw-jR-vNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1830" y="1066"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="LrD-s1-cmp">
+            <objects>
+                <viewController id="YFZ-wI-dkF" customClass="MapViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mh0-DC-iid"/>
+                        <viewControllerLayoutGuide type="bottom" id="mgq-Nt-Ems"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fCQ-Oc-Alc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gdr-Qi-axL">
+                                <rect key="frame" x="0.0" y="72" width="600" height="520"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="bf7-P3-TeJ"/>
+                                    <constraint firstAttribute="height" constant="520" id="dsF-13-sCs"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gdr-Qi-axL" firstAttribute="top" secondItem="Mh0-DC-iid" secondAttribute="bottom" constant="8" id="OKH-Mz-T5J"/>
+                            <constraint firstItem="Gdr-Qi-axL" firstAttribute="leading" secondItem="fCQ-Oc-Alc" secondAttribute="leadingMargin" constant="-20" id="qju-GG-ByN"/>
+                            <constraint firstItem="mgq-Nt-Ems" firstAttribute="top" secondItem="Gdr-Qi-axL" secondAttribute="bottom" constant="8" id="zT5-Kx-0g9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Gdr-Qi-axL" id="Lbc-5c-Ezr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kht-yw-9nR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="1066"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hie-p8-7fj">

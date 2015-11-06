@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import CoreLocation
+import AddressBook
+import MapKit
 
 class AddingLocationController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var locationInformation: UITextView!
     @IBOutlet weak var locationName: UITextField!
     @IBOutlet weak var locationAddText: UILabel!
+    var coords: CLLocationCoordinate2D?
     
     //Opens view so user can add location and updates locationText var with information
     @IBAction func locationAddButton(sender: AnyObject) {
+
+    
     }
 
     
