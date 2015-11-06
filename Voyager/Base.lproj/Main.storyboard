@@ -277,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ams-j4-B78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="1066"/>
+            <point key="canvasLocation" x="1094" y="1066"/>
         </scene>
         <!--Adding Location Controller-->
         <scene sceneID="8Uf-OA-050">
@@ -370,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jw-jR-vNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="1066"/>
+            <point key="canvasLocation" x="1802" y="1066"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="LrD-s1-cmp">
@@ -387,9 +387,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gdr-Qi-axL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="bf7-P3-TeJ"/>
-                                </constraints>
                             </mapView>
                         </subviews>
                         <animations/>
@@ -407,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kht-yw-9nR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="1066"/>
+            <point key="canvasLocation" x="1802" y="1812"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hie-p8-7fj">
@@ -447,24 +444,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T48-Xx-BWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="411" y="1066"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="5U9-MH-znb">
-            <objects>
-                <viewController id="Z9A-GJ-ShE" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Q9Z-J1-m8r"/>
-                        <viewControllerLayoutGuide type="bottom" id="gpb-Pg-RCD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="faj-nV-c3y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BSI-Ap-G2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>
