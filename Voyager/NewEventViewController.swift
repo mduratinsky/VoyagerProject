@@ -8,11 +8,21 @@
 
 import UIKit
 
-class NewEventViewController: UIViewController {
+class NewEventViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var tourName: UITextField!
+    
+    @IBOutlet weak var tourDescription: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tourDescription.delegate = self
+        tourName.placeholder = "Enter tour name"
+        tourDescription.text = "Enter tour description"
+        tourDescription.textColor = UIColor.lightGrayColor()
+        //Eventually add Border color
+        
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +36,25 @@ class NewEventViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: {})
     }
 
+    //Detects if user enters info, removes default text and changes text color
+    func textViewDidBeginEditing(textView: UITextView) {
+        
+        if tourDescription.textColor == UIColor.lightGrayColor() {
+            tourDescription.text = ""
+            tourDescription.textColor = UIColor.blackColor()
+        }
+    }
+    
+    //If user does not eneter info, place default text and color
+    func textViewDidEndEditing(textView: UITextView) {
+        
+        if tourDescription.text == "" {
+            
+            tourDescription.text = "Enter tour description"
+            tourDescription.textColor = UIColor.lightGrayColor()
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
