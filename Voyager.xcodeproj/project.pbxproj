@@ -24,6 +24,9 @@
 		26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368591BE8387800CDBAE5 /* Category.swift */; };
 		26E368631BE8470D00CDBAE5 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368611BE8470D00CDBAE5 /* CategoryTableViewCell.swift */; };
 		26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */; };
+		908278201BEEB8CE00DFB52F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9082781D1BEEB8CE00DFB52F /* FBSDKCoreKit.framework */; };
+		908278211BEEB8CE00DFB52F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9082781E1BEEB8CE00DFB52F /* FBSDKLoginKit.framework */; };
+		908278221BEEB8CE00DFB52F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9082781F1BEEB8CE00DFB52F /* FBSDKShareKit.framework */; };
 		BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37A71A1BED4E5900F92534 /* MapViewController.swift */; };
 		BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37A7201BED59DD00F92534 /* MapKit.framework */; };
 		BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */; };
@@ -49,6 +52,9 @@
 		26E368591BE8387800CDBAE5 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		26E368611BE8470D00CDBAE5 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		9082781D1BEEB8CE00DFB52F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../FacebookSDKs-iOS-20151026/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		9082781E1BEEB8CE00DFB52F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../FacebookSDKs-iOS-20151026/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		9082781F1BEEB8CE00DFB52F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../FacebookSDKs-iOS-20151026/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		BD37A71A1BED4E5900F92534 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD37A7201BED59DD00F92534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationController.swift; sourceTree = "<group>"; };
@@ -59,7 +65,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908278221BEEB8CE00DFB52F /* FBSDKShareKit.framework in Frameworks */,
 				BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */,
+				908278201BEEB8CE00DFB52F /* FBSDKCoreKit.framework in Frameworks */,
+				908278211BEEB8CE00DFB52F /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +78,7 @@
 		2601AD401BD4B195004F6394 = {
 			isa = PBXGroup;
 			children = (
-				BD37A7201BED59DD00F92534 /* MapKit.framework */,
+				9082781C1BEEB75700DFB52F /* Framework */,
 				2601AD4B1BD4B195004F6394 /* Voyager */,
 				2601AD4A1BD4B195004F6394 /* Products */,
 			);
@@ -148,6 +157,17 @@
 				26C429EB1BE3F2F1001C56DA /* DiscoverViewController.xib */,
 			);
 			name = Discover;
+			sourceTree = "<group>";
+		};
+		9082781C1BEEB75700DFB52F /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				9082781D1BEEB8CE00DFB52F /* FBSDKCoreKit.framework */,
+				9082781E1BEEB8CE00DFB52F /* FBSDKLoginKit.framework */,
+				9082781F1BEEB8CE00DFB52F /* FBSDKShareKit.framework */,
+				BD37A7201BED59DD00F92534 /* MapKit.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
