@@ -40,6 +40,8 @@
 		90C443101BEEE9B4001A8749 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4430F1BEEE9B4001A8749 /* libsqlite3.tbd */; };
 		90C443121BEEE9BE001A8749 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443111BEEE9BE001A8749 /* Accounts.framework */; };
 		90C443141BEEE9CE001A8749 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443131BEEE9CE001A8749 /* Social.framework */; };
+		90C4431E1BEF0074001A8749 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4431C1BEF0074001A8749 /* Bolts.framework */; };
+		90C4431F1BEF0074001A8749 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4431D1BEF0074001A8749 /* Parse.framework */; };
 		BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37A71A1BED4E5900F92534 /* MapViewController.swift */; };
 		BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37A7201BED59DD00F92534 /* MapKit.framework */; };
 		BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */; };
@@ -81,6 +83,9 @@
 		90C4430F1BEEE9B4001A8749 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		90C443111BEEE9BE001A8749 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		90C443131BEEE9CE001A8749 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		90C443151BEEF12C001A8749 /* Voyager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voyager-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		90C4431C1BEF0074001A8749 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		90C4431D1BEF0074001A8749 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		BD37A71A1BED4E5900F92534 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD37A7201BED59DD00F92534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationController.swift; sourceTree = "<group>"; };
@@ -104,7 +109,9 @@
 				90C443001BEEE8B3001A8749 /* CFNetwork.framework in Frameworks */,
 				90C442FE1BEEE8A3001A8749 /* AudioToolbox.framework in Frameworks */,
 				908278261BEEBC8400DFB52F /* FBSDKShareKit.framework in Frameworks */,
+				90C4431F1BEF0074001A8749 /* Parse.framework in Frameworks */,
 				BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */,
+				90C4431E1BEF0074001A8749 /* Bolts.framework in Frameworks */,
 				908278201BEEB8CE00DFB52F /* FBSDKCoreKit.framework in Frameworks */,
 				908278211BEEB8CE00DFB52F /* FBSDKLoginKit.framework in Frameworks */,
 			);
@@ -133,6 +140,7 @@
 		2601AD4B1BD4B195004F6394 /* Voyager */ = {
 			isa = PBXGroup;
 			children = (
+				90C443151BEEF12C001A8749 /* Voyager-Bridging-Header.h */,
 				2601AD5F1BD4B3F9004F6394 /* Controllers */,
 				2601AD5E1BD4B3F2004F6394 /* Data */,
 				2601AD501BD4B195004F6394 /* Main.storyboard */,
@@ -201,6 +209,8 @@
 		9082781C1BEEB75700DFB52F /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				90C4431C1BEF0074001A8749 /* Bolts.framework */,
+				90C4431D1BEF0074001A8749 /* Parse.framework */,
 				90C443131BEEE9CE001A8749 /* Social.framework */,
 				90C443111BEEE9BE001A8749 /* Accounts.framework */,
 				90C4430F1BEEE9B4001A8749 /* libsqlite3.tbd */,
@@ -425,10 +435,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/satyamdhar/Documents/FacebookSDKs-iOS-20151026/",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Voyager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.voyager.Voyager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Voyager-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -436,10 +451,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/satyamdhar/Documents/FacebookSDKs-iOS-20151026/",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Voyager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.voyager.Voyager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Voyager-Bridging-Header.h";
 			};
 			name = Release;
 		};
