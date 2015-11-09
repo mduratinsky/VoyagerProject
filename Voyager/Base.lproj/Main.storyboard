@@ -62,7 +62,7 @@
                     <connections>
                         <outlet property="FBSignin" destination="1iK-5l-Pm8" id="Tt5-eN-g2A"/>
                         <outlet property="SkipSignin" destination="oSq-My-bnL" id="L2q-xC-6sb"/>
-                        <segue destination="l79-Lg-2iP" kind="show" id="msw-Hn-uTX"/>
+                        <segue destination="l79-Lg-2iP" kind="show" identifier="signinCompleted" id="msw-Hn-uTX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

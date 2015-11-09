@@ -18,7 +18,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var FBSignin: UIButton!
     
     @IBAction func enterApp(sender: UIButton) {
-        if sender.currentTitle == SkipSignin.currentTitle {
+        if sender == SkipSignin {
             
         } else if sender == FBSignin {
             
@@ -27,8 +27,33 @@ class SignupViewController: UIViewController {
                 (user: PFUser?, error: NSError?) -> Void in
                 if let error = error {
                     print(error)
-                } else if let user = user {
-                    print(user)
+                } else if let _ = user {
+                    let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender"])
+                    graphRequest.startWithCompletionHandler({
+                        (connection,result,error) -> Void in
+                        
+                        if (error != nil) {
+                            print(error)
+                        } else if (result != nil) {
+                            PFUser.currentUser()?["gender"] = result["gender"]
+                            PFUser.currentUser()?["name"] = result["name"]
+                            
+                            let userId = result["id"] as! String
+                            let facebookProfilePictureUrl = "https://graph.facebook.com/\(userId)/picture?type=large"
+                            print(facebookProfilePictureUrl)
+                            if let fbpicUrl = NSURL(string: facebookProfilePictureUrl) {
+                                if let data = NSData(contentsOfURL: fbpicUrl) {
+                                    let imageFile = PFFile(data: data)
+                                    PFUser.currentUser()?["image"] = imageFile
+                                    PFUser.currentUser()?.saveInBackground()
+                                    
+                                }
+                            }
+                            
+                        }
+                    })
+                    
+                    self.performSegueWithIdentifier("signinCompleted", sender: self)
                 }
             }
         }
@@ -41,6 +66,13 @@ class SignupViewController: UIViewController {
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if let _ = PFUser.currentUser()?.username {
+            performSegueWithIdentifier("signinCompleted", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
