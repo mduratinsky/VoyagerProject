@@ -33,12 +33,7 @@
                                     <action selector="enterApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxf-Y1-qIl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0x4-xR-AVB">
-                                <rect key="frame" x="225" y="247" width="150" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Sign in using Google+"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voyager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoq-1x-nqX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Voyager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoq-1x-nqX">
                                 <rect key="frame" x="155" y="116" width="291" height="98"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="82"/>
@@ -50,12 +45,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oSq-My-bnL" secondAttribute="bottom" constant="20" id="387-3s-YeM"/>
-                            <constraint firstItem="0x4-xR-AVB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Nd-9O-ugq"/>
                             <constraint firstItem="hoq-1x-nqX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7TS-bz-U0r"/>
-                            <constraint firstItem="0x4-xR-AVB" firstAttribute="top" secondItem="hoq-1x-nqX" secondAttribute="bottom" constant="33" id="cyk-cY-JHo"/>
                             <constraint firstItem="1iK-5l-Pm8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j8u-mR-2OU"/>
                             <constraint firstItem="oSq-My-bnL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lkc-Qn-XEB"/>
-                            <constraint firstItem="1iK-5l-Pm8" firstAttribute="top" secondItem="0x4-xR-AVB" secondAttribute="bottom" constant="8" id="tdK-bQ-RA4"/>
                             <constraint firstItem="1iK-5l-Pm8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ush-jM-8mT"/>
                         </constraints>
                     </view>
