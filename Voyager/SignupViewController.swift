@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import ParseFacebookUtilsV4
 import Parse
+
 
 class SignupViewController: UIViewController {
 
@@ -16,21 +18,28 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var FBSignin: UIButton!
     
     @IBAction func enterApp(sender: UIButton) {
-        if sender == SkipSignin {
+        if sender.currentTitle == SkipSignin.currentTitle {
             
         } else if sender == FBSignin {
             
+            let permissions = ["public_profile"]
+            PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
+                (user: PFUser?, error: NSError?) -> Void in
+                if let error = error {
+                    print(error)
+                } else if let user = user {
+                    print(user)
+                }
+            }
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Load Parse
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("Object has been saved.")
-        }
+        //test facebook
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 

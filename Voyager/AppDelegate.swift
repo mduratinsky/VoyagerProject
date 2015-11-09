@@ -8,6 +8,8 @@
 
 import UIKit
 import Bolts
+import ParseFacebookUtilsV4
+import FBSDKCoreKit
 import Parse
 
 
@@ -31,17 +33,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("HeWNTsh2Lq4qataRzk7VpOoZ0o1rQ1seUguJ6Zv6",
             clientKey: "LlV1IRSvf2u6qGVdNadHkinnNbCx59Og0zl0YcH4")
         
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
         // [Optional] Track statistics around application opens.
         //PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         
-        return true
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
     func application(application: UIApplication,
         openURL url: NSURL,
         sourceApplication: String?,
-        annotation: AnyObject?) -> Bool {
+        annotation: AnyObject) -> Bool {
             return FBSDKApplicationDelegate.sharedInstance().application(
                 application,
                 openURL: url,

@@ -42,6 +42,8 @@
 		90C443141BEEE9CE001A8749 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443131BEEE9CE001A8749 /* Social.framework */; };
 		90C4431E1BEF0074001A8749 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4431C1BEF0074001A8749 /* Bolts.framework */; };
 		90C4431F1BEF0074001A8749 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4431D1BEF0074001A8749 /* Parse.framework */; };
+		90C443211BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443201BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework */; };
+		90C443231BF00A37001A8749 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443221BF00A37001A8749 /* ParseFacebookUtils.framework */; };
 		BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37A71A1BED4E5900F92534 /* MapViewController.swift */; };
 		BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37A7201BED59DD00F92534 /* MapKit.framework */; };
 		BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */; };
@@ -86,6 +88,8 @@
 		90C443151BEEF12C001A8749 /* Voyager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voyager-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		90C4431C1BEF0074001A8749 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		90C4431D1BEF0074001A8749 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		90C443201BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		90C443221BF00A37001A8749 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		BD37A71A1BED4E5900F92534 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD37A7201BED59DD00F92534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			files = (
 				90C443141BEEE9CE001A8749 /* Social.framework in Frameworks */,
 				90C443121BEEE9BE001A8749 /* Accounts.framework in Frameworks */,
+				90C443211BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				90C443101BEEE9B4001A8749 /* libsqlite3.tbd in Frameworks */,
 				90C4430E1BEEE9A5001A8749 /* libz.tbd in Frameworks */,
 				90C4430C1BEEE99D001A8749 /* SystemConfiguration.framework in Frameworks */,
@@ -113,6 +118,7 @@
 				BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */,
 				90C4431E1BEF0074001A8749 /* Bolts.framework in Frameworks */,
 				908278201BEEB8CE00DFB52F /* FBSDKCoreKit.framework in Frameworks */,
+				90C443231BF00A37001A8749 /* ParseFacebookUtils.framework in Frameworks */,
 				908278211BEEB8CE00DFB52F /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +215,8 @@
 		9082781C1BEEB75700DFB52F /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				90C443221BF00A37001A8749 /* ParseFacebookUtils.framework */,
+				90C443201BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework */,
 				90C4431C1BEF0074001A8749 /* Bolts.framework */,
 				90C4431D1BEF0074001A8749 /* Parse.framework */,
 				90C443131BEEE9CE001A8749 /* Social.framework */,

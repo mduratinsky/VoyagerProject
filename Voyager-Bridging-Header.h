@@ -9,7 +9,7 @@
 #ifndef Voyager_Bridging_Header_h
 #define Voyager_Bridging_Header_h
 
-//#import <ParseFacebookUtilsV4.framework/PFFacebookUtils.h>
+//#import <ParseFacebookUtils.framework/PFFacebookUtils.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 

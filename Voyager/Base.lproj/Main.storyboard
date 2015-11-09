@@ -21,6 +21,9 @@
                                 <rect key="frame" x="221" y="285" width="158" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Sign in using Facebook"/>
+                                <connections>
+                                    <action selector="enterApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4JU-bU-AyI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSq-My-bnL">
                                 <rect key="frame" x="285" y="550" width="30" height="30"/>
