@@ -17,14 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iK-5l-Pm8">
-                                <rect key="frame" x="221" y="285" width="158" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Sign in using Facebook"/>
-                                <connections>
-                                    <action selector="enterApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4JU-bU-AyI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSq-My-bnL">
                                 <rect key="frame" x="285" y="550" width="30" height="30"/>
                                 <animations/>
@@ -33,22 +25,39 @@
                                     <action selector="enterApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxf-Y1-qIl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Voyager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoq-1x-nqX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voyager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoq-1x-nqX">
                                 <rect key="frame" x="155" y="116" width="291" height="98"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="UMt-8p-qKb"/>
+                                    <constraint firstAttribute="width" constant="291" id="fYA-AH-VV1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="82"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iK-5l-Pm8">
+                                <rect key="frame" x="193" y="222" width="214" height="103"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="QMJ-qq-aNL"/>
+                                    <constraint firstAttribute="height" constant="103" id="sZk-9b-q6s"/>
+                                </constraints>
+                                <state key="normal" title="Sign in using Facebook" image="fblogin.png"/>
+                                <connections>
+                                    <action selector="enterApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4JU-bU-AyI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oSq-My-bnL" secondAttribute="bottom" constant="20" id="387-3s-YeM"/>
-                            <constraint firstItem="hoq-1x-nqX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7TS-bz-U0r"/>
-                            <constraint firstItem="1iK-5l-Pm8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j8u-mR-2OU"/>
-                            <constraint firstItem="oSq-My-bnL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lkc-Qn-XEB"/>
-                            <constraint firstItem="1iK-5l-Pm8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ush-jM-8mT"/>
+                            <constraint firstItem="oSq-My-bnL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7y8-Ux-Afu"/>
+                            <constraint firstItem="1iK-5l-Pm8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Bh-01-jBq"/>
+                            <constraint firstItem="hoq-1x-nqX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="K7e-nN-ilS"/>
+                            <constraint firstItem="hoq-1x-nqX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tcc-OV-31k"/>
+                            <constraint firstItem="1iK-5l-Pm8" firstAttribute="top" secondItem="hoq-1x-nqX" secondAttribute="bottom" constant="8" id="VRl-yg-ayG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oSq-My-bnL" secondAttribute="bottom" constant="20" id="hH5-Ai-dpF"/>
                         </constraints>
                     </view>
                     <connections>
@@ -59,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-328" y="-617"/>
+            <point key="canvasLocation" x="350" y="-945"/>
         </scene>
         <!--MainContent-->
         <scene sceneID="XHp-CO-kq1">
@@ -468,4 +477,7 @@
             <point key="canvasLocation" x="445" y="249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fblogin.png" width="480" height="230"/>
+    </resources>
 </document>

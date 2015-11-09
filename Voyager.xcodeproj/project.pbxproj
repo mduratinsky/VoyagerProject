@@ -44,6 +44,7 @@
 		90C4431F1BEF0074001A8749 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4431D1BEF0074001A8749 /* Parse.framework */; };
 		90C443211BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443201BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework */; };
 		90C443231BF00A37001A8749 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443221BF00A37001A8749 /* ParseFacebookUtils.framework */; };
+		90C443251BF09AF3001A8749 /* fblogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 90C443241BF09AF3001A8749 /* fblogin.png */; };
 		BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37A71A1BED4E5900F92534 /* MapViewController.swift */; };
 		BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37A7201BED59DD00F92534 /* MapKit.framework */; };
 		BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */; };
@@ -90,6 +91,7 @@
 		90C4431D1BEF0074001A8749 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		90C443201BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		90C443221BF00A37001A8749 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		90C443241BF09AF3001A8749 /* fblogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fblogin.png; sourceTree = "<group>"; };
 		BD37A71A1BED4E5900F92534 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD37A7201BED59DD00F92534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		2601AD5E1BD4B3F2004F6394 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				90C443241BF09AF3001A8749 /* fblogin.png */,
 				26E368531BE8379A00CDBAE5 /* Tour.swift */,
 				26E368551BE8380600CDBAE5 /* Location.swift */,
 				26E368591BE8387800CDBAE5 /* Category.swift */,
@@ -308,6 +311,7 @@
 				26C429E91BE3F2E3001C56DA /* CategoriesViewController.xib in Resources */,
 				26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */,
 				2601AD521BD4B195004F6394 /* Main.storyboard in Resources */,
+				90C443251BF09AF3001A8749 /* fblogin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

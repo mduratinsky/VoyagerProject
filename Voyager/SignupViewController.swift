@@ -20,6 +20,8 @@ class SignupViewController: UIViewController {
     @IBAction func enterApp(sender: UIButton) {
         if sender == SkipSignin {
             
+            self.performSegueWithIdentifier("signinCompleted", sender: self)
+            
         } else if sender == FBSignin {
             
             let permissions = ["public_profile"]
@@ -28,7 +30,7 @@ class SignupViewController: UIViewController {
                 if let error = error {
                     print(error)
                 } else if let _ = user {
-                    let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender"])
+                    let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender, email"])
                     graphRequest.startWithCompletionHandler({
                         (connection,result,error) -> Void in
                         
@@ -37,6 +39,7 @@ class SignupViewController: UIViewController {
                         } else if (result != nil) {
                             PFUser.currentUser()?["gender"] = result["gender"]
                             PFUser.currentUser()?["name"] = result["name"]
+                            PFUser.currentUser()?["email"] = result["email"]
                             
                             let userId = result["id"] as! String
                             let facebookProfilePictureUrl = "https://graph.facebook.com/\(userId)/picture?type=large"
@@ -63,7 +66,7 @@ class SignupViewController: UIViewController {
         
         //test facebook
         
-        
+        PFUser.logOut()
         
         // Do any additional setup after loading the view.
     }
