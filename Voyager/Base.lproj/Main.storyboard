@@ -286,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ams-j4-B78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="1066"/>
+            <point key="canvasLocation" x="1094" y="1066"/>
         </scene>
         <!--Adding Location Controller-->
         <scene sceneID="8Uf-OA-050">
@@ -379,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jw-jR-vNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="1066"/>
+            <point key="canvasLocation" x="1802" y="1066"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="LrD-s1-cmp">
@@ -405,9 +405,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gdr-Qi-axL" firstAttribute="top" secondItem="Mh0-DC-iid" secondAttribute="bottom" constant="8" id="OKH-Mz-T5J"/>
-                            <constraint firstItem="Gdr-Qi-axL" firstAttribute="leading" secondItem="fCQ-Oc-Alc" secondAttribute="leadingMargin" constant="-20" id="qju-GG-ByN"/>
-                            <constraint firstItem="mgq-Nt-Ems" firstAttribute="top" secondItem="Gdr-Qi-axL" secondAttribute="bottom" constant="8" id="zT5-Kx-0g9"/>
+                            <constraint firstItem="Gdr-Qi-axL" firstAttribute="width" secondItem="fCQ-Oc-Alc" secondAttribute="width" id="3QH-To-OHr"/>
+                            <constraint firstItem="Gdr-Qi-axL" firstAttribute="centerY" secondItem="fCQ-Oc-Alc" secondAttribute="centerY" id="5sC-qB-N0g"/>
+                            <constraint firstItem="Gdr-Qi-axL" firstAttribute="height" secondItem="fCQ-Oc-Alc" secondAttribute="height" id="H0m-SK-rUa"/>
+                            <constraint firstItem="Gdr-Qi-axL" firstAttribute="centerX" secondItem="fCQ-Oc-Alc" secondAttribute="centerX" id="VRU-Am-1Bk"/>
                         </constraints>
                     </view>
                     <connections>
@@ -416,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kht-yw-9nR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="1066"/>
+            <point key="canvasLocation" x="1802" y="1812"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hie-p8-7fj">
