@@ -14,7 +14,13 @@ class ScrollViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpScreen()
 
+    }
+    
+    //MARK: - General Functions
+    
+    func setUpScreen() {
         //SearchViewController - placement
         let vc0 = SearchViewController(nibName: "SearchViewController", bundle:  nil)
         
