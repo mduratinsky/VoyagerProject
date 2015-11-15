@@ -24,8 +24,6 @@ class UserInfoViewController: UIViewController {
         userPhoto.text = String.fontAwesomeIconWithName(.User)
     }
     
-
-    
     /*
     // MARK: - Navigation
 

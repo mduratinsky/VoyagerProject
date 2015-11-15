@@ -12,6 +12,9 @@
 		2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD531BD4B195004F6394 /* Assets.xcassets */; };
 		2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD551BD4B195004F6394 /* LaunchScreen.storyboard */; };
 		26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */; };
+		26BA99351BF951EF00EC4F91 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99321BF951EF00EC4F91 /* MKButton.swift */; };
+		26BA99361BF951EF00EC4F91 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99331BF951EF00EC4F91 /* MKColor.swift */; };
+		26BA99371BF951EF00EC4F91 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99341BF951EF00EC4F91 /* MKLayer.swift */; };
 		26C429DB1BE3F215001C56DA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429DA1BE3F215001C56DA /* ScrollViewController.swift */; };
 		26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429E21BE3F2CE001C56DA /* SearchViewController.swift */; };
 		26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C429E31BE3F2CE001C56DA /* SearchViewController.xib */; };
@@ -60,6 +63,9 @@
 		2601AD561BD4B195004F6394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2601AD581BD4B196004F6394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		26BA99321BF951EF00EC4F91 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = ../../Development/iOS/materialDesignProject/materialDesignProject/MKButton.swift; sourceTree = "<group>"; };
+		26BA99331BF951EF00EC4F91 /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = ../../Development/iOS/materialDesignProject/materialDesignProject/MKColor.swift; sourceTree = "<group>"; };
+		26BA99341BF951EF00EC4F91 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = ../../Development/iOS/materialDesignProject/materialDesignProject/MKLayer.swift; sourceTree = "<group>"; };
 		26C429DA1BE3F215001C56DA /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		26C429E21BE3F2CE001C56DA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		26C429E31BE3F2CE001C56DA /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				90C443151BEEF12C001A8749 /* Voyager-Bridging-Header.h */,
+				26BA99381BF9520A00EC4F91 /* Design */,
 				2601AD5F1BD4B3F9004F6394 /* Controllers */,
 				2601AD5E1BD4B3F2004F6394 /* Data */,
 				2601AD501BD4B195004F6394 /* Main.storyboard */,
@@ -191,6 +198,16 @@
 				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		26BA99381BF9520A00EC4F91 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				26BA99321BF951EF00EC4F91 /* MKButton.swift */,
+				26BA99331BF951EF00EC4F91 /* MKColor.swift */,
+				26BA99341BF951EF00EC4F91 /* MKLayer.swift */,
+			);
+			name = Design;
 			sourceTree = "<group>";
 		};
 		26E368651BE847B500CDBAE5 /* Categories */ = {
@@ -401,6 +418,7 @@
 				26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */,
 				BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */,
 				26E368561BE8380600CDBAE5 /* Location.swift in Sources */,
+				26BA99371BF951EF00EC4F91 /* MKLayer.swift in Sources */,
 				26C429EF1BE3FA2F001C56DA /* NewEventViewController.swift in Sources */,
 				26C429EC1BE3F2F1001C56DA /* DiscoverViewController.swift in Sources */,
 				26E368631BE8470D00CDBAE5 /* CategoryTableViewCell.swift in Sources */,
@@ -408,8 +426,10 @@
 				26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */,
 				908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */,
 				26C429E81BE3F2E3001C56DA /* CategoriesViewController.swift in Sources */,
+				26BA99351BF951EF00EC4F91 /* MKButton.swift in Sources */,
 				2601AD4D1BD4B195004F6394 /* AppDelegate.swift in Sources */,
 				26C429DB1BE3F215001C56DA /* ScrollViewController.swift in Sources */,
+				26BA99361BF951EF00EC4F91 /* MKColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
