@@ -11,6 +11,7 @@
 		2601AD521BD4B195004F6394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD501BD4B195004F6394 /* Main.storyboard */; };
 		2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD531BD4B195004F6394 /* Assets.xcassets */; };
 		2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD551BD4B195004F6394 /* LaunchScreen.storyboard */; };
+		26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */; };
 		26C429DB1BE3F215001C56DA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429DA1BE3F215001C56DA /* ScrollViewController.swift */; };
 		26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429E21BE3F2CE001C56DA /* SearchViewController.swift */; };
 		26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C429E31BE3F2CE001C56DA /* SearchViewController.xib */; };
@@ -41,7 +42,6 @@
 		90C4431F1BEF0074001A8749 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4431D1BEF0074001A8749 /* Parse.framework */; };
 		90C443211BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443201BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework */; };
 		90C443231BF00A37001A8749 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443221BF00A37001A8749 /* ParseFacebookUtils.framework */; };
-		90C443251BF09AF3001A8749 /* fblogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 90C443241BF09AF3001A8749 /* fblogin.png */; };
 		90C443291BF14D67001A8749 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443261BF14D67001A8749 /* FBSDKCoreKit.framework */; };
 		90C4432A1BF14D67001A8749 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443271BF14D67001A8749 /* FBSDKLoginKit.framework */; };
 		90C4432B1BF14D67001A8749 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443281BF14D67001A8749 /* FBSDKShareKit.framework */; };
@@ -59,6 +59,7 @@
 		2601AD531BD4B195004F6394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2601AD561BD4B195004F6394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2601AD581BD4B196004F6394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		26C429DA1BE3F215001C56DA /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		26C429E21BE3F2CE001C56DA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		26C429E31BE3F2CE001C56DA /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		90C4431D1BEF0074001A8749 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		90C443201BEFF7C1001A8749 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		90C443221BF00A37001A8749 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		90C443241BF09AF3001A8749 /* fblogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fblogin.png; sourceTree = "<group>"; };
 		90C443261BF14D67001A8749 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		90C443271BF14D67001A8749 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		90C443281BF14D67001A8749 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -163,7 +163,6 @@
 				2601AD531BD4B195004F6394 /* Assets.xcassets */,
 				2601AD551BD4B195004F6394 /* LaunchScreen.storyboard */,
 				2601AD581BD4B196004F6394 /* Info.plist */,
-				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
 			);
 			path = Voyager;
 			sourceTree = "<group>";
@@ -171,7 +170,6 @@
 		2601AD5E1BD4B3F2004F6394 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				90C443241BF09AF3001A8749 /* fblogin.png */,
 				26E368531BE8379A00CDBAE5 /* Tour.swift */,
 				26E368551BE8380600CDBAE5 /* Location.swift */,
 				26E368591BE8387800CDBAE5 /* Category.swift */,
@@ -189,6 +187,8 @@
 				26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */,
 				BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */,
 				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
+				26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */,
+				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -338,7 +338,6 @@
 				26C429E91BE3F2E3001C56DA /* CategoriesViewController.xib in Resources */,
 				26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */,
 				2601AD521BD4B195004F6394 /* Main.storyboard in Resources */,
-				90C443251BF09AF3001A8749 /* fblogin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26E368541BE8379A00CDBAE5 /* Tour.swift in Sources */,
+				26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */,
 				26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */,
 				BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */,
 				26E368561BE8380600CDBAE5 /* Location.swift in Sources */,
