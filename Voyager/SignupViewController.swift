@@ -30,7 +30,7 @@ class SignupViewController: UIViewController {
                 if let error = error {
                     print(error)
                 } else if let _ = user {
-                    let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender, email"])
+                    let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, gender"])
                     graphRequest.startWithCompletionHandler({
                         (connection,result,error) -> Void in
                         
@@ -39,7 +39,6 @@ class SignupViewController: UIViewController {
                         } else if (result != nil) {
                             PFUser.currentUser()?["gender"] = result["gender"]
                             PFUser.currentUser()?["name"] = result["name"]
-                            PFUser.currentUser()?["email"] = result["email"]
                             
                             let userId = result["id"] as! String
                             let facebookProfilePictureUrl = "https://graph.facebook.com/\(userId)/picture?type=large"
