@@ -12,6 +12,9 @@
 		2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD531BD4B195004F6394 /* Assets.xcassets */; };
 		2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD551BD4B195004F6394 /* LaunchScreen.storyboard */; };
 		26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */; };
+		26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99391BF9579D00EC4F91 /* MKButton.swift */; };
+		26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA993B1BF9590800EC4F91 /* MKLayer.swift */; };
+		26BA99401BF9597600EC4F91 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA993F1BF9597600EC4F91 /* MKColor.swift */; };
 		26C429DB1BE3F215001C56DA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429DA1BE3F215001C56DA /* ScrollViewController.swift */; };
 		26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429E21BE3F2CE001C56DA /* SearchViewController.swift */; };
 		26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C429E31BE3F2CE001C56DA /* SearchViewController.xib */; };
@@ -60,6 +63,9 @@
 		2601AD561BD4B195004F6394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2601AD581BD4B196004F6394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		26BA99391BF9579D00EC4F91 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
+		26BA993B1BF9590800EC4F91 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
+		26BA993F1BF9597600EC4F91 /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
 		26C429DA1BE3F215001C56DA /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		26C429E21BE3F2CE001C56DA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		26C429E31BE3F2CE001C56DA /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
@@ -197,6 +203,9 @@
 		26BA99381BF9520A00EC4F91 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				26BA99391BF9579D00EC4F91 /* MKButton.swift */,
+				26BA993B1BF9590800EC4F91 /* MKLayer.swift */,
+				26BA993F1BF9597600EC4F91 /* MKColor.swift */,
 			);
 			name = Design;
 			sourceTree = "<group>";
@@ -412,10 +421,13 @@
 				26C429EF1BE3FA2F001C56DA /* NewEventViewController.swift in Sources */,
 				26C429EC1BE3F2F1001C56DA /* DiscoverViewController.swift in Sources */,
 				26E368631BE8470D00CDBAE5 /* CategoryTableViewCell.swift in Sources */,
+				26BA99401BF9597600EC4F91 /* MKColor.swift in Sources */,
 				BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */,
 				26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */,
 				908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */,
 				26C429E81BE3F2E3001C56DA /* CategoriesViewController.swift in Sources */,
+				26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */,
+				26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */,
 				2601AD4D1BD4B195004F6394 /* AppDelegate.swift in Sources */,
 				26C429DB1BE3F215001C56DA /* ScrollViewController.swift in Sources */,
 			);
