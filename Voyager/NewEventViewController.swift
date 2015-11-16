@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 class NewEventViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var tourName: UITextField!

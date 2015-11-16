@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 import FontAwesome_swift
 
 class ScrollViewController: UIViewController {

@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import AddressBook
 import MapKit
+import Parse
 
 class AddingLocationController: UIViewController, UITextViewDelegate {
     
