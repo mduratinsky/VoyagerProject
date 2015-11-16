@@ -7,20 +7,29 @@
 //
 
 import UIKit
+import FontAwesome_swift
 
 class ScrollViewController: UIViewController {
 
+    @IBOutlet weak var userPhoto: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpScreen()
-
+        
+        setScreenScrolling()
+        setUserPhoto()
     }
     
     //MARK: - General Functions
     
-    func setUpScreen() {
+    func setUserPhoto() {
+        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(30)] as Dictionary!
+        userPhoto.setTitleTextAttributes(attributes, forState: .Normal)
+        userPhoto.title = String.fontAwesomeIconWithName(.User)
+    }
+    
+    func setScreenScrolling() {
         //SearchViewController - placement
         let vc0 = SearchViewController(nibName: "SearchViewController", bundle:  nil)
         
