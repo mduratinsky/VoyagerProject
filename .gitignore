@@ -47,7 +47,12 @@ xcuserdata
 *.xcuserdata
 
 # ProjectName.xcodeproj/project.xcworkspace/xcuserdata/username.xcuserdatad/UserInterfaceState.xcuserstate
-*.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+# Voyager.xcodeproj/project.xcworkspace/xcuserdata/katherinerichards.xcuserdatad/UserInterfaceState.xcuserstate
+**/*.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+# User Settings in any directory (this may be incorrect - set by Katherine)
+**/xcuserdata
+**/*.xcuserstate
+**/*.xcuserdata
 
 ## Other
 *.xccheckout
