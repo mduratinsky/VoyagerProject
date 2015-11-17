@@ -82,34 +82,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y6-Ra-1z3">
-                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3hs-TK-7Q4">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Qst-JP-x3h"/>
+                                    <constraint firstAttribute="width" constant="200" id="lr0-Sa-8OW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9p-xT-Ief">
+                                <rect key="frame" x="20" y="129" width="560" height="63"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayc-ub-Tgq" customClass="MKButton" customModule="Voyager" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="570" width="600" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="LOGIN">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInOut:" destination="hlY-gh-pxM" eventType="touchUpInside" id="dT9-P3-PBa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9Y6-Ra-1z3" firstAttribute="centerY" secondItem="XgI-Kp-fAM" secondAttribute="centerY" id="IFX-Tb-c7K"/>
-                            <constraint firstItem="9Y6-Ra-1z3" firstAttribute="centerX" secondItem="XgI-Kp-fAM" secondAttribute="centerX" id="MMP-3T-lKq"/>
+                            <constraint firstItem="3hs-TK-7Q4" firstAttribute="centerX" secondItem="XgI-Kp-fAM" secondAttribute="centerX" id="Dmy-91-UFJ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="A9p-xT-Ief" secondAttribute="leading" id="Qbj-SV-jby"/>
+                            <constraint firstItem="3hs-TK-7Q4" firstAttribute="top" secondItem="A9p-xT-Ief" secondAttribute="bottom" constant="8" id="TZk-OO-dBd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A9p-xT-Ief" secondAttribute="trailing" id="Wpd-pr-iVN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ayc-ub-Tgq" secondAttribute="trailing" constant="-20" id="X2p-Pb-oH6"/>
                             <constraint firstItem="ayc-ub-Tgq" firstAttribute="leading" secondItem="XgI-Kp-fAM" secondAttribute="leadingMargin" constant="-20" id="a2W-Cw-xcl"/>
                             <constraint firstItem="ZK2-uR-4Me" firstAttribute="top" secondItem="ayc-ub-Tgq" secondAttribute="bottom" id="eUh-Bs-Xg2"/>
+                            <constraint firstItem="3hs-TK-7Q4" firstAttribute="centerY" secondItem="XgI-Kp-fAM" secondAttribute="centerY" id="fTj-H8-8yS"/>
+                            <constraint firstItem="3hs-TK-7Q4" firstAttribute="centerX" secondItem="XgI-Kp-fAM" secondAttribute="centerX" id="tYq-Xa-VIj"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="userPhoto" destination="9Y6-Ra-1z3" id="JPC-ob-uZy"/>
+                        <outlet property="imageView" destination="3hs-TK-7Q4" id="OTf-X1-XPc"/>
+                        <outlet property="logInOutButton" destination="ayc-ub-Tgq" id="Ctl-oO-Bax"/>
+                        <outlet property="userName" destination="A9p-xT-Ief" id="DRG-Xu-yYt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wiv-OV-bjh" userLabel="First Responder" sceneMemberID="firstResponder"/>

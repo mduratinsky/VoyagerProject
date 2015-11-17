@@ -28,6 +28,7 @@
 		26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368591BE8387800CDBAE5 /* Category.swift */; };
 		26E368631BE8470D00CDBAE5 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368611BE8470D00CDBAE5 /* CategoryTableViewCell.swift */; };
 		26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */; };
+		901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 901E79531BFABC8B00B20149 /* placeholder.jpg */; };
 		908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908278231BEEBB2800DFB52F /* SignupViewController.swift */; };
 		90C442FE1BEEE8A3001A8749 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */; };
 		90C443001BEEE8B3001A8749 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FF1BEEE8B3001A8749 /* CFNetwork.framework */; };
@@ -81,6 +82,7 @@
 		26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		76C8530CF00CEE2B03FB00AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8402E3352D099E38D2425AB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		901E79531BFABC8B00B20149 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		908278231BEEBB2800DFB52F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		90C442FF1BEEE8B3001A8749 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -180,6 +182,7 @@
 				26E368531BE8379A00CDBAE5 /* Tour.swift */,
 				26E368551BE8380600CDBAE5 /* Location.swift */,
 				26E368591BE8387800CDBAE5 /* Category.swift */,
+				901E79531BFABC8B00B20149 /* placeholder.jpg */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */,
+				901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */,
 				26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */,
 				26C429ED1BE3F2F1001C56DA /* DiscoverViewController.xib in Resources */,
 				2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */,
