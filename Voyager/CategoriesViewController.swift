@@ -29,6 +29,9 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         categories.append(newCategory)
     }
     
+    //MARK: General
+    
+    
     // MARK: TableView
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -48,11 +51,21 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         let title: String = categories[indexPath.row].getName()
         let image: String = "test" //TODO
         
+        cell.rippleLocation = .TapLocation
+        cell.rippleLayerColor = UIColor.MKColor.Grey
+        
         //3. Set the cells attributes
         cell.setCell(title, image: image)
         
         //4. Return the cell
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("specificCategory") as UIViewController
+        navigationController?.pushViewController(vc, animated: true)
+        //self.presentViewController(vc, animated: true, completion: nil)
     }
     
     // MARK: Navigation

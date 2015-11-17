@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
+class CategoryTableViewCell: MKTableViewCell {
 
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryTitle: UILabel!
