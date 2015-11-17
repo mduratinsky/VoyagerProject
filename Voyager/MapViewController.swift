@@ -12,17 +12,59 @@ import AddressBook
 import MapKit
 import Parse
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     @IBOutlet weak var mapView: MKMapView!
+    var status = CLLocationManager.authorizationStatus()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showsUserLocation = true
+        // Do any additional setup after loading the view, typically from a nib.
+        /*
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        */
+        
+        let locationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.delegate = self;
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
         //Eventually add Border color
         
         // Do any additional setup after loading the view.
     }
+
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        print("present location : \(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude)")
+    }
+    
+    
+    /*
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) -> Void in
+            
+            if error != nil {
+                print("error")
+                return
+            }
+            
+            if(placemarks!.count > 0) {
+                let pm = placemarks![0] as CLPlacemark
+                self.displayLocationInfo(pm)
+            }
+        }
+    }
+    */
+    func displayLocationInfo(placemark: CLPlacemark) {
+        self.locationManager.stopUpdatingLocation()
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,16 +74,6 @@ class MapViewController: UIViewController {
     @IBAction func cancel(sender: UIBarButtonItem) {
         //Dismiss view controller
         self.dismissViewControllerAnimated(true, completion: {})
-    }
-    
-    //Updates map to user location
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let location = locations.last as! CLLocation
-        
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
-        self.mapView.setRegion(region, animated: true)
     }
     
     /*

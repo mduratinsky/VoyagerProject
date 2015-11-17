@@ -14,6 +14,7 @@ import Parse
 
 class AddingLocationController: UIViewController, UITextViewDelegate {
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var locationInformation: UITextView!
     @IBOutlet weak var locationName: UITextField!
     @IBOutlet weak var locationAddText: UILabel!
@@ -40,7 +41,10 @@ class AddingLocationController: UIViewController, UITextViewDelegate {
         //Eventually add Border color
         
         // Do any additional setup after loading the view.
+        
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
