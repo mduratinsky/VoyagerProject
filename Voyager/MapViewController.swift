@@ -17,6 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapView: MKMapView!
     var status = CLLocationManager.authorizationStatus()
     let locationManager = CLLocationManager()
+    var myPosition = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +36,36 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.delegate = self;
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
-        //Eventually add Border color
-        
+        /*
+        print("**********")
+        print(mapView.userLocation.coordinate)
+        let mapCenter = mapView.userLocation.coordinate
+        let mapCamera = MKMapCamera(lookingAtCenterCoordinate: mapCenter, fromEyeCoordinate: mapCenter, eyeAltitude: 5000)
+        mapView.setCamera(mapCamera, animated: true)
+        */
         // Do any additional setup after loading the view.
     }
-
+    
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
         print("present location : \(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude)")
+        
+        myPosition = newLocation.coordinate
+        
+        let span = MKCoordinateSpanMake(3.0, 3.0)
+        let region = MKCoordinateRegionMake(newLocation.coordinate, span)
+        mapView.setRegion(region, animated: true)
+        
+    }
+
+    @IBAction func addPin(sender: UILongPressGestureRecognizer) {
+        let location = sender.locationInView(self.mapView)
+        
+        let locCoord = self.mapView.convertPoint(location, toCoordinateFromView: self.mapView)
+        
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = locCoord
+        annotation.title = "Event"
     }
     
     
