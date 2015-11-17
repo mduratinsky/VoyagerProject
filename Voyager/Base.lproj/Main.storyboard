@@ -174,7 +174,7 @@
                                 <segue destination="hlY-gh-pxM" kind="show" id="nbf-Tn-AmP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Gz5-py-nX8">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Gz5-py-nX8">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="09E-66-Fx5" kind="show" id="VXv-uG-MUJ"/>
@@ -183,6 +183,7 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="createNewTourButton" destination="Gz5-py-nX8" id="Byb-qB-G9D"/>
                         <outlet property="scrollView" destination="DCR-1z-zfc" id="sCo-B9-ScW"/>
                         <outlet property="userPhoto" destination="LfX-SI-fA7" id="HH8-4e-ADz"/>
                         <segue destination="gTd-wI-S3e" kind="show" id="akF-ng-NAg"/>
