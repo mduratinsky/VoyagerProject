@@ -12,10 +12,7 @@ import Parse
 
 class UserInfoViewController: UIViewController {
     @IBOutlet weak var logInOutButton: MKButton!
-
     @IBOutlet weak var userName: UILabel!
-    
-    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func logInOut(sender: MKButton) {
@@ -23,6 +20,7 @@ class UserInfoViewController: UIViewController {
             PFUser.logOut()
             userName.text = ""
             logInOutButton.setTitle("Login using Facebook", forState: UIControlState.Normal)
+            logInOutButton.backgroundColor = UIColor.MKColor.Green
             let image = UIImage(named: "placeholder.jpg")
             self.imageView.image = image
         } else {
@@ -64,7 +62,8 @@ class UserInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpScreen()
+        
+        imageView.layer.cornerRadius = 100.0
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -76,7 +75,8 @@ class UserInfoViewController: UIViewController {
             let name = PFUser.currentUser()?["name"] as! String
             userName.text = name
             
-            logInOutButton.setTitle("LOGOUT!", forState: UIControlState.Normal)
+            logInOutButton.setTitle("Logout", forState: UIControlState.Normal)
+            logInOutButton.backgroundColor = UIColor.MKColor.Red
             
             let imageFile = PFUser.currentUser()?["image"] as! PFFile
             imageFile.getDataInBackgroundWithBlock ({
@@ -94,14 +94,10 @@ class UserInfoViewController: UIViewController {
             })
             
         } else {
-            logInOutButton.setTitle("Login using Facebook!", forState: UIControlState.Normal)
+            logInOutButton.setTitle("Login using Facebook", forState: UIControlState.Normal)
+            logInOutButton.backgroundColor = UIColor.MKColor.Green
         }
 
-    }
-    // MARK: - General
-    
-    func setUpScreen() {
-        
     }
     
     /*
