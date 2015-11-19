@@ -34,6 +34,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.delegate = self;
+        locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
         /*
