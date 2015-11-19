@@ -14,6 +14,7 @@ class ScrollViewController: UIViewController {
 
     @IBOutlet weak var userPhoto: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var createNewTourButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,12 @@ class ScrollViewController: UIViewController {
     //MARK: - General Functions
     
     func setUserPhoto() {
-        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(30)] as Dictionary!
+        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(25)] as Dictionary!
         userPhoto.setTitleTextAttributes(attributes, forState: .Normal)
         userPhoto.title = String.fontAwesomeIconWithName(.User)
+        
+        createNewTourButton.setTitleTextAttributes(attributes, forState: .Normal)
+        createNewTourButton.title = String.fontAwesomeIconWithName(.Pencil)
     }
     
     func setScreenScrolling() {

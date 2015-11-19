@@ -174,7 +174,7 @@
                                 <segue destination="hlY-gh-pxM" kind="show" id="nbf-Tn-AmP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Gz5-py-nX8">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Gz5-py-nX8">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="09E-66-Fx5" kind="show" id="VXv-uG-MUJ"/>
@@ -183,6 +183,7 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="createNewTourButton" destination="Gz5-py-nX8" id="Byb-qB-G9D"/>
                         <outlet property="scrollView" destination="DCR-1z-zfc" id="sCo-B9-ScW"/>
                         <outlet property="userPhoto" destination="LfX-SI-fA7" id="HH8-4e-ADz"/>
                         <segue destination="gTd-wI-S3e" kind="show" id="akF-ng-NAg"/>
@@ -204,20 +205,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YVH-T2-83w">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YVH-T2-83w">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tourCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="tourCell" id="1Eo-6T-qmM" customClass="TourTableViewCell" customModule="Voyager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tourCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="tourCell" rowHeight="76" id="1Eo-6T-qmM" customClass="TourTableViewCell" customModule="Voyager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Eo-6T-qmM" id="tIK-hj-kDv">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SjB-sc-QeA">
+                                                    <rect key="frame" x="8" y="8" width="94" height="59"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.75530697599999996" green="0.75530697599999996" blue="0.75530697599999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="94" id="4Lp-97-1Hi"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Tour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-e6-9gq">
-                                                    <rect key="frame" x="264" y="11" width="72" height="21"/>
+                                                    <rect key="frame" x="110" y="27" width="457" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,8 +235,13 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="Y4b-e6-9gq" firstAttribute="centerY" secondItem="tIK-hj-kDv" secondAttribute="centerY" id="jOn-Xw-FjU"/>
-                                                <constraint firstItem="Y4b-e6-9gq" firstAttribute="centerX" secondItem="tIK-hj-kDv" secondAttribute="centerX" id="mrn-WH-8VO"/>
+                                                <constraint firstItem="SjB-sc-QeA" firstAttribute="bottom" secondItem="tIK-hj-kDv" secondAttribute="bottomMargin" id="HEy-QZ-OSN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Y4b-e6-9gq" secondAttribute="trailing" constant="-8" id="Mmw-QA-eV1"/>
+                                                <constraint firstItem="SjB-sc-QeA" firstAttribute="leading" secondItem="tIK-hj-kDv" secondAttribute="leadingMargin" id="Nda-qa-HgH"/>
+                                                <constraint firstItem="Y4b-e6-9gq" firstAttribute="top" secondItem="tIK-hj-kDv" secondAttribute="topMargin" constant="19" id="VKN-Zh-UcE"/>
+                                                <constraint firstItem="SjB-sc-QeA" firstAttribute="top" secondItem="tIK-hj-kDv" secondAttribute="topMargin" id="Zti-lQ-1ie"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Y4b-e6-9gq" secondAttribute="bottom" constant="19" id="xXu-PN-ct3"/>
+                                                <constraint firstItem="Y4b-e6-9gq" firstAttribute="leading" secondItem="SjB-sc-QeA" secondAttribute="trailing" constant="8" id="zxe-eM-Ln7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -236,6 +250,9 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="0hR-jH-A9Z" kind="show" identifier="tourSelected" id="aYc-n8-UMY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -252,13 +269,35 @@
                             <constraint firstItem="YVH-T2-83w" firstAttribute="width" secondItem="d2p-Df-dwX" secondAttribute="width" id="Y6c-8n-sDn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Category" id="xQ2-C2-rPn"/>
                     <connections>
+                        <outlet property="navBar" destination="xQ2-C2-rPn" id="aKu-uF-4Lg"/>
                         <outlet property="tableView" destination="YVH-T2-83w" id="Hgg-40-PfW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LF-iP-3a4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-303" y="1892"/>
+        </scene>
+        <!--Tour-->
+        <scene sceneID="A98-7W-6mj">
+            <objects>
+                <viewController id="0hR-jH-A9Z" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Twe-jS-mUe"/>
+                        <viewControllerLayoutGuide type="bottom" id="gtq-cu-Tl4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VK1-Cs-vEz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tour" id="G5h-TC-qiZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lzl-cX-C4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="406" y="1892"/>
         </scene>
         <!--New tour-->
         <scene sceneID="RQ9-dE-1yT">

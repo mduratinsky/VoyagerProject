@@ -24,10 +24,9 @@ class CategoryTableViewCell: MKTableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(title: String, image: String) {
+    func setCell(title: String, image: UIImage) {
         categoryTitle.text = title
-        
-        //TODO - update the picture
+        categoryImage.image = image
     }
     
 }
