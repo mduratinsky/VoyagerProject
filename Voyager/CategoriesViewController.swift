@@ -13,19 +13,19 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var categoriesTableView: UITableView!
     
     var categories: [Category] = []
-    
+    var category: String? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         categoriesTableView.registerNib(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "categoryCell")
         
         //For testing
-        var newCategory = Category(name: "Arts")
+        var newCategory = Category(name: "Arts", image: UIImage(named: "arts")!)
         categories.append(newCategory)
-        newCategory = Category(name: "Bars")
+        newCategory = Category(name: "Bars", image: UIImage(named: "bars")!)
         categories.append(newCategory)
-        newCategory = Category(name: "Dancing")
+        newCategory = Category(name: "Dancing", image: UIImage(named: "dancing")!)
         categories.append(newCategory)
-        newCategory = Category(name: "Dining")
+        newCategory = Category(name: "Dining", image: UIImage(named: "dining")!)
         categories.append(newCategory)
     }
     
@@ -49,10 +49,10 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         
         //2. Get the cell attributes
         let title: String = categories[indexPath.row].getName()
-        let image: String = "test" //TODO
+        let image: UIImage = categories[indexPath.row].getPhoto()
         
         cell.rippleLocation = .TapLocation
-        cell.rippleLayerColor = UIColor.MKColor.Grey
+        cell.rippleLayerColor = UIColor.whiteColor()
         
         //3. Set the cells attributes
         cell.setCell(title, image: image)
@@ -63,10 +63,11 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("specificCategory") as UIViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("specificCategory") as! IndividualCategoryViewController
         navigationController?.pushViewController(vc, animated: true)
-        //self.presentViewController(vc, animated: true, completion: nil)
+        
+        //Set the category title and pass it to the new view controller
+        category = categories[indexPath.row].getName()
+        vc.navTitle = category
     }
-    
-    // MARK: Navigation
 }

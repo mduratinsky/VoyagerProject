@@ -10,13 +10,15 @@ import Foundation
 
 class Category {
     //Mandatory attributes
-    var mName: String
+    private var mName: String
+    private var mPhoto: UIImage
     
     //Optional attributes
-    var mListOfTours: [Tour]?
+    private var mListOfTours: [Tour]?
     
-    init(name: String) {
+    init(name: String, image: UIImage) {
         mName = name
+        mPhoto = image
     }
     
     func getName() -> String {
@@ -25,6 +27,14 @@ class Category {
     
     func setName(name: String) {
         mName = name
+    }
+    
+    func getPhoto() -> UIImage {
+        return mPhoto
+    }
+    
+    func setPhoto(image: UIImage) {
+        mPhoto = image
     }
     
     func getTours() -> [Tour] {

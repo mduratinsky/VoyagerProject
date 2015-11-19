@@ -11,9 +11,13 @@ import UIKit
 class IndividualCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navBar: UINavigationItem!
+    
+    var navTitle: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.title = navTitle!
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
