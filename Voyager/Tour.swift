@@ -14,7 +14,9 @@ class Tour {
     var mListOfLocations: [Location]
     var mCategory: String
     var mAuthor: String
-    
+    var views = 0 //number of times the tour has been viewed
+    var starts = 0 //number of times the tour has been taken
+    var completes = 0 //number of times the tour has been completed
     //Optional attributes
     var mDescription: String?
     var mComments: [String]?
