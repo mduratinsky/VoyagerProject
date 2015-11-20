@@ -12,7 +12,7 @@ class Tour {
     //Mandatory attributes
     var mName: String
     var mListOfLocations: [Location]
-    var mCategory: Category
+    var mCategory: String
     var mAuthor: String
     
     //Optional attributes
@@ -20,7 +20,7 @@ class Tour {
     var mComments: [String]?
     var mRating: Int?
     
-    init(name: String, locations: [Location], category: Category, author: String) {
+    init(name: String, locations: [Location], category: String, author: String) {
         mName = name
         mListOfLocations = locations
         mCategory = category
@@ -51,11 +51,11 @@ class Tour {
         // TODO
     }
     
-    func getCategory() -> Category {
+    func getCategory() -> String {
         return mCategory
     }
     
-    func setCategory(category: Category) {
+    func setCategory(category: String) {
         mCategory = category
     }
     
