@@ -1,53 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="249" id="KGk-i7-Jjw" customClass="CategoryTableViewCell" customModule="Voyager" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="583" height="180"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="125" id="KGk-i7-Jjw" customClass="CategoryTableViewCell" customModule="Voyager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="583" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="550" height="179"/>
+                <rect key="frame" x="0.0" y="0.0" width="550" height="124"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OAE-aU-VY7">
-                        <rect key="frame" x="0.0" y="0.0" width="550" height="180"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kdg-4A-GHY">
-                                <rect key="frame" x="0.0" y="0.0" width="275" height="180"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.72008576349999998" green="1" blue="0.74487050970000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bml-vy-pys">
-                                <rect key="frame" x="275" y="0.0" width="275" height="180"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arts" translatesAutoresizingMaskIntoConstraints="NO" id="kdg-4A-GHY">
+                        <rect key="frame" x="0.0" y="0.0" width="584" height="124"/>
                         <animations/>
-                    </stackView>
+                        <color key="backgroundColor" red="0.72008576349999998" green="1" blue="0.74487050970000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bml-vy-pys">
+                        <rect key="frame" x="0.0" y="0.0" width="584" height="124"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="75"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <animations/>
                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="OAE-aU-VY7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="GWZ-iC-QNU"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="OAE-aU-VY7" secondAttribute="bottom" constant="-9" id="OZ8-ad-BdN"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="OAE-aU-VY7" secondAttribute="trailing" constant="-8" id="Wzk-qg-qhW"/>
-                    <constraint firstItem="OAE-aU-VY7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="qXt-Cu-lVG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kdg-4A-GHY" secondAttribute="bottom" constant="-8" id="DTI-7n-ghc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kdg-4A-GHY" secondAttribute="trailing" constant="-42" id="EUa-qj-NyJ"/>
+                    <constraint firstItem="kdg-4A-GHY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="GUF-Cq-NSt"/>
+                    <constraint firstItem="kdg-4A-GHY" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Iv2-RS-EJQ"/>
+                    <constraint firstItem="bml-vy-pys" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="RNa-Uy-FzY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kdg-4A-GHY" secondAttribute="bottom" id="WeU-6F-KpC"/>
+                    <constraint firstItem="kdg-4A-GHY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="g2S-iG-HrL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="bml-vy-pys" secondAttribute="trailing" constant="-42" id="iDj-lt-ADc"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="bml-vy-pys" secondAttribute="bottom" constant="-8" id="kvo-LZ-TSU"/>
+                    <constraint firstItem="kdg-4A-GHY" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-8" id="ply-t6-sAk"/>
+                    <constraint firstItem="bml-vy-pys" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="qel-Ci-Jyv"/>
+                    <constraint firstItem="kdg-4A-GHY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="sMw-dg-w3d"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kdg-4A-GHY" secondAttribute="bottom" constant="-8" id="ytE-zz-BLL"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Iv2-RS-EJQ"/>
+                        <exclude reference="WeU-6F-KpC"/>
+                        <exclude reference="ply-t6-sAk"/>
+                        <exclude reference="sMw-dg-w3d"/>
+                        <exclude reference="ytE-zz-BLL"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <connections>
                 <outlet property="categoryImage" destination="kdg-4A-GHY" id="HUK-Tq-dgo"/>
                 <outlet property="categoryTitle" destination="bml-vy-pys" id="cRK-oi-Fe7"/>
             </connections>
-            <point key="canvasLocation" x="447.5" y="249"/>
+            <point key="canvasLocation" x="447.5" y="248.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arts" width="1180" height="500"/>
+    </resources>
 </document>
