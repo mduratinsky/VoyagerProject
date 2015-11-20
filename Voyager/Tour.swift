@@ -10,6 +10,8 @@ import Foundation
 
 class Tour {
     //Mandatory attributes
+    var id: String? //Object ID within Parse
+    var userId: String?
     var mName: String
     var mListOfLocations: [Location]
     var mCategory: String
