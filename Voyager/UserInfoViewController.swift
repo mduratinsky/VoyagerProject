@@ -25,7 +25,7 @@ class UserInfoViewController: UIViewController {
             self.imageView.image = image
         } else {
             let permissions = ["public_profile"]
-            PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
+            PFFacebookUtils.logInInBackgroundWithAccessToken(FBSDKAccessToken) {
                 (user: PFUser?, error: NSError?) -> Void in
                 if let error = error {
                     print(error)
