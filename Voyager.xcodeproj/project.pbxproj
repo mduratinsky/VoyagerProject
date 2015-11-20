@@ -60,6 +60,7 @@
 		90C443291BF14D67001A8749 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443261BF14D67001A8749 /* FBSDKCoreKit.framework */; };
 		90C4432A1BF14D67001A8749 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443271BF14D67001A8749 /* FBSDKLoginKit.framework */; };
 		90C4432B1BF14D67001A8749 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443281BF14D67001A8749 /* FBSDKShareKit.framework */; };
+		90C7323D1BFFCC920051C5E3 /* ParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7323C1BFFCC920051C5E3 /* ParseController.swift */; };
 		BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37A71A1BED4E5900F92534 /* MapViewController.swift */; };
 		BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37A7201BED59DD00F92534 /* MapKit.framework */; };
 		BD45453A1BFE9BEB0017EE99 /* SingleMediaTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */; };
@@ -127,6 +128,7 @@
 		90C443261BF14D67001A8749 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		90C443271BF14D67001A8749 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		90C443281BF14D67001A8749 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		90C7323C1BFFCC920051C5E3 /* ParseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseController.swift; sourceTree = "<group>"; };
 		BD37A71A1BED4E5900F92534 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD37A7201BED59DD00F92534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMediaTourViewController.swift; sourceTree = "<group>"; };
@@ -189,9 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				90C443151BEEF12C001A8749 /* Voyager-Bridging-Header.h */,
-				26BA99381BF9520A00EC4F91 /* Design */,
-				2601AD5F1BD4B3F9004F6394 /* Controllers */,
-				2601AD5E1BD4B3F2004F6394 /* Data */,
+				26BA99381BF9520A00EC4F91 /* View */,
+				2601AD5F1BD4B3F9004F6394 /* Controller */,
+				2601AD5E1BD4B3F2004F6394 /* Model */,
 				2601AD501BD4B195004F6394 /* Main.storyboard */,
 				2601AD4C1BD4B195004F6394 /* AppDelegate.swift */,
 				2601AD531BD4B195004F6394 /* Assets.xcassets */,
@@ -201,17 +203,17 @@
 			path = Voyager;
 			sourceTree = "<group>";
 		};
-		2601AD5E1BD4B3F2004F6394 /* Data */ = {
+		2601AD5E1BD4B3F2004F6394 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				26E368531BE8379A00CDBAE5 /* Tour.swift */,
 				26E368551BE8380600CDBAE5 /* Location.swift */,
 				26E368591BE8387800CDBAE5 /* Category.swift */,
 			);
-			name = Data;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		2601AD5F1BD4B3F9004F6394 /* Controllers */ = {
+		2601AD5F1BD4B3F9004F6394 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				26E368671BE847DF00CDBAE5 /* Discover */,
@@ -219,6 +221,7 @@
 				26E368651BE847B500CDBAE5 /* Categories */,
 				26C429DA1BE3F215001C56DA /* ScrollViewController.swift */,
 				BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */,
+				90C7323C1BFFCC920051C5E3 /* ParseController.swift */,
 				26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */,
 				BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */,
 				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
@@ -228,10 +231,10 @@
 				26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */,
 				26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */,
 			);
-			name = Controllers;
+			name = Controller;
 			sourceTree = "<group>";
 		};
-		26BA99381BF9520A00EC4F91 /* Design */ = {
+		26BA99381BF9520A00EC4F91 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				26BA99391BF9579D00EC4F91 /* MKButton.swift */,
@@ -242,7 +245,7 @@
 				26513CCA1BFAF132001DC6A6 /* MKLabel.swift */,
 				26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */,
 			);
-			name = Design;
+			name = View;
 			sourceTree = "<group>";
 		};
 		26E368651BE847B500CDBAE5 /* Categories */ = {
@@ -470,6 +473,7 @@
 				26513CC71BFAF0F9001DC6A6 /* MKTextField.swift in Sources */,
 				26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */,
 				26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */,
+				90C7323D1BFFCC920051C5E3 /* ParseController.swift in Sources */,
 				BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */,
 				26513CC91BFAF113001DC6A6 /* MKTableViewCell.swift in Sources */,
 				266A10FC1BFFD59B0044EBF8 /* SpecificTourViewController.swift in Sources */,
