@@ -61,6 +61,7 @@
 		90C4432B1BF14D67001A8749 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443281BF14D67001A8749 /* FBSDKShareKit.framework */; };
 		BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37A71A1BED4E5900F92534 /* MapViewController.swift */; };
 		BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37A7201BED59DD00F92534 /* MapKit.framework */; };
+		BD45453A1BFE9BEB0017EE99 /* SingleMediaTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */; };
 		BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */; };
 		EE56906C8B25AF90DD18525D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A225ED54F582248A0FB7C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 		90C443281BF14D67001A8749 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		BD37A71A1BED4E5900F92534 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD37A7201BED59DD00F92534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMediaTourViewController.swift; sourceTree = "<group>"; };
 		BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,6 +216,7 @@
 				26E368661BE847D200CDBAE5 /* Search */,
 				26E368651BE847B500CDBAE5 /* Categories */,
 				26C429DA1BE3F215001C56DA /* ScrollViewController.swift */,
+				BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */,
 				26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */,
 				BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */,
 				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
@@ -243,8 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				26C429E61BE3F2E3001C56DA /* CategoriesViewController.swift */,
-				26C429E71BE3F2E3001C56DA /* CategoriesViewController.xib */,
 				26E368611BE8470D00CDBAE5 /* CategoryTableViewCell.swift */,
+				26C429E71BE3F2E3001C56DA /* CategoriesViewController.xib */,
 				26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */,
 			);
 			name = Categories;
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26E368541BE8379A00CDBAE5 /* Tour.swift in Sources */,
+				BD45453A1BFE9BEB0017EE99 /* SingleMediaTourViewController.swift in Sources */,
 				26513CC71BFAF0F9001DC6A6 /* MKTextField.swift in Sources */,
 				26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */,
 				26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */,
