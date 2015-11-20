@@ -282,22 +282,83 @@
         <!--Tour-->
         <scene sceneID="A98-7W-6mj">
             <objects>
-                <viewController id="0hR-jH-A9Z" sceneMemberID="viewController">
+                <viewController id="0hR-jH-A9Z" customClass="SpecificTourViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Twe-jS-mUe"/>
                         <viewControllerLayoutGuide type="bottom" id="gtq-cu-Tl4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VK1-Cs-vEz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JM-aH-I96" customClass="MKButton" customModule="Voyager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="750" width="600" height="50"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="osc-vo-cWH"/>
+                                </constraints>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPL-sq-nuZ">
+                                <rect key="frame" x="0.0" y="264" width="600" height="486"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svs-KV-izN">
+                                        <rect key="frame" x="272" y="457" width="56" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Svs-KV-izN" firstAttribute="centerX" secondItem="lPL-sq-nuZ" secondAttribute="centerX" id="Byj-hi-uIK"/>
+                                    <constraint firstItem="Svs-KV-izN" firstAttribute="top" secondItem="lPL-sq-nuZ" secondAttribute="top" constant="457" id="OmZ-vb-SlR"/>
+                                    <constraint firstAttribute="bottom" secondItem="Svs-KV-izN" secondAttribute="bottom" constant="8" id="Uhh-7N-oct"/>
+                                </constraints>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arts" translatesAutoresizingMaskIntoConstraints="NO" id="s9s-qX-7oh">
+                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ZNr-8M-bOY"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lPL-sq-nuZ" secondAttribute="trailing" constant="-20" id="8Gh-NT-FAl"/>
+                            <constraint firstItem="0JM-aH-I96" firstAttribute="centerX" secondItem="VK1-Cs-vEz" secondAttribute="centerX" id="Doa-mh-5QT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s9s-qX-7oh" secondAttribute="trailing" constant="-20" id="HOf-Tx-eGq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0JM-aH-I96" secondAttribute="trailing" constant="-20" id="JJa-0i-hJt"/>
+                            <constraint firstItem="lPL-sq-nuZ" firstAttribute="top" secondItem="s9s-qX-7oh" secondAttribute="bottom" id="PX1-lr-BIc"/>
+                            <constraint firstItem="s9s-qX-7oh" firstAttribute="top" secondItem="Twe-jS-mUe" secondAttribute="bottom" id="TgC-du-QaI"/>
+                            <constraint firstItem="lPL-sq-nuZ" firstAttribute="leading" secondItem="VK1-Cs-vEz" secondAttribute="leadingMargin" constant="-20" id="USJ-38-oI3"/>
+                            <constraint firstItem="s9s-qX-7oh" firstAttribute="leading" secondItem="VK1-Cs-vEz" secondAttribute="leadingMargin" constant="-20" id="f9e-Sn-bj3"/>
+                            <constraint firstItem="gtq-cu-Tl4" firstAttribute="top" secondItem="0JM-aH-I96" secondAttribute="bottom" id="mFA-DK-CaJ"/>
+                            <constraint firstItem="0JM-aH-I96" firstAttribute="top" secondItem="lPL-sq-nuZ" secondAttribute="bottom" id="n3L-PN-pP8"/>
+                            <constraint firstItem="lPL-sq-nuZ" firstAttribute="centerX" secondItem="VK1-Cs-vEz" secondAttribute="centerX" id="p6D-WX-CbU"/>
+                            <constraint firstItem="s9s-qX-7oh" firstAttribute="centerX" secondItem="VK1-Cs-vEz" secondAttribute="centerX" id="r5s-r9-UBU"/>
+                            <constraint firstItem="0JM-aH-I96" firstAttribute="leading" secondItem="VK1-Cs-vEz" secondAttribute="leadingMargin" constant="-20" id="x5a-uu-bS4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tour" id="G5h-TC-qiZ"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
+                    <connections>
+                        <outlet property="photoGallery" destination="s9s-qX-7oh" id="pAe-5n-VO1"/>
+                        <outlet property="scrollView" destination="lPL-sq-nuZ" id="vk7-d9-W84"/>
+                        <outlet property="startButton" destination="0JM-aH-I96" id="hGe-yK-TLq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lzl-cX-C4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="406" y="1892"/>
+            <point key="canvasLocation" x="411" y="1986"/>
         </scene>
         <!--New tour-->
         <scene sceneID="RQ9-dE-1yT">
@@ -765,6 +826,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arts" width="1180" height="500"/>
         <image name="fblogin" width="480" height="230"/>
     </resources>
 </document>

@@ -17,6 +17,7 @@
 		26513CC91BFAF113001DC6A6 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC81BFAF113001DC6A6 /* MKTableViewCell.swift */; };
 		26513CCB1BFAF132001DC6A6 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CCA1BFAF132001DC6A6 /* MKLabel.swift */; };
 		26513CCD1BFAF15C001DC6A6 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */; };
+		266A10FC1BFFD59B0044EBF8 /* SpecificTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */; };
 		26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */; };
 		26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99391BF9579D00EC4F91 /* MKButton.swift */; };
 		26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA993B1BF9590800EC4F91 /* MKLayer.swift */; };
@@ -80,6 +81,7 @@
 		26513CC81BFAF113001DC6A6 /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
 		26513CCA1BFAF132001DC6A6 /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
 		26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
+		266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificTourViewController.swift; sourceTree = "<group>"; };
 		26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		26BA99391BF9579D00EC4F91 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		26BA993B1BF9590800EC4F91 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */,
 				BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */,
 				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
+				266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */,
 				26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */,
 				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
 				26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */,
@@ -469,6 +472,7 @@
 				26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */,
 				BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */,
 				26513CC91BFAF113001DC6A6 /* MKTableViewCell.swift in Sources */,
+				266A10FC1BFFD59B0044EBF8 /* SpecificTourViewController.swift in Sources */,
 				26E368561BE8380600CDBAE5 /* Location.swift in Sources */,
 				26C429EF1BE3FA2F001C56DA /* NewEventViewController.swift in Sources */,
 				26C429EC1BE3F2F1001C56DA /* DiscoverViewController.swift in Sources */,
