@@ -18,6 +18,7 @@
 		26513CCB1BFAF132001DC6A6 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CCA1BFAF132001DC6A6 /* MKLabel.swift */; };
 		26513CCD1BFAF15C001DC6A6 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */; };
 		266A10FC1BFFD59B0044EBF8 /* SpecificTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */; };
+		267C63471C000A50001AFA97 /* VoyagerBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C63461C000A50001AFA97 /* VoyagerBackground.jpg */; };
 		26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */; };
 		26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99391BF9579D00EC4F91 /* MKButton.swift */; };
 		26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA993B1BF9590800EC4F91 /* MKLayer.swift */; };
@@ -83,6 +84,7 @@
 		26513CCA1BFAF132001DC6A6 /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
 		26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
 		266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificTourViewController.swift; sourceTree = "<group>"; };
+		267C63461C000A50001AFA97 /* VoyagerBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = VoyagerBackground.jpg; path = Voyager/VoyagerBackground.jpg; sourceTree = "<group>"; };
 		26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		26BA99391BF9579D00EC4F91 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		26BA993B1BF9590800EC4F91 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				26E678B51BFD7362002AAACC /* bars_updated (1).jpg */,
 				26E678B81BFD73CE002AAACC /* dancing_updated (1).jpg */,
 				26E678BA1BFD73EC002AAACC /* dining_updated (2).jpg */,
+				267C63461C000A50001AFA97 /* VoyagerBackground.jpg */,
 				901E79531BFABC8B00B20149 /* placeholder.jpg */,
 			);
 			name = images;
@@ -406,6 +409,7 @@
 				26C429ED1BE3F2F1001C56DA /* DiscoverViewController.xib in Resources */,
 				2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */,
 				26E678BB1BFD73EC002AAACC /* dining_updated (2).jpg in Resources */,
+				267C63471C000A50001AFA97 /* VoyagerBackground.jpg in Resources */,
 				26E678B41BFD7317002AAACC /* arts_updated (3).jpg in Resources */,
 				26C429E91BE3F2E3001C56DA /* CategoriesViewController.xib in Resources */,
 				26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */,
