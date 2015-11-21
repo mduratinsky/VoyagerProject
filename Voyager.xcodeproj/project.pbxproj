@@ -19,6 +19,8 @@
 		26513CCD1BFAF15C001DC6A6 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */; };
 		266A10FC1BFFD59B0044EBF8 /* SpecificTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */; };
 		267C63471C000A50001AFA97 /* VoyagerBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C63461C000A50001AFA97 /* VoyagerBackground.jpg */; };
+		267C63491C000FCF001AFA97 /* dancing_updated (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C63481C000FCF001AFA97 /* dancing_updated (1).jpg */; };
+		267C634B1C000FD9001AFA97 /* dining_updated (2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C634A1C000FD9001AFA97 /* dining_updated (2).jpg */; };
 		26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */; };
 		26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99391BF9579D00EC4F91 /* MKButton.swift */; };
 		26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA993B1BF9590800EC4F91 /* MKLayer.swift */; };
@@ -38,8 +40,6 @@
 		26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */; };
 		26E678B41BFD7317002AAACC /* arts_updated (3).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B31BFD7317002AAACC /* arts_updated (3).jpg */; };
 		26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B51BFD7362002AAACC /* bars_updated (1).jpg */; };
-		26E678B91BFD73CE002AAACC /* dancing_updated (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B81BFD73CE002AAACC /* dancing_updated (1).jpg */; };
-		26E678BB1BFD73EC002AAACC /* dining_updated (2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678BA1BFD73EC002AAACC /* dining_updated (2).jpg */; };
 		901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 901E79531BFABC8B00B20149 /* placeholder.jpg */; };
 		908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908278231BEEBB2800DFB52F /* SignupViewController.swift */; };
 		90C442FE1BEEE8A3001A8749 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */; };
@@ -85,6 +85,8 @@
 		26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
 		266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificTourViewController.swift; sourceTree = "<group>"; };
 		267C63461C000A50001AFA97 /* VoyagerBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = VoyagerBackground.jpg; path = Voyager/VoyagerBackground.jpg; sourceTree = "<group>"; };
+		267C63481C000FCF001AFA97 /* dancing_updated (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "dancing_updated (1).jpg"; path = "Voyager/dancing_updated (1).jpg"; sourceTree = "<group>"; };
+		267C634A1C000FD9001AFA97 /* dining_updated (2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "dining_updated (2).jpg"; path = "Voyager/dining_updated (2).jpg"; sourceTree = "<group>"; };
 		26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		26BA99391BF9579D00EC4F91 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		26BA993B1BF9590800EC4F91 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -104,8 +106,6 @@
 		26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		26E678B31BFD7317002AAACC /* arts_updated (3).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "arts_updated (3).jpg"; path = "Voyager/arts_updated (3).jpg"; sourceTree = "<group>"; };
 		26E678B51BFD7362002AAACC /* bars_updated (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bars_updated (1).jpg"; path = "Voyager/bars_updated (1).jpg"; sourceTree = "<group>"; };
-		26E678B81BFD73CE002AAACC /* dancing_updated (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dancing_updated (1).jpg"; sourceTree = "<group>"; };
-		26E678BA1BFD73EC002AAACC /* dining_updated (2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dining_updated (2).jpg"; sourceTree = "<group>"; };
 		76C8530CF00CEE2B03FB00AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8402E3352D099E38D2425AB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		901E79531BFABC8B00B20149 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = placeholder.jpg; path = Voyager/placeholder.jpg; sourceTree = "<group>"; };
@@ -284,8 +284,8 @@
 			children = (
 				26E678B31BFD7317002AAACC /* arts_updated (3).jpg */,
 				26E678B51BFD7362002AAACC /* bars_updated (1).jpg */,
-				26E678B81BFD73CE002AAACC /* dancing_updated (1).jpg */,
-				26E678BA1BFD73EC002AAACC /* dining_updated (2).jpg */,
+				267C63481C000FCF001AFA97 /* dancing_updated (1).jpg */,
+				267C634A1C000FD9001AFA97 /* dining_updated (2).jpg */,
 				267C63461C000A50001AFA97 /* VoyagerBackground.jpg */,
 				901E79531BFABC8B00B20149 /* placeholder.jpg */,
 			);
@@ -403,16 +403,16 @@
 			files = (
 				2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */,
 				26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */,
+				267C63491C000FCF001AFA97 /* dancing_updated (1).jpg in Resources */,
 				901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */,
-				26E678B91BFD73CE002AAACC /* dancing_updated (1).jpg in Resources */,
 				26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */,
 				26C429ED1BE3F2F1001C56DA /* DiscoverViewController.xib in Resources */,
 				2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */,
-				26E678BB1BFD73EC002AAACC /* dining_updated (2).jpg in Resources */,
 				267C63471C000A50001AFA97 /* VoyagerBackground.jpg in Resources */,
 				26E678B41BFD7317002AAACC /* arts_updated (3).jpg in Resources */,
 				26C429E91BE3F2E3001C56DA /* CategoriesViewController.xib in Resources */,
 				26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */,
+				267C634B1C000FD9001AFA97 /* dining_updated (2).jpg in Resources */,
 				2601AD521BD4B195004F6394 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
