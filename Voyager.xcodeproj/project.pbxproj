@@ -40,6 +40,7 @@
 		26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */; };
 		26E678B41BFD7317002AAACC /* arts_updated (3).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B31BFD7317002AAACC /* arts_updated (3).jpg */; };
 		26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B51BFD7362002AAACC /* bars_updated (1).jpg */; };
+		26FCBB4D1C02A66600209C3E /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */; };
 		901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 901E79531BFABC8B00B20149 /* placeholder.jpg */; };
 		908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908278231BEEBB2800DFB52F /* SignupViewController.swift */; };
 		90C442FE1BEEE8A3001A8749 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */; };
@@ -106,6 +107,7 @@
 		26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		26E678B31BFD7317002AAACC /* arts_updated (3).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "arts_updated (3).jpg"; path = "Voyager/arts_updated (3).jpg"; sourceTree = "<group>"; };
 		26E678B51BFD7362002AAACC /* bars_updated (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bars_updated (1).jpg"; path = "Voyager/bars_updated (1).jpg"; sourceTree = "<group>"; };
+		26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		76C8530CF00CEE2B03FB00AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8402E3352D099E38D2425AB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		901E79531BFABC8B00B20149 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = placeholder.jpg; path = Voyager/placeholder.jpg; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
 				26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */,
 				26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */,
+				26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				26BA99401BF9597600EC4F91 /* MKColor.swift in Sources */,
 				BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */,
 				26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */,
+				26FCBB4D1C02A66600209C3E /* DirectionsViewController.swift in Sources */,
 				908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */,
 				26C429E81BE3F2E3001C56DA /* CategoriesViewController.swift in Sources */,
 				26513CC31BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift in Sources */,

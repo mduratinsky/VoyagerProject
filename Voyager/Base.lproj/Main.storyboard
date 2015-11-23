@@ -551,6 +551,9 @@
                                 <rect key="frame" x="279" y="373" width="43" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Map it"/>
+                                <connections>
+                                    <segue destination="PG2-fE-7mf" kind="show" id="8QV-a1-7iV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -574,6 +577,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiL-vi-eVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="447" y="2740"/>
+        </scene>
+        <!--Directions View Controller-->
+        <scene sceneID="gdN-Dl-AaJ">
+            <objects>
+                <viewController id="PG2-fE-7mf" customClass="DirectionsViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="upA-9W-Pfu"/>
+                        <viewControllerLayoutGuide type="bottom" id="pAV-7e-DAq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RSl-by-h1q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZeL-L5-XKr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="PG2-fE-7mf" id="HwW-H4-rCx"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZeL-L5-XKr" firstAttribute="width" secondItem="RSl-by-h1q" secondAttribute="width" id="F6b-vx-x6z"/>
+                            <constraint firstItem="ZeL-L5-XKr" firstAttribute="height" secondItem="RSl-by-h1q" secondAttribute="height" id="FEc-Xr-XwA"/>
+                            <constraint firstItem="ZeL-L5-XKr" firstAttribute="centerX" secondItem="RSl-by-h1q" secondAttribute="centerX" id="twL-X3-Ik6"/>
+                            <constraint firstItem="ZeL-L5-XKr" firstAttribute="centerY" secondItem="RSl-by-h1q" secondAttribute="centerY" id="tzm-B0-Tcv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ZeL-L5-XKr" id="4bm-Hn-1Ne"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fu6-ds-sGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="3586"/>
         </scene>
         <!--New tour-->
         <scene sceneID="RQ9-dE-1yT">
