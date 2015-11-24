@@ -352,7 +352,7 @@
                                                 <rect key="frame" x="0.0" y="23" width="292" height="15"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nXL-FA-7D3">
@@ -362,14 +362,14 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="292" height="15"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of views: 1,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-oU-oHL">
                                                         <rect key="frame" x="0.0" y="15" width="292" height="15"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -461,7 +461,7 @@
                                         <rect key="frame" x="8" y="0.0" width="584" height="57"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -509,10 +509,10 @@
             </objects>
             <point key="canvasLocation" x="-303" y="2840"/>
         </scene>
-        <!--View Controller-->
+        <!--Specific Location View Controller-->
         <scene sceneID="rF7-Yk-Dfd">
             <objects>
-                <viewController id="m4d-ZB-2Yi" sceneMemberID="viewController">
+                <viewController id="m4d-ZB-2Yi" customClass="SpecificLocationViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AFd-Yd-1oV"/>
                         <viewControllerLayoutGuide type="bottom" id="QHy-dT-RRX"/>
@@ -544,17 +544,28 @@
                                 <rect key="frame" x="182" y="274" width="236" height="52"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="43"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWp-nn-KyH">
-                                <rect key="frame" x="279" y="373" width="43" height="30"/>
+                                <rect key="frame" x="279" y="491" width="43" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Map it"/>
                                 <connections>
-                                    <segue destination="PG2-fE-7mf" kind="show" id="8QV-a1-7iV"/>
+                                    <segue destination="PG2-fE-7mf" kind="show" identifier="mapLocation" id="8QV-a1-7iV"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x8H-iP-H1Y">
+                                <rect key="frame" x="20" y="334" width="560" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="mga-B5-INl"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -562,17 +573,24 @@
                             <constraint firstItem="wWp-nn-KyH" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="1nl-fi-Xn1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="exO-UN-F3C" secondAttribute="trailing" constant="-20" id="7Tk-A8-VtY"/>
                             <constraint firstItem="bGJ-hs-m2C" firstAttribute="leading" secondItem="ryD-2f-ylF" secondAttribute="leadingMargin" constant="-20" id="Awn-4Z-bbc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="x8H-iP-H1Y" secondAttribute="leading" id="HUD-bf-lsG"/>
                             <constraint firstItem="3YT-cT-guR" firstAttribute="centerY" secondItem="ryD-2f-ylF" secondAttribute="centerY" id="Jr4-1S-f8S"/>
                             <constraint firstItem="exO-UN-F3C" firstAttribute="top" secondItem="AFd-Yd-1oV" secondAttribute="bottom" id="KPb-I0-GPN"/>
                             <constraint firstItem="exO-UN-F3C" firstAttribute="leading" secondItem="ryD-2f-ylF" secondAttribute="leadingMargin" constant="-20" id="M11-eK-EUy"/>
+                            <constraint firstItem="wWp-nn-KyH" firstAttribute="top" secondItem="x8H-iP-H1Y" secondAttribute="bottom" constant="29" id="PhF-wn-QQb"/>
+                            <constraint firstItem="x8H-iP-H1Y" firstAttribute="top" secondItem="3YT-cT-guR" secondAttribute="bottom" constant="8" id="bzs-2H-8OU"/>
                             <constraint firstItem="QHy-dT-RRX" firstAttribute="top" secondItem="bGJ-hs-m2C" secondAttribute="bottom" id="ed9-He-Acz"/>
                             <constraint firstItem="3YT-cT-guR" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="h0u-2g-Chq"/>
-                            <constraint firstItem="wWp-nn-KyH" firstAttribute="top" secondItem="3YT-cT-guR" secondAttribute="bottom" constant="47" id="u7N-De-hPU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x8H-iP-H1Y" secondAttribute="trailing" id="paz-tv-OgD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bGJ-hs-m2C" secondAttribute="trailing" constant="-20" id="wqo-ze-lhf"/>
+                            <constraint firstItem="x8H-iP-H1Y" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="xaF-jZ-8wr"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="locationTitle" destination="3YT-cT-guR" id="yeq-FU-4p0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiL-vi-eVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,6 +17,8 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
     var myPosition = CLLocationCoordinate2D()
     var pinLocation = CLLocationCoordinate2D()
     var destination = MKMapItem()
+    var locationTitle: String = ""
+    var locationDescription: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,8 +85,7 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
         let annotation = MKPointAnnotation()
         
         annotation.coordinate = pinLocation
-        annotation.title = "Test"
-        annotation.subtitle = "Test sub title"
+        annotation.title = locationTitle
         
         let placeMark = MKPlacemark(coordinate: pinLocation, addressDictionary: nil)
         destination =  MKMapItem(placemark: placeMark)
