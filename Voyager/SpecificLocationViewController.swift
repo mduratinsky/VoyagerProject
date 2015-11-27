@@ -11,6 +11,7 @@ import UIKit
 class SpecificLocationViewController: UIViewController {
 
     @IBOutlet weak var locationTitle: UILabel!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,21 @@ class SpecificLocationViewController: UIViewController {
         locationTitle.text = "Nitty Gritty"
     }
 
+    @IBAction func cancelButtonSelected(sender: UIBarButtonItem) {
+        cancelAlert()
+    }
+    
+    // MARK: - General Functions
+    func cancelAlert() {
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you wish to cancel? Your current progress will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) in
+            self.dismissViewControllerAnimated(true, completion: {})
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 
     
     // MARK: - Navigation

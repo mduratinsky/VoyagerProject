@@ -20,7 +20,7 @@ class ScrollViewController: UIViewController {
         super.viewDidLoad()
         
         setScreenScrolling()
-        setUserPhoto()
+        setIcons()
         
         
         // ------------- Testing -------------
@@ -66,7 +66,7 @@ class ScrollViewController: UIViewController {
     
     //MARK: - General Functions
     
-    func setUserPhoto() {
+    func setIcons() {
         let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(25)] as Dictionary!
         userPhoto.setTitleTextAttributes(attributes, forState: .Normal)
         userPhoto.title = String.fontAwesomeIconWithName(.User)

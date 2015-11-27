@@ -339,7 +339,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="m4d-ZB-2Yi" kind="show" id="6EZ-LX-AE4"/>
+                                    <segue destination="bI5-Rn-tYR" kind="presentation" id="6EZ-LX-AE4"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPL-sq-nuZ">
@@ -571,6 +571,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wWp-nn-KyH" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="1nl-fi-Xn1"/>
+                            <constraint firstItem="x8H-iP-H1Y" firstAttribute="top" secondItem="3YT-cT-guR" secondAttribute="bottom" constant="8" id="4Ex-Ht-HdX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="exO-UN-F3C" secondAttribute="trailing" constant="-20" id="7Tk-A8-VtY"/>
                             <constraint firstItem="bGJ-hs-m2C" firstAttribute="leading" secondItem="ryD-2f-ylF" secondAttribute="leadingMargin" constant="-20" id="Awn-4Z-bbc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="x8H-iP-H1Y" secondAttribute="leading" id="HUD-bf-lsG"/>
@@ -578,25 +579,33 @@
                             <constraint firstItem="exO-UN-F3C" firstAttribute="top" secondItem="AFd-Yd-1oV" secondAttribute="bottom" id="KPb-I0-GPN"/>
                             <constraint firstItem="exO-UN-F3C" firstAttribute="leading" secondItem="ryD-2f-ylF" secondAttribute="leadingMargin" constant="-20" id="M11-eK-EUy"/>
                             <constraint firstItem="wWp-nn-KyH" firstAttribute="top" secondItem="x8H-iP-H1Y" secondAttribute="bottom" constant="29" id="PhF-wn-QQb"/>
-                            <constraint firstItem="x8H-iP-H1Y" firstAttribute="top" secondItem="3YT-cT-guR" secondAttribute="bottom" constant="8" id="bzs-2H-8OU"/>
                             <constraint firstItem="QHy-dT-RRX" firstAttribute="top" secondItem="bGJ-hs-m2C" secondAttribute="bottom" id="ed9-He-Acz"/>
                             <constraint firstItem="3YT-cT-guR" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="h0u-2g-Chq"/>
+                            <constraint firstItem="3YT-cT-guR" firstAttribute="top" secondItem="exO-UN-F3C" secondAttribute="bottom" constant="10" id="lar-gv-00h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="x8H-iP-H1Y" secondAttribute="trailing" id="paz-tv-OgD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bGJ-hs-m2C" secondAttribute="trailing" constant="-20" id="wqo-ze-lhf"/>
                             <constraint firstItem="x8H-iP-H1Y" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="xaF-jZ-8wr"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QGl-hk-d75">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vi3-Eq-AdE">
+                            <connections>
+                                <action selector="cancelButtonSelected:" destination="m4d-ZB-2Yi" id="E0v-4x-UNV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="cancelButton" destination="vi3-Eq-AdE" id="lam-mg-1uj"/>
                         <outlet property="locationTitle" destination="3YT-cT-guR" id="yeq-FU-4p0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiL-vi-eVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447" y="2740"/>
+            <point key="canvasLocation" x="1240" y="2740"/>
         </scene>
-        <!--Directions View Controller-->
+        <!--Map-->
         <scene sceneID="gdN-Dl-AaJ">
             <objects>
                 <viewController id="PG2-fE-7mf" customClass="DirectionsViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
@@ -625,13 +634,59 @@
                             <constraint firstItem="ZeL-L5-XKr" firstAttribute="centerY" secondItem="RSl-by-h1q" secondAttribute="centerY" id="tzm-B0-Tcv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Map" id="Itm-94-BaN">
+                        <barButtonItem key="rightBarButtonItem" title="Directions" id="3qp-wM-JEJ">
+                            <connections>
+                                <segue destination="QY5-TH-NdE" kind="show" identifier="writtenDirections" id="NP7-Pn-Toq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="directionsButton" destination="3qp-wM-JEJ" id="CIO-an-2Mv"/>
                         <outlet property="mapView" destination="ZeL-L5-XKr" id="4bm-Hn-1Ne"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fu6-ds-sGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="447" y="3586"/>
+        </scene>
+        <!--Written Directions View Controller-->
+        <scene sceneID="c3k-zq-sak">
+            <objects>
+                <viewController id="QY5-TH-NdE" customClass="WrittenDirectionsViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9YW-f7-W5K"/>
+                        <viewControllerLayoutGuide type="bottom" id="acx-CH-vVs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DxA-DC-po2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zuq-zL-wSU">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zuq-zL-wSU" firstAttribute="leading" secondItem="DxA-DC-po2" secondAttribute="leadingMargin" id="GlQ-Sj-Opj"/>
+                            <constraint firstItem="zuq-zL-wSU" firstAttribute="top" secondItem="9YW-f7-W5K" secondAttribute="bottom" id="UOf-Sn-JuR"/>
+                            <constraint firstItem="zuq-zL-wSU" firstAttribute="trailing" secondItem="DxA-DC-po2" secondAttribute="trailingMargin" id="jn0-ZH-MwF"/>
+                            <constraint firstItem="acx-CH-vVs" firstAttribute="top" secondItem="zuq-zL-wSU" secondAttribute="bottom" id="wwx-Ny-P5v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="zuq-zL-wSU" id="uVy-vC-BD7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v2T-X2-F9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117" y="3586"/>
         </scene>
         <!--New tour-->
         <scene sceneID="RQ9-dE-1yT">
@@ -1096,6 +1151,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T48-Xx-BWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="411" y="1066"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9kK-g8-z4Y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bI5-Rn-tYR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h3I-Y2-LEg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="m4d-ZB-2Yi" kind="relationship" relationship="rootViewController" id="Dor-xi-Taa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLP-5O-8UR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="2740"/>
         </scene>
     </scenes>
     <resources>
