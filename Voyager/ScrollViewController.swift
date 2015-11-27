@@ -20,16 +20,15 @@ class ScrollViewController: UIViewController {
         super.viewDidLoad()
         
         setScreenScrolling()
-        setUserPhoto()
+        setIcons()
         
         
-        //Testing
+        // ------------- Testing -------------
         let location1 = Location(name: "UW", longitude: 89.4172, latitude: 43.0750)
         var listOfTestLocations: [Location] = []
         listOfTestLocations.append(location1)
         let category = "Arts"
-//        
-//        let testTour = Tour(name: "TestTour", locations: listOfTestLocations, category: category, author: "Brett")
+        
         let location2 = PFObject(className: "Location")
         location2["name"] = "UW";
         location2["longitude"] = 89.4172
@@ -52,7 +51,7 @@ class ScrollViewController: UIViewController {
         tour["locations"]=listOfTestLocations1
         tour["category"] =  category
         tour["owner"] = "Brett"
-//        tour["owner"] = PFUser.currentUser()?["id"]
+//      tour["owner"] = PFUser.currentUser()?["id"]
         
         tour.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
@@ -62,12 +61,12 @@ class ScrollViewController: UIViewController {
                 print("there was a problem");
             }
         }
-        
+        // ------------- Testing -------------
     }
     
     //MARK: - General Functions
     
-    func setUserPhoto() {
+    func setIcons() {
         let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(25)] as Dictionary!
         userPhoto.setTitleTextAttributes(attributes, forState: .Normal)
         userPhoto.title = String.fontAwesomeIconWithName(.User)
