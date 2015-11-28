@@ -21,7 +21,7 @@ class ScrollViewController: UIViewController {
         
         setScreenScrolling()
         setIcons()
-        
+        let controller = ParseController()
         
         // ------------- Testing -------------
         let location1 = Location(name: "UW", longitude: 89.4172, latitude: 43.0750)
@@ -41,7 +41,17 @@ class ScrollViewController: UIViewController {
         location4["name"] = "UW";
         location4["longitude"] = 29.4172
         location4["latitude"] = 49.0750
+        let tourtoo = Tour(name: "Dante's Inferno", locations: [], category: "Hellish Adventures", author: "Satyam")
+        tourtoo.mListOfLocations = []
+        tourtoo.mCategory = "Arts"
+        tourtoo.mOwnerId = "Shandaar"
+        tourtoo.views = 0
+        tourtoo.starts = 200
+        tourtoo.completes = 395
+        tourtoo.setDescription("yaay hai the most awesome tour that was ever created")
 
+        controller.addTourByUserId(tourtoo)
+        //tourtoo.mOwnerId = PFUser.currentUser()?["id"] as! String
         var listOfTestLocations1: [PFObject] = []
         listOfTestLocations1.append(location2)
         listOfTestLocations1.append(location3)

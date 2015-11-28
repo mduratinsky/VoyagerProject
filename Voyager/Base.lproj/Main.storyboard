@@ -356,7 +356,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nXL-FA-7D3">
-                                                <rect key="frame" x="292" y="15" width="292" height="30"/>
+                                                <rect key="frame" x="292" y="16" width="292" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total time: 1 hour" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGg-R7-e9E">
                                                         <rect key="frame" x="0.0" y="0.0" width="292" height="15"/>
@@ -401,7 +401,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="584" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CCL-a1-Yny" id="sCz-Hs-OWJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="584" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="584" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <animations/>
                                                         </tableViewCellContentView>

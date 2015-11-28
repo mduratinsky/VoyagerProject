@@ -41,19 +41,23 @@ class ParseController {
             listOfLocations.append(locObj)
         }
         tourObj["listOfLocations"] = tour.mListOfLocations
-        tourObj["categoy"] = tour.mCategory
+        tourObj["category"] = tour.mCategory
         tourObj["ownerId"] = tour.mOwnerId
         tourObj["views"] = tour.views
         tourObj["starts"] = tour.starts
         tourObj["completes"] = tour.completes
         tourObj["description"] = tour.mDescription
-        tourObj["rating"] = tour.mName
-        tourObj["image"] = getImageAsParseFile(tour)
+        if tour.mRating != nil {
+            tourObj["rating"] = tour.mRating
+        } else {
+            tourObj["rating"] = "No Rating Yet"
+        }
+//        tourObj["image"] = getImageAsParseFile(tour)
         
         tourObj.saveInBackgroundWithBlock {
             (success: Bool,error: NSError?) -> Void in
             if success == true {
-                print("Score created with ID: \(tourObj.objectId)")
+                print("Tour created with ID: \(tourObj.objectId)")
             } else {
                 print(error)
             }
@@ -89,7 +93,7 @@ class ParseController {
                             tourObj.views = tour["views"] as! Int
                             tourObj.starts = tour["starts"] as! Int
                             tourObj.completes = tour["completes"] as! Int
-                            tourObj.mDescription = tour["description"] as? String
+                            tourObj.mDescription = (tour["description"] as! String)
                             tourObj.mRating = tour["rating"] as? Float
 //                            tourObj["image"] = getImageAsParseFile(tour)
                             toursList.append(tourObj)
@@ -129,7 +133,7 @@ class ParseController {
                     tourObj.views = tour["views"] as! Int
                     tourObj.starts = tour["starts"] as! Int
                     tourObj.completes = tour["completes"] as! Int
-                    tourObj.mDescription = tour["description"] as? String
+                    tourObj.mDescription = (tour["description"] as! String)
                     tourObj.mRating = tour["rating"] as? Float
                     //                            tourObj["image"] = getImageAsParseFile(tour)
                     toursList.append(tourObj)

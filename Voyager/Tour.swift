@@ -10,17 +10,17 @@ import Foundation
 
 class Tour {
     //Mandatory attributes
-    var userId: String?
-    var mName: String
-    var mListOfLocations: [Location]
-    var mCategory: String
-    var mOwnerId: String
+    var userId: String = ""
+    var mName: String = ""
+    var mListOfLocations: [Location] = []
+    var mCategory: String = ""
+    var mOwnerId: String = ""
     var image: UIImage?
     var views = 0 //number of times the tour has been viewed
     var starts = 0 //number of times the tour has been taken
     var completes = 0 //number of times the tour has been completed
     //Optional attributes
-    var mDescription: String?
+    var mDescription: String = ""
     var mComments: [String]?
     var mRating: Float?
     
@@ -73,7 +73,7 @@ class Tour {
     }
     
     func getDescription() -> String {
-        return mDescription!
+        return mDescription
     }
     
     func setDescription(description: String) {
@@ -96,7 +96,7 @@ class Tour {
         // TODO
     }
     
-    func getRating() -> Int {
+    func getRating() -> Float {
         return mRating!
     }
     
