@@ -31,7 +31,15 @@ class ParseController {
     func addTourByUserId (tour: Tour) -> Void {
         
         let tourObj = PFObject(className: "Tour")
+        var listOfLocations : [PFObject] = []
         tourObj["name"] = tour.mName
+        for location in tour.mListOfLocations {
+            let locObj = PFObject(className: "Location")
+            locObj["name"] = location.mName
+            locObj["longitude"] = location.mLongitude
+            locObj["latitude"] = location.mLongitude
+            listOfLocations.append(locObj)
+        }
         tourObj["listOfLocations"] = tour.mListOfLocations
         tourObj["categoy"] = tour.mCategory
         tourObj["ownerId"] = tour.mOwnerId
@@ -55,7 +63,7 @@ class ParseController {
     
     
     // Functions for returning lists of tours (search by ...)
-    func findToursByStringValueKey(key : String, value : String) -> [Tour] { // User ID
+    func findToursByKey(key : String, value : String) -> [Tour] { // User ID
         let query = PFQuery(className:"Tour")
         let tourObj : Tour = Tour(name: "", locations: [], category: "", author: "")
         let locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
@@ -90,10 +98,54 @@ class ParseController {
                 } else {
                         print(error)
                 }
-            }
-        
-            return toursList
         }
+        return toursList
+    }
+    
+    func findToursByKey(key : String, value : Int) -> [Tour] { // User ID
+        let query = PFQuery(className:"Tour")
+        let tourObj : Tour = Tour(name: "", locations: [], category: "", author: "")
+        let locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
+        var listOfLocations : [Location] = []
+        var toursList : [Tour] = []
+        query.limit = value
+        query.orderByDescending(key)
+        query.findObjectsInBackgroundWithBlock {
+            ( tours: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for tour in tours! {
+                    listOfLocations = []
+                    tourObj.mOwnerId = tour["ownerId"] as! String
+                    tourObj.mName = tour["name"] as! String
+                    let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
+                    for obj in list {
+                        locationObj.mName = obj["name"] as! String
+                        locationObj.mLatitude = obj["latitude"] as! Double
+                        locationObj.mLongitude = obj["longitude"] as! Double
+                        listOfLocations.append(locationObj)
+                    }
+                    tourObj.mListOfLocations = listOfLocations
+                    tourObj.mCategory = tour["categoy"] as! String
+                    tourObj.views = tour["views"] as! Int
+                    tourObj.starts = tour["starts"] as! Int
+                    tourObj.completes = tour["completes"] as! Int
+                    tourObj.mDescription = tour["description"] as? String
+                    tourObj.mRating = tour["rating"] as? Float
+                    //                            tourObj["image"] = getImageAsParseFile(tour)
+                    toursList.append(tourObj)
+                }
+                
+            } else {
+                print(error)
+            }
+        }
+        return toursList
+    }
+
+    
+    
+    
+    
 }
 
 //    query.findObjectsInBackgroundWithBlock {
