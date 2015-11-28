@@ -22,47 +22,7 @@ class ScrollViewController: UIViewController {
         setScreenScrolling()
         setIcons()
         
-        
-        // ------------- Testing -------------
-        let location1 = Location(name: "UW", longitude: 89.4172, latitude: 43.0750)
-        var listOfTestLocations: [Location] = []
-        listOfTestLocations.append(location1)
-        let category = "Arts"
-        
-        let location2 = PFObject(className: "Location")
-        location2["name"] = "UW";
-        location2["longitude"] = 89.4172
-        location2["latitude"] = 43.0750
-        let location3 = PFObject(className: "Location")
-        location3["name"] = "UW";
-        location3["longitude"] = 82.4172
-        location3["latitude"] = 44.0750
-        let location4 = PFObject(className: "Location")
-        location4["name"] = "UW";
-        location4["longitude"] = 29.4172
-        location4["latitude"] = 49.0750
-
-        var listOfTestLocations1: [PFObject] = []
-        listOfTestLocations1.append(location2)
-        listOfTestLocations1.append(location3)
-        listOfTestLocations1.append(location4)
-        let tour = PFObject(className: "Tour")
-        tour["name"]="Tour2";
-        tour["locations"]=listOfTestLocations1
-        tour["category"] =  category
-        tour["owner"] = "Brett"
-//      tour["owner"] = PFUser.currentUser()?["id"]
-        
-        tour.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                print("object saved")
-            } else {
-                print("there was a problem");
-            }
         }
-        // ------------- Testing -------------
-    }
     
     //MARK: - General Functions
     
