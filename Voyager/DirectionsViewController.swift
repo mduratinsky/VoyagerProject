@@ -13,6 +13,8 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var directionsButton: UIBarButtonItem!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var loadingLabel: UILabel!
     
     let locationManager = CLLocationManager()
     var myPosition = CLLocationCoordinate2D()
@@ -20,11 +22,17 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
     var destination = MKMapItem()
     var locationTitle: String = ""
     var locationDescription: String = ""
-    var writtenDirections: String = ""
+    var writtenDirections: [String] = []
     var count: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Hide the map while it loads
+        mapView.hidden = true
+        spinner.hidden = false
+        spinner.startAnimating()
+        loadingLabel.hidden = false
         
         setIcons()
         mapView.showsUserLocation = true
@@ -123,7 +131,8 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
                     
                     for next in route.steps {
                         print(next.instructions)
-                        self.writtenDirections += "\(self.count)) \(next.instructions) \n"
+                        self.writtenDirections.append("\(self.count). \(next.instructions)")
+                        //self.writtenDirections += "\(self.count)) \(next.instructions) \n"
                         self.count++
                     }
                 }
@@ -135,6 +144,13 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
         let draw = MKPolylineRenderer(overlay: overlay)
         draw.strokeColor = UIColor.MKColor.Blue
         draw.lineWidth = 3.0
+        
+        //Hide the map while it loads
+        mapView.hidden = false
+        spinner.hidden = true
+        spinner.stopAnimating()
+        loadingLabel.hidden = true
+        
         return draw
     }
     
@@ -146,9 +162,6 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
         directionsButton.title = String.fontAwesomeIconWithName(.LocationArrow)
     }
 
-    
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

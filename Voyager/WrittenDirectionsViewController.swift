@@ -8,23 +8,32 @@
 
 import UIKit
 
-class WrittenDirectionsViewController: UIViewController {
-
-    @IBOutlet weak var textView: UITextView!
+class WrittenDirectionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var directions: String = ""
+    @IBOutlet weak var tableView: UITableView!
+    
+    var directions: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        textView.text = directions
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
+    // MARK: - Table View
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return directions.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("directionCell") as! DirectionTableViewCell
+        
+        let directionTitle = directions[indexPath.row]
+        
+        cell.setCell(directionTitle)
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation

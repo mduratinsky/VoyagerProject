@@ -12,6 +12,7 @@
 		2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD531BD4B195004F6394 /* Assets.xcassets */; };
 		2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD551BD4B195004F6394 /* LaunchScreen.storyboard */; };
 		263E9CC81C041EC800BDF077 /* SpecificLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263E9CC71C041EC800BDF077 /* SpecificLocationViewController.swift */; };
+		2650FDB11C096DFF00C3E20A /* DirectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */; };
 		26513CC31BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */; };
 		26513CC51BFAF00F001DC6A6 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */; };
 		26513CC71BFAF0F9001DC6A6 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC61BFAF0F9001DC6A6 /* MKTextField.swift */; };
@@ -81,6 +82,7 @@
 		2601AD561BD4B195004F6394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2601AD581BD4B196004F6394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		263E9CC71C041EC800BDF077 /* SpecificLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificLocationViewController.swift; sourceTree = "<group>"; };
+		2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionTableViewCell.swift; sourceTree = "<group>"; };
 		26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualCategoryViewController.swift; sourceTree = "<group>"; };
 		26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
 		26513CC61BFAF0F9001DC6A6 /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				263E9CC71C041EC800BDF077 /* SpecificLocationViewController.swift */,
 				26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */,
 				26E2B5FB1C081713000A69F8 /* WrittenDirectionsViewController.swift */,
+				2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				26E2B5FC1C081713000A69F8 /* WrittenDirectionsViewController.swift in Sources */,
 				26BA99401BF9597600EC4F91 /* MKColor.swift in Sources */,
 				BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */,
+				2650FDB11C096DFF00C3E20A /* DirectionTableViewCell.swift in Sources */,
 				26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */,
 				26FCBB4D1C02A66600209C3E /* DirectionsViewController.swift in Sources */,
 				908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */,
