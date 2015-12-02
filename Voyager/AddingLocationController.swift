@@ -12,26 +12,72 @@ import AddressBook
 import MapKit
 import Parse
 
-class AddingLocationController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class AddingLocationController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, DataEnteredDelegate {
     
+    //@IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
+    
+    //@IBOutlet weak var locationInformation: UITextView!
     @IBOutlet weak var locationInformation: UITextView!
+    
+    //@IBOutlet weak var locationName: UITextField!
     @IBOutlet weak var locationName: UITextField!
+    
+    //@IBOutlet weak var locationAddText: UILabel!
     @IBOutlet weak var locationAddText: UILabel!
     
+    
+    //@IBOutlet weak var singleTourTableView: UITableView!
     @IBOutlet weak var singleTourTableView: UITableView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    var locationLabelText = String()
+    var locationFlag = 0
+    
     var coords: CLLocationCoordinate2D?
     
     //Used for setting up listview
     var categories: [Category] = []
     var category: String? = nil
-    var flag = 0
+    var imageFlag = 0
     
+    @IBAction func AddingLocationMediaButton(sender: AnyObject) {
+        //print("******HELLO****")
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            imageFlag = 2
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.allowsEditing = true
+             self.presentViewController(imagePicker, animated: true, completion: nil)
+            
+            //var cell: UITableViewCell = singleTourTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+            
+            //cell.imageView?.image = imagePicker.
+            
+        }
+    }
+    func userEnteredInfo(info: String) {
+        locationAddText.text = info
+    }
     
     //Opens view so user can add location and updates locationText var with information
     @IBAction func locationAddButton(sender: AnyObject) {
     }
     
+    //Gives sense that image is button and opens users photo library
+    @IBAction func imageButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            imageFlag = 1
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+/*
     //Gives sense that image is button and opens users photo library
     @IBAction func imageButton(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
@@ -43,14 +89,21 @@ class AddingLocationController: UIViewController, UITextViewDelegate, UIImagePic
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
     }
-    
+*/
     //Sets imageView to the image selected from the users photo library
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
-        if(flag == 0) {
+        if(imageFlag == 0) {
             //For testing
             let newCategory = Category(name: "Event One", image: image)
             categories.append(newCategory)
+        } else if (imageFlag == 2) {
+            
+            //creating cell and saving image
+            var cell: UITableViewCell = singleTourTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+            cell.imageView?.image = image
+            self.singleTourTableView.reloadData()
+            
         } else {
             imageView.image = image
         }
@@ -60,19 +113,32 @@ class AddingLocationController: UIViewController, UITextViewDelegate, UIImagePic
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         locationInformation.delegate = self
         
         locationName.placeholder = "Enter tour name"
         locationInformation.text = "Enter tour description"
         locationInformation.textColor = UIColor.lightGrayColor()
-        locationAddText.text = "No Location Specified"
-        locationAddText.textColor = UIColor.lightGrayColor()
+        //if(locationFlag == 0) {
+            locationAddText.text = locationLabelText
+            locationAddText.textColor = UIColor.lightGrayColor()
+            //locationFlag == 1
+        //} else {
+        //    locationAddText.text = locationLabelText
+        //    locationAddText.textColor = UIColor.lightGrayColor()
+            
+        //}
+        
         
         singleTourTableView.registerNib(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "categoryCell")
         //For testing
         var newCategory = Category(name: "Arts", image: UIImage(named: "arts")!)
         categories.append(newCategory)
         
+        scrollView.scrollEnabled = true
+        scrollView.contentSize.height = 800
+        scrollView.contentSize.width = 600
+
     }
     
     

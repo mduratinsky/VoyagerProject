@@ -10,12 +10,33 @@ import UIKit
 import Parse
 class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate {
 
+    //@IBOutlet weak var tourName: UITextField!
+    //@IBOutlet weak var tourName: UITextField!
     @IBOutlet weak var tourName: UITextField!
     
+    //@IBOutlet weak var tourDescription: UITextView!
+    //@IBOutlet weak var tourDescription: UITextView!
     @IBOutlet weak var tourDescription: UITextView!
     
+    //@IBOutlet weak var imageView: UIImageView!
+    //@IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    //Gives sense that image is button and opens users photo library
+
+    @IBAction func imageButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+/*
     //Gives sense that image is button and opens users photo library
     @IBAction func imageButton(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
@@ -26,7 +47,7 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
     }
-    
+*/
     //Sets imageView to the image selected from the users photo library
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
@@ -43,6 +64,12 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
         tourDescription.text = "Enter tour description"
         tourDescription.textColor = UIColor.lightGrayColor()
         //Eventually add Border color
+        
+        scrollView.scrollEnabled = true
+        scrollView.contentSize.height = 800
+        scrollView.contentSize.width = 600
+        
+        //self.scrollView.contentInset = UIEdgeInsets(top: 45, left: -20, bottom: 0, right: 20)
         
         // Do any additional setup after loading the view.
     }

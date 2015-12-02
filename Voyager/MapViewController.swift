@@ -12,6 +12,10 @@ import AddressBook
 import MapKit
 import Parse
 
+protocol DataEnteredDelegate: class {
+    func userEnteredInfo(info: String)
+}
+
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
@@ -24,9 +28,39 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var annotation = MKPointAnnotation()
     var placeMark: CLPlacemark!
     var name, street, city, zipcode, country: String!
+    var tapLimit = 0
+    var thoroughFareInfo: String! = "nothing"
     
+    weak var delegate: DataEnteredDelegate?
+    
+    
+    @IBAction func confirmLocationButton(sender: AnyObject) {
+        if let myDelegate = delegate {
+            myDelegate.userEnteredInfo(thoroughFareInfo)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //let destViewController: AddingLocationController = segue.destinationViewController as! AddingLocationController
+        //destViewController.mDe
+        let destViewController = (segue.destinationViewController as! AddingLocationController)
+        destViewController.locationLabelText = thoroughFareInfo
+    }
+
+ 
+    
+    func back(sender: UIBarButtonItem) {
+        //let goNext = storyboard?.instantiateViewControllerWithIdentifier("AddingLocation") as! AddingLocationController
+        //goNext.locationAddText.text = "Hello"//thoroughFareInfo
+        //let myDelegate = delegate!
+        //myDelegate.userEnteredInfo(thoroughFareInfo)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
+
     func longPressAction(myLongPress: UILongPressGestureRecognizer) {
-        
+        if(tapLimit < 1) {
         //See where user clicks
         let myClick = myLongPress.locationInView(mapView)
         let myPointOnMap = mapView.convertPoint(myClick, toCoordinateFromView: mapView)
@@ -47,9 +81,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             //var placeMark: CLPlacemark!
             self.placeMark = placeArray?[0]
             
+            self.thoroughFareInfo = self.placeMark.thoroughfare! + ", " +
+            self.placeMark.subLocality!
             print(self.placeMark.addressDictionary)
         })
-        
+        tapLimit++
+        }
         
     }
     
@@ -58,6 +95,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         lpg.minimumPressDuration = 2
         
         mapView.addGestureRecognizer(lpg)
+
         
         
     }
@@ -66,7 +104,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         
         longPressGesture()
-        
+
         mapView.showsUserLocation = true
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -87,11 +125,31 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //locationManager.startUpdatingHeading()
         
         //CLLocationManager locationManager = new CLLocationManager();
-        locationManager.requestWhenInUseAuthorization();
+        
+        //locationManager.requestWhenInUseAuthorization();
         mapView.showsUserLocation = true;
         
         //Zooms into current location
         location = CLLocationCoordinate2D(latitude: mapView.userLocation.coordinate.longitude, longitude: mapView.userLocation.coordinate.latitude)
+        
+        //Does not grab users current location currently
+        //let currentLocation = getUsersCurrentLocation()
+        
+        //UW Madison location
+        let longitude = -89.4172
+        let latitude = 43.0750
+        
+        //Used to grab current location (Does not work)
+        myPosition.longitude = longitude
+        myPosition.latitude = latitude
+        
+        //Sets map to current location
+        centerMapOnLocation(longitude, latitude: latitude)
+        
+        //MAYBE
+        var tap = UITapGestureRecognizer(target: self, action: "removeAnnotation:")
+        tap.numberOfTapsRequired = 1
+        mapView.addGestureRecognizer(tap)
         
         //User can add pins with longPress
         
@@ -118,6 +176,62 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //func longPressAction() {
     //    print(" did long press")
     //}
+    
+    func removeAnnotation(gesture: UIGestureRecognizer) {
+        
+        if gesture.state == UIGestureRecognizerState.Ended {
+            
+            //mapView.removeAnnotation(annotation)
+            mapView.removeAnnotations(self.mapView.annotations)
+            tapLimit--
+            print("*******Annotation Removed*******")
+            
+        }
+        
+    }
+    /*
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        
+        mapView.removeAnnotations(self.mapView.annotations)
+        print("********HELLO DUDE********")
+        
+    }
+    */
+    
+    func getUsersCurrentLocation() -> CLLocation {
+        //Make sure the user allows us to use their location
+        locationManager.requestWhenInUseAuthorization()
+        
+        var currentLocation = CLLocation!()
+        
+        //Check to make sure we allow location
+        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Authorized){
+                
+                currentLocation = locationManager.location
+                
+        }
+        
+        return currentLocation
+    }
+    
+    func centerMapOnLocation(longitude: Double, latitude: Double) {
+        let latitude:CLLocationDegrees = latitude
+        
+        let longitude:CLLocationDegrees = longitude
+        
+        let latDelta:CLLocationDegrees = 0.02
+        
+        let lonDelta:CLLocationDegrees = 0.02
+        
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        mapView.setRegion(region, animated: true)
+    }
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
         print("present location : \(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude)")

@@ -376,6 +376,7 @@
 				TargetAttributes = {
 					2601AD481BD4B195004F6394 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 835KF8UN9P;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -619,14 +620,18 @@
 			baseConfigurationReference = 8402E3352D099E38D2425AB3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"/Users/satyamdhar/Documents/FacebookSDKs-iOS-20151026/",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Voyager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.voyager.Voyager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Voyager-Bridging-Header.h";
 			};
 			name = Debug;
@@ -636,14 +641,18 @@
 			baseConfigurationReference = 76C8530CF00CEE2B03FB00AE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"/Users/satyamdhar/Documents/FacebookSDKs-iOS-20151026/",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Voyager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.voyager.Voyager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Voyager-Bridging-Header.h";
 			};
 			name = Release;
