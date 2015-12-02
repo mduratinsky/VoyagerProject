@@ -262,7 +262,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Tour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-e6-9gq">
-                                                    <rect key="frame" x="110" y="27" width="457" height="21"/>
+                                                    <rect key="frame" x="110" y="8" width="457" height="59"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -271,12 +271,12 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstItem="Y4b-e6-9gq" firstAttribute="top" secondItem="tIK-hj-kDv" secondAttribute="topMargin" id="Ezk-A4-kTD"/>
                                                 <constraint firstItem="SjB-sc-QeA" firstAttribute="bottom" secondItem="tIK-hj-kDv" secondAttribute="bottomMargin" id="HEy-QZ-OSN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Y4b-e6-9gq" secondAttribute="trailing" constant="-8" id="Mmw-QA-eV1"/>
                                                 <constraint firstItem="SjB-sc-QeA" firstAttribute="leading" secondItem="tIK-hj-kDv" secondAttribute="leadingMargin" id="Nda-qa-HgH"/>
-                                                <constraint firstItem="Y4b-e6-9gq" firstAttribute="top" secondItem="tIK-hj-kDv" secondAttribute="topMargin" constant="19" id="VKN-Zh-UcE"/>
                                                 <constraint firstItem="SjB-sc-QeA" firstAttribute="top" secondItem="tIK-hj-kDv" secondAttribute="topMargin" id="Zti-lQ-1ie"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Y4b-e6-9gq" secondAttribute="bottom" constant="19" id="xXu-PN-ct3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Y4b-e6-9gq" secondAttribute="bottom" id="uf6-LF-okQ"/>
                                                 <constraint firstItem="Y4b-e6-9gq" firstAttribute="leading" secondItem="SjB-sc-QeA" secondAttribute="trailing" constant="8" id="zxe-eM-Ln7"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -571,6 +571,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wWp-nn-KyH" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="1nl-fi-Xn1"/>
+                            <constraint firstItem="x8H-iP-H1Y" firstAttribute="top" secondItem="3YT-cT-guR" secondAttribute="bottom" constant="8" id="4Ex-Ht-HdX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="exO-UN-F3C" secondAttribute="trailing" constant="-20" id="7Tk-A8-VtY"/>
                             <constraint firstItem="bGJ-hs-m2C" firstAttribute="leading" secondItem="ryD-2f-ylF" secondAttribute="leadingMargin" constant="-20" id="Awn-4Z-bbc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="x8H-iP-H1Y" secondAttribute="leading" id="HUD-bf-lsG"/>
@@ -578,25 +579,33 @@
                             <constraint firstItem="exO-UN-F3C" firstAttribute="top" secondItem="AFd-Yd-1oV" secondAttribute="bottom" id="KPb-I0-GPN"/>
                             <constraint firstItem="exO-UN-F3C" firstAttribute="leading" secondItem="ryD-2f-ylF" secondAttribute="leadingMargin" constant="-20" id="M11-eK-EUy"/>
                             <constraint firstItem="wWp-nn-KyH" firstAttribute="top" secondItem="x8H-iP-H1Y" secondAttribute="bottom" constant="29" id="PhF-wn-QQb"/>
-                            <constraint firstItem="x8H-iP-H1Y" firstAttribute="top" secondItem="3YT-cT-guR" secondAttribute="bottom" constant="8" id="bzs-2H-8OU"/>
                             <constraint firstItem="QHy-dT-RRX" firstAttribute="top" secondItem="bGJ-hs-m2C" secondAttribute="bottom" id="ed9-He-Acz"/>
                             <constraint firstItem="3YT-cT-guR" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="h0u-2g-Chq"/>
+                            <constraint firstItem="3YT-cT-guR" firstAttribute="top" secondItem="exO-UN-F3C" secondAttribute="bottom" constant="10" id="lar-gv-00h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="x8H-iP-H1Y" secondAttribute="trailing" id="paz-tv-OgD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bGJ-hs-m2C" secondAttribute="trailing" constant="-20" id="wqo-ze-lhf"/>
                             <constraint firstItem="x8H-iP-H1Y" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="xaF-jZ-8wr"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QGl-hk-d75">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vi3-Eq-AdE">
+                            <connections>
+                                <action selector="cancelButtonSelected:" destination="m4d-ZB-2Yi" id="E0v-4x-UNV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="cancelButton" destination="vi3-Eq-AdE" id="lam-mg-1uj"/>
                         <outlet property="locationTitle" destination="3YT-cT-guR" id="yeq-FU-4p0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiL-vi-eVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447" y="2740"/>
+            <point key="canvasLocation" x="1240" y="2740"/>
         </scene>
-        <!--Directions View Controller-->
+        <!--Map-->
         <scene sceneID="gdN-Dl-AaJ">
             <objects>
                 <viewController id="PG2-fE-7mf" customClass="DirectionsViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
@@ -615,18 +624,44 @@
                                     <outlet property="delegate" destination="PG2-fE-7mf" id="HwW-H4-rCx"/>
                                 </connections>
                             </mapView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="A5E-98-GLy">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <animations/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading your directions..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQM-Ky-vM4">
+                                <rect key="frame" x="204" y="246" width="193" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZeL-L5-XKr" firstAttribute="width" secondItem="RSl-by-h1q" secondAttribute="width" id="F6b-vx-x6z"/>
                             <constraint firstItem="ZeL-L5-XKr" firstAttribute="height" secondItem="RSl-by-h1q" secondAttribute="height" id="FEc-Xr-XwA"/>
+                            <constraint firstItem="A5E-98-GLy" firstAttribute="centerX" secondItem="RSl-by-h1q" secondAttribute="centerX" id="KZy-om-zSf"/>
+                            <constraint firstItem="A5E-98-GLy" firstAttribute="centerY" secondItem="RSl-by-h1q" secondAttribute="centerY" id="OMd-bz-ctg"/>
+                            <constraint firstItem="aQM-Ky-vM4" firstAttribute="centerX" secondItem="RSl-by-h1q" secondAttribute="centerX" id="UoZ-Jc-URN"/>
+                            <constraint firstItem="A5E-98-GLy" firstAttribute="top" secondItem="aQM-Ky-vM4" secondAttribute="bottom" constant="14" id="VLH-et-FRQ"/>
                             <constraint firstItem="ZeL-L5-XKr" firstAttribute="centerX" secondItem="RSl-by-h1q" secondAttribute="centerX" id="twL-X3-Ik6"/>
                             <constraint firstItem="ZeL-L5-XKr" firstAttribute="centerY" secondItem="RSl-by-h1q" secondAttribute="centerY" id="tzm-B0-Tcv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Map" id="Itm-94-BaN">
+                        <barButtonItem key="rightBarButtonItem" title="Directions" id="3qp-wM-JEJ">
+                            <connections>
+                                <segue destination="QY5-TH-NdE" kind="show" identifier="writtenDirections" id="NP7-Pn-Toq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="directionsButton" destination="3qp-wM-JEJ" id="CIO-an-2Mv"/>
+                        <outlet property="loadingLabel" destination="aQM-Ky-vM4" id="Bnk-E6-Emb"/>
                         <outlet property="mapView" destination="ZeL-L5-XKr" id="4bm-Hn-1Ne"/>
+                        <outlet property="spinner" destination="A5E-98-GLy" id="bns-or-00R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fu6-ds-sGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
