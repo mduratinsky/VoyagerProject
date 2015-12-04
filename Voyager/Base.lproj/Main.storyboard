@@ -651,11 +651,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="Itm-94-BaN">
-                        <barButtonItem key="rightBarButtonItem" title="Directions" id="3qp-wM-JEJ">
-                            <connections>
-                                <segue destination="QY5-TH-NdE" kind="show" identifier="writtenDirections" id="NP7-Pn-Toq"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Directions" id="3qp-wM-JEJ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="directionsButton" destination="3qp-wM-JEJ" id="CIO-an-2Mv"/>
