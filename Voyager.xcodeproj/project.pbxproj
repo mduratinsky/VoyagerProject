@@ -35,7 +35,6 @@
 		26C429EC1BE3F2F1001C56DA /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429EA1BE3F2F1001C56DA /* DiscoverViewController.swift */; };
 		26C429ED1BE3F2F1001C56DA /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C429EB1BE3F2F1001C56DA /* DiscoverViewController.xib */; };
 		26C429EF1BE3FA2F001C56DA /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */; };
-		26E2B5FC1C081713000A69F8 /* WrittenDirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E2B5FB1C081713000A69F8 /* WrittenDirectionsViewController.swift */; };
 		26E368541BE8379A00CDBAE5 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368531BE8379A00CDBAE5 /* Tour.swift */; };
 		26E368561BE8380600CDBAE5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368551BE8380600CDBAE5 /* Location.swift */; };
 		26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368591BE8387800CDBAE5 /* Category.swift */; };
@@ -43,6 +42,7 @@
 		26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */; };
 		26E678B41BFD7317002AAACC /* arts_updated (3).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B31BFD7317002AAACC /* arts_updated (3).jpg */; };
 		26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B51BFD7362002AAACC /* bars_updated (1).jpg */; };
+		26F1B8A21C124C1800CCD63D /* WrittenDirectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1B8A11C124C1800CCD63D /* WrittenDirectionsTableViewController.swift */; };
 		26FCBB4D1C02A66600209C3E /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */; };
 		901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 901E79531BFABC8B00B20149 /* placeholder.jpg */; };
 		908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908278231BEEBB2800DFB52F /* SignupViewController.swift */; };
@@ -105,7 +105,6 @@
 		26C429EA1BE3F2F1001C56DA /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		26C429EB1BE3F2F1001C56DA /* DiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverViewController.xib; sourceTree = "<group>"; };
 		26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
-		26E2B5FB1C081713000A69F8 /* WrittenDirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrittenDirectionsViewController.swift; sourceTree = "<group>"; };
 		26E368531BE8379A00CDBAE5 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		26E368551BE8380600CDBAE5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		26E368591BE8387800CDBAE5 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 		26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		26E678B31BFD7317002AAACC /* arts_updated (3).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "arts_updated (3).jpg"; path = "Voyager/arts_updated (3).jpg"; sourceTree = "<group>"; };
 		26E678B51BFD7362002AAACC /* bars_updated (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bars_updated (1).jpg"; path = "Voyager/bars_updated (1).jpg"; sourceTree = "<group>"; };
+		26F1B8A11C124C1800CCD63D /* WrittenDirectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrittenDirectionsTableViewController.swift; sourceTree = "<group>"; };
 		26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		76C8530CF00CEE2B03FB00AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8402E3352D099E38D2425AB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 				26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */,
 				263E9CC71C041EC800BDF077 /* SpecificLocationViewController.swift */,
 				26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */,
-				26E2B5FB1C081713000A69F8 /* WrittenDirectionsViewController.swift */,
+				26F1B8A11C124C1800CCD63D /* WrittenDirectionsTableViewController.swift */,
 				2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */,
 			);
 			name = Controller;
@@ -489,6 +489,7 @@
 				BD45453A1BFE9BEB0017EE99 /* SingleMediaTourViewController.swift in Sources */,
 				26513CC71BFAF0F9001DC6A6 /* MKTextField.swift in Sources */,
 				26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */,
+				26F1B8A21C124C1800CCD63D /* WrittenDirectionsTableViewController.swift in Sources */,
 				26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */,
 				263E9CC81C041EC800BDF077 /* SpecificLocationViewController.swift in Sources */,
 				90C7323D1BFFCC920051C5E3 /* ParseController.swift in Sources */,
@@ -499,7 +500,6 @@
 				26C429EF1BE3FA2F001C56DA /* NewEventViewController.swift in Sources */,
 				26C429EC1BE3F2F1001C56DA /* DiscoverViewController.swift in Sources */,
 				26E368631BE8470D00CDBAE5 /* CategoryTableViewCell.swift in Sources */,
-				26E2B5FC1C081713000A69F8 /* WrittenDirectionsViewController.swift in Sources */,
 				26BA99401BF9597600EC4F91 /* MKColor.swift in Sources */,
 				BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */,
 				2650FDB11C096DFF00C3E20A /* DirectionTableViewCell.swift in Sources */,

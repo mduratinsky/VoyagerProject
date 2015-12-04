@@ -167,10 +167,9 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "writtenDirections" {
-            let vc: WrittenDirectionsViewController = segue.destinationViewController as! WrittenDirectionsViewController
-            vc.directions = self.writtenDirections
+
         }
+        let vc: WrittenDirectionsTableViewController = segue.destinationViewController as! WrittenDirectionsTableViewController
+        vc.directions = self.writtenDirections
     }
-
-
 }

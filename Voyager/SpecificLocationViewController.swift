@@ -34,7 +34,9 @@ class SpecificLocationViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil))
 
         self.presentViewController(alert, animated: true, completion: nil)
+
     }
+    
 
     
     // MARK: - Navigation
