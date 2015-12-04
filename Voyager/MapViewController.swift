@@ -62,6 +62,42 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     
+    func centerMapOnLocation(longitude: Double, latitude: Double) {
+        let latitude:CLLocationDegrees = latitude
+        
+        let longitude:CLLocationDegrees = longitude
+        
+        let latDelta:CLLocationDegrees = 0.02
+        
+        let lonDelta:CLLocationDegrees = 0.02
+        
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func getUsersCurrentLocation() -> CLLocation {
+        //Make sure the user allows us to use their location
+        let locManager = CLLocationManager()
+        locManager.requestWhenInUseAuthorization()
+        
+        var currentLocation = CLLocation!()
+        
+        //Check to make sure we allow location
+        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Authorized){
+                
+                currentLocation = locManager.location
+                
+        }
+        
+        return currentLocation
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,7 +127,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.showsUserLocation = true;
         
         //Zooms into current location
-        location = CLLocationCoordinate2D(latitude: mapView.userLocation.coordinate.longitude, longitude: mapView.userLocation.coordinate.latitude)
+//        location = CLLocationCoordinate2D(latitude: mapView.userLocation.coordinate.longitude, longitude: mapView.userLocation.coordinate.latitude)
+        
+        let currentLocation =  getUsersCurrentLocation()
+        
+        let longitude = currentLocation.coordinate.longitude
+        let latitude = currentLocation.coordinate.latitude
+        
+        myPosition.longitude = longitude
+        myPosition.latitude = latitude
+        
+        centerMapOnLocation(longitude, latitude: latitude)
         
         //User can add pins with longPress
         

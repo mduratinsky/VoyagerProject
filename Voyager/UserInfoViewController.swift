@@ -14,13 +14,15 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var logInOutButton: MKButton!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var favoritesButton: MKButton!
+    @IBOutlet weak var myToursButton: MKButton!
     
     @IBAction func logInOut(sender: MKButton) {
         if let _ = PFUser.currentUser()?.username {
             PFUser.logOut()
-            userName.text = ""
+            userName.text = "Anonymous"
             logInOutButton.setTitle("Login using Facebook", forState: UIControlState.Normal)
-            logInOutButton.backgroundColor = UIColor.MKColor.Green
+            logInOutButton.backgroundColor = UIColor.MKColor.FacebookBlue
             let image = UIImage(named: "placeholder.jpg")
             self.imageView.image = image
         } else {
@@ -62,7 +64,8 @@ class UserInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        favoritesButton.hidden = true
+        myToursButton.hidden = true
         imageView.layer.cornerRadius = 100.0
     }
     
@@ -74,6 +77,9 @@ class UserInfoViewController: UIViewController {
             
             let name = PFUser.currentUser()?["name"] as! String
             userName.text = name
+            
+            favoritesButton.hidden = false
+            myToursButton.hidden = false
             
             logInOutButton.setTitle("Logout", forState: UIControlState.Normal)
             logInOutButton.backgroundColor = UIColor.MKColor.Red
@@ -95,7 +101,8 @@ class UserInfoViewController: UIViewController {
             
         } else {
             logInOutButton.setTitle("Login using Facebook", forState: UIControlState.Normal)
-            logInOutButton.backgroundColor = UIColor.MKColor.Green
+            logInOutButton.backgroundColor = UIColor.MKColor.FacebookBlue
+            userName.text = "Anonymous"
         }
 
     }
