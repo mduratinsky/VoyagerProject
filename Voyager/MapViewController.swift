@@ -135,7 +135,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         return currentLocation
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -182,8 +182,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //let currentLocation = getUsersCurrentLocation()
         
         //UW Madison location
-        let longitude = -89.4172
-        let latitude = 43.0750
+        //let longitude = -89.4172
+        //let latitude = 43.0750
         
         //Used to grab current location (Does not work)
         myPosition.longitude = longitude
@@ -243,8 +243,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     */
+  
     
-    func getUsersCurrentLocation() -> CLLocation {
+    /*func getUsersCurrentLocation() -> CLLocation {
         //Make sure the user allows us to use their location
         locationManager.requestWhenInUseAuthorization()
         
@@ -277,7 +278,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         
         mapView.setRegion(region, animated: true)
-    }
+    }*/
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
         print("present location : \(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude)")
