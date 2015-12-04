@@ -69,7 +69,7 @@ class ParseController {
     // Functions for returning lists of tours (search by ...)
     func findToursByKey(key : String, value : String) -> [Tour] { // User ID
         let query = PFQuery(className:"Tour")
-        let tourObj : Tour = Tour(name: "", locations: [], category: "", author: "")
+        let tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
         let locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
         var listOfLocations : [Location] = []
         var toursList : [Tour] = []
@@ -108,7 +108,7 @@ class ParseController {
     
     func findToursByKey(key : String, value : Int) -> [Tour] { // User ID
         let query = PFQuery(className:"Tour")
-        let tourObj : Tour = Tour(name: "", locations: [], category: "", author: "")
+        let tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
         let locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
         var listOfLocations : [Location] = []
         var toursList : [Tour] = []

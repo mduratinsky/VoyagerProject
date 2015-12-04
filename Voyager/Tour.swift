@@ -24,12 +24,12 @@ class Tour {
     var mComments: [String]?
     var mRating: Float?
     
-    init(name: String, locations: [Location], category: String, author: String) {
+    init(name: String, locations: [Location], category: String, author: String, description: String) {
         mName = name
         mListOfLocations = locations
         mCategory = category
         mOwnerId = author
-        
+        mDescription = description
     }
     
     func getName() -> String {

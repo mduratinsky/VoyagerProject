@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate {
-
+    let parseController = ParseController()
     //@IBOutlet weak var tourName: UITextField!
     //@IBOutlet weak var tourName: UITextField!
     @IBOutlet weak var tourName: UITextField!
@@ -102,6 +102,32 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
             tourDescription.textColor = UIColor.lightGrayColor()
         }
     }
+    
+    @IBAction func createEventButton(sender: MKButton) {
+        //1. Check to make sure the user has filled out all of the correct fields
+        
+        //2. Create the tour object
+        
+        if PFUser.currentUser() != nil {
+        
+        //Save the tour object
+        let tName = tourName.text!
+        let tDescription = "Test Description"
+        let tour: Tour = Tour(name: tName, locations: [], category: "Test", author: "Test", description: tDescription)
+        
+        parseController.addTourByUserId(tour)
+        } else {
+            print("error: Please login!")
+        }
+        
+        let list : [Tour] = parseController.findToursByKey("category", value: "Test")
+        
+        for tour in list{
+            print(tour.getName())
+        }
+        
+    }
+    
     
     /*
     // MARK: - Navigation
