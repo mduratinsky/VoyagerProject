@@ -120,9 +120,11 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
             print("error: Please login!")
         }
         
-        let list : [Tour] = parseController.findToursByKey("category", value: "Test")
+        let list : [Tour] = parseController.findToursByKey("Category", value: "Test")
+        print(list)
         
-        for tour in list{
+        for tour in list {
+            print("you entered!")
             print(tour.getName())
         }
         

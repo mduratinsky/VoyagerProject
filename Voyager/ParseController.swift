@@ -9,15 +9,26 @@
 import Foundation
 import Parse
 
-class ParseController {
+protocol findTours {
+    func findToursByKey(key: String, value: String) -> [Tour]
+    func findToursByKey(key: String, value: Int) -> [Tour]
+
+}
+
+class ParseController : findTours {
 //    func saveToParse(tour : Tour){
 //        
 //    }
     
 //    getToursByNumberOfViews() -> [
+    
+    var toursList : [Tour] = []
+    
     init(){
         
     }
+    
+    
     
     func getImageAsParseFile(tour: Tour) -> PFFile? {
         if tour.image != nil {
@@ -72,12 +83,13 @@ class ParseController {
         let tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
         let locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
         var listOfLocations : [Location] = []
-        var toursList : [Tour] = []
         query.whereKey(key, equalTo: value)
         query.findObjectsInBackgroundWithBlock {
                 ( tours: [PFObject]?, error: NSError?) -> Void in
                 if error == nil {
+                        print("no error")
                         for tour in tours! {
+                            print("You found an object to put in your list of tours")
                             listOfLocations = []
                             tourObj.mOwnerId = tour["ownerId"] as! String
                             tourObj.mName = tour["name"] as! String
@@ -89,21 +101,24 @@ class ParseController {
                                 listOfLocations.append(locationObj)
                             }
                             tourObj.mListOfLocations = listOfLocations
-                            tourObj.mCategory = tour["categoy"] as! String
+                            tourObj.mCategory = tour["category"] as! String
                             tourObj.views = tour["views"] as! Int
                             tourObj.starts = tour["starts"] as! Int
                             tourObj.completes = tour["completes"] as! Int
                             tourObj.mDescription = (tour["description"] as! String)
                             tourObj.mRating = tour["rating"] as? Float
 //                            tourObj["image"] = getImageAsParseFile(tour)
-                            toursList.append(tourObj)
+                            self.toursList.append(tourObj)
                             }
-                
+                    for tour in self.toursList{
+                        print(tour.getCategory())
+                    }
+                    
                 } else {
                         print(error)
                 }
         }
-        return toursList
+        return self.toursList
     }
     
     func findToursByKey(key : String, value : Int) -> [Tour] { // User ID
