@@ -14,17 +14,24 @@ class SpecificTourViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var startButton: MKButton!
     
+    var tour: Tour = Tour()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Set up the scroll view
         scrollView.scrollEnabled = true
-        scrollView.contentSize.height = 468
+        scrollView.contentSize.height = 487
         scrollView.contentSize.width = self.view.frame.width
+        
+        //Set up the screen info
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    /* MARK: - General Functions */
+    func setTourInfo() {
+        
     }
     
 

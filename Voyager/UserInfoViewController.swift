@@ -71,9 +71,9 @@ class UserInfoViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
         let image = UIImage(named: "placeholder.jpg")
         self.imageView.image = image
+        
         if let _ = PFUser.currentUser()?.username {
             
             let name = PFUser.currentUser()?["name"] as! String

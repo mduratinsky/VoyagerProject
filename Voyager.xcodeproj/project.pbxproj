@@ -238,7 +238,6 @@
 				26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */,
 				BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */,
 				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
-				266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */,
 				26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */,
 				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
 			);
@@ -269,6 +268,7 @@
 				2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */,
 				26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */,
 				26D3CB961C138EBE0039F274 /* RateTourViewController.swift */,
+				266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */,
 			);
 			name = "View Tour";
 			sourceTree = "<group>";
