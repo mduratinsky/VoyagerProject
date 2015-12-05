@@ -13,6 +13,7 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
     //@IBOutlet weak var tourName: UITextField!
     //@IBOutlet weak var tourName: UITextField!
     @IBOutlet weak var tourName: UITextField!
+    @IBOutlet weak var addLocationButton: MKButton!
     
     //@IBOutlet weak var tourDescription: UITextView!
     //@IBOutlet weak var tourDescription: UITextView!
@@ -66,9 +67,16 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
         //Eventually add Border color
         
         scrollView.scrollEnabled = true
-        scrollView.contentSize.height = 800
+        scrollView.contentSize.height = 900
         scrollView.contentSize.width = 600
         
+        
+        //Set button properties
+        addLocationButton.cornerRadius = 15.0
+        addLocationButton.layer.shadowOpacity = 0.75
+        addLocationButton.layer.shadowRadius = 3.5
+        addLocationButton.layer.shadowColor = UIColor.blackColor().CGColor
+        addLocationButton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
         //self.scrollView.contentInset = UIEdgeInsets(top: 45, left: -20, bottom: 0, right: 20)
         
         // Do any additional setup after loading the view.
