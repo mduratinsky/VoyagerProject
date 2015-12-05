@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -973,7 +973,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E6Y-rw-CTC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6Y-rw-CTC">
                                 <rect key="frame" x="0.0" y="64" width="600" height="200"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -982,7 +982,7 @@
                                     <constraint firstAttribute="width" constant="600" id="dab-TZ-i1Q"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfc-s8-d55">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfc-s8-d55">
                                 <rect key="frame" x="0.0" y="207" width="600" height="57"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z5x-KO-zO4">
@@ -1194,27 +1194,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PxK-2l-9eR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PxK-2l-9eR">
                                 <rect key="frame" x="20" y="101" width="560" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIS-Mx-7kA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIS-Mx-7kA">
                                 <rect key="frame" x="20" y="72" width="34" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPB-uh-NeS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPB-uh-NeS">
                                 <rect key="frame" x="20" y="139" width="88" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-NY-cHW">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-NY-cHW">
                                 <rect key="frame" x="20" y="168" width="560" height="263"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1254,7 +1254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNi-F1-oYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2110" y="1052"/>
+            <point key="canvasLocation" x="2054" y="926"/>
         </scene>
         <!--New tour-->
         <scene sceneID="RQ9-dE-1yT">
@@ -1633,7 +1633,7 @@
                                     <action selector="confirmLocationButton:" destination="YFZ-wI-dkF" eventType="touchUpInside" id="egQ-Xy-XCP"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gdr-Qi-axL">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gdr-Qi-axL">
                                 <rect key="frame" x="0.0" y="64" width="600" height="486"/>
                                 <animations/>
                                 <gestureRecognizers/>
@@ -1741,7 +1741,7 @@
         <!--Create a new tour-->
         <scene sceneID="SyR-3r-mQW">
             <objects>
-                <viewController id="pg5-e3-Fdt" sceneMemberID="viewController">
+                <viewController id="pg5-e3-Fdt" customClass="NewTourViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fQY-gm-Xgd"/>
                         <viewControllerLayoutGuide type="bottom" id="8bD-7z-21i"/>
@@ -1843,6 +1843,11 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="iJL-Xy-zfc"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="Sg3-EV-1c6"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="category" destination="y3c-wH-DSr" id="vXW-UF-3vG"/>
+                        <outlet property="tourDescription" destination="SKD-fx-UFm" id="SIG-nN-1yg"/>
+                        <outlet property="tourName" destination="hvC-vH-yF4" id="HOk-mQ-ger"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpn-Em-pMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1851,7 +1856,6 @@
         <!--Add Location-->
         <scene sceneID="EMm-Ff-ADJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lud-wY-pgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bSC-xl-kZt" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pz1-gt-Qu8"/>
@@ -1872,8 +1876,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="createEventButton:" destination="FfM-Gg-O6h" eventType="touchUpInside" id="9Ad-vU-qYU"/>
-                                    <segue destination="hnn-hY-bfc" kind="show" id="FtQ-6w-GCo"/>
+                                    <segue destination="2Pe-YS-7x8" kind="show" id="kGe-iI-UKf"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qaN-Qm-BgU">
@@ -1912,9 +1915,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="NQ7-ob-0Ma">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fGg-9X-WE6"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a75-Ji-4PE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a75-Ji-4PE">
+                            <connections>
+                                <segue destination="hnn-hY-bfc" kind="show" id="i09-f9-FOG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lud-wY-pgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2054" y="198"/>
         </scene>
