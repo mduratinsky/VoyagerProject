@@ -21,6 +21,8 @@ class UserInfoViewController: UIViewController {
         if let _ = PFUser.currentUser()?.username {
             PFUser.logOut()
             userName.text = "Anonymous"
+            favoritesButton.hidden = true
+            myToursButton.hidden = true
             logInOutButton.setTitle("Login using Facebook", forState: UIControlState.Normal)
             logInOutButton.backgroundColor = UIColor.MKColor.FacebookBlue
             let image = UIImage(named: "placeholder.jpg")
@@ -56,7 +58,6 @@ class UserInfoViewController: UIViewController {
                             
                         }
                     })
-                    
                 }
             }
         }

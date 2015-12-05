@@ -33,6 +33,7 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
         spinner.hidden = false
         spinner.startAnimating()
         loadingLabel.hidden = false
+        directionsButton.enabled = false
         
         setIcons()
         mapView.showsUserLocation = true
@@ -150,6 +151,7 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
         spinner.hidden = true
         spinner.stopAnimating()
         loadingLabel.hidden = true
+        directionsButton.enabled = true
         
         return draw
     }
@@ -167,9 +169,8 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "writtenDirections" {
-
+            let vc: WrittenDirectionsTableViewController = segue.destinationViewController as! WrittenDirectionsTableViewController
+            vc.directions = self.writtenDirections
         }
-        let vc: WrittenDirectionsTableViewController = segue.destinationViewController as! WrittenDirectionsTableViewController
-        vc.directions = self.writtenDirections
     }
 }
