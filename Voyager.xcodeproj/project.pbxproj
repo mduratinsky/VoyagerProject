@@ -67,6 +67,9 @@
 		90C4432A1BF14D67001A8749 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443271BF14D67001A8749 /* FBSDKLoginKit.framework */; };
 		90C4432B1BF14D67001A8749 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443281BF14D67001A8749 /* FBSDKShareKit.framework */; };
 		90C7323D1BFFCC920051C5E3 /* ParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7323C1BFFCC920051C5E3 /* ParseController.swift */; };
+		BD2A2CDD1C138BB300BC841F /* NewTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2A2CDC1C138BB300BC841F /* NewTourViewController.swift */; };
+		BD2A2CDF1C138FDD00BC841F /* AddingLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2A2CDE1C138FDD00BC841F /* AddingLocationsViewController.swift */; };
+		BD2A2CE11C13949F00BC841F /* ConfirmTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2A2CE01C13949F00BC841F /* ConfirmTourViewController.swift */; };
 		BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37A71A1BED4E5900F92534 /* MapViewController.swift */; };
 		BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37A7201BED59DD00F92534 /* MapKit.framework */; };
 		BD45453A1BFE9BEB0017EE99 /* SingleMediaTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */; };
@@ -141,6 +144,9 @@
 		90C443271BF14D67001A8749 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		90C443281BF14D67001A8749 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		90C7323C1BFFCC920051C5E3 /* ParseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseController.swift; sourceTree = "<group>"; };
+		BD2A2CDC1C138BB300BC841F /* NewTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTourViewController.swift; sourceTree = "<group>"; };
+		BD2A2CDE1C138FDD00BC841F /* AddingLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationsViewController.swift; sourceTree = "<group>"; };
+		BD2A2CE01C13949F00BC841F /* ConfirmTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmTourViewController.swift; sourceTree = "<group>"; };
 		BD37A71A1BED4E5900F92534 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD37A7201BED59DD00F92534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMediaTourViewController.swift; sourceTree = "<group>"; };
@@ -228,7 +234,7 @@
 		2601AD5F1BD4B3F9004F6394 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				26D3CB951C138E6A0039F274 /* View Tour */,
+				BD2A2CDB1C138B8500BC841F /* TourCreation */,
 				26E368671BE847DF00CDBAE5 /* Discover */,
 				26E368661BE847D200CDBAE5 /* Search */,
 				26E368651BE847B500CDBAE5 /* Categories */,
@@ -349,6 +355,16 @@
 				76C8530CF00CEE2B03FB00AE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD2A2CDB1C138B8500BC841F /* TourCreation */ = {
+			isa = PBXGroup;
+			children = (
+				BD2A2CDC1C138BB300BC841F /* NewTourViewController.swift */,
+				BD2A2CDE1C138FDD00BC841F /* AddingLocationsViewController.swift */,
+				BD2A2CE01C13949F00BC841F /* ConfirmTourViewController.swift */,
+			);
+			name = TourCreation;
 			sourceTree = "<group>";
 		};
 		CCA2BF4041BF0B2CC33562AC /* Frameworks */ = {
@@ -510,13 +526,16 @@
 				26E368561BE8380600CDBAE5 /* Location.swift in Sources */,
 				26C429EF1BE3FA2F001C56DA /* NewEventViewController.swift in Sources */,
 				26C429EC1BE3F2F1001C56DA /* DiscoverViewController.swift in Sources */,
+				BD2A2CDD1C138BB300BC841F /* NewTourViewController.swift in Sources */,
 				26E368631BE8470D00CDBAE5 /* CategoryTableViewCell.swift in Sources */,
+				BD2A2CDF1C138FDD00BC841F /* AddingLocationsViewController.swift in Sources */,
 				26BA99401BF9597600EC4F91 /* MKColor.swift in Sources */,
 				BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */,
 				2650FDB11C096DFF00C3E20A /* DirectionTableViewCell.swift in Sources */,
 				26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */,
 				26FCBB4D1C02A66600209C3E /* DirectionsViewController.swift in Sources */,
 				908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */,
+				BD2A2CE11C13949F00BC841F /* ConfirmTourViewController.swift in Sources */,
 				26C429E81BE3F2E3001C56DA /* CategoriesViewController.swift in Sources */,
 				26513CC31BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift in Sources */,
 				26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */,
