@@ -499,7 +499,7 @@
                                     <constraint firstAttribute="height" constant="50" id="osc-vo-cWH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="START">
+                                <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -561,9 +561,12 @@
                                     <constraint firstAttribute="height" constant="50" id="KvE-Vt-OL3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="T9d-kA-aBd" kind="show" id="HXG-oC-4YP"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arts_updated (3).jpg" translatesAutoresizingMaskIntoConstraints="NO" id="exO-UN-F3C">
                                 <rect key="frame" x="0.0" y="64" width="600" height="200"/>
@@ -636,6 +639,134 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiL-vi-eVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1444" y="2840"/>
+        </scene>
+        <!--Tour Review-->
+        <scene sceneID="0eA-LJ-mp0">
+            <objects>
+                <viewController id="T9d-kA-aBd" customClass="RateTourViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rRr-BO-r74"/>
+                        <viewControllerLayoutGuide type="bottom" id="lRf-WR-rbc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uOe-ao-Cda">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DQB-d4-WTv">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3I-Py-jL2" customClass="MKButton" customModule="Voyager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                        <state key="normal" title="Skip">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="skipButtonSelected:" destination="T9d-kA-aBd" eventType="touchUpInside" id="u7e-1l-m6Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZc-PX-tRe" customClass="MKButton" customModule="Voyager" customModuleProvider="target">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="50"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                        <state key="normal" title="Confirm">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="confirmButtonSelected:" destination="T9d-kA-aBd" eventType="touchUpInside" id="d1o-uz-vut"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Mvf-M2-qJ1"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a reivew:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VR7-RP-3Oo">
+                                <rect key="frame" x="20" y="134" width="113" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o2z-VP-3ns" customClass="MKTextField" customModule="Voyager" customModuleProvider="target">
+                                <rect key="frame" x="138" y="79" width="52" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Ro-1f-6cN"/>
+                                    <constraint firstAttribute="width" constant="52" id="IDs-hv-At6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhc-zy-OPO">
+                                <rect key="frame" x="198" y="83" width="28" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate this tour:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSF-Jj-gWs">
+                                <rect key="frame" x="20" y="83" width="107" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="78i-zO-PeI">
+                                <rect key="frame" x="20" y="163" width="560" height="330"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3k-Ok-5Bq" customClass="MKButton" customModule="Voyager" customModuleProvider="target">
+                                <rect key="frame" x="20" y="501" width="202" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="9nD-85-kJe"/>
+                                </constraints>
+                                <state key="normal" title="Add to favorites">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DQB-d4-WTv" firstAttribute="top" secondItem="E3k-Ok-5Bq" secondAttribute="bottom" constant="19" id="4El-oF-3aD"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jSF-Jj-gWs" secondAttribute="leading" id="A3V-ZY-uPT"/>
+                            <constraint firstItem="o2z-VP-3ns" firstAttribute="top" secondItem="rRr-BO-r74" secondAttribute="bottom" constant="15" id="Egs-2p-IUH"/>
+                            <constraint firstItem="78i-zO-PeI" firstAttribute="top" secondItem="VR7-RP-3Oo" secondAttribute="bottom" constant="8" id="GIg-cB-Gad"/>
+                            <constraint firstItem="o2z-VP-3ns" firstAttribute="leading" secondItem="jSF-Jj-gWs" secondAttribute="trailing" constant="11" id="HHA-Az-bYY"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="VR7-RP-3Oo" secondAttribute="leading" id="Hnx-4Z-x8N"/>
+                            <constraint firstItem="lRf-WR-rbc" firstAttribute="top" secondItem="DQB-d4-WTv" secondAttribute="bottom" id="IQM-L8-3dj"/>
+                            <constraint firstItem="E3k-Ok-5Bq" firstAttribute="top" secondItem="78i-zO-PeI" secondAttribute="bottom" constant="8" id="JaS-xQ-W80"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="78i-zO-PeI" secondAttribute="leading" id="US9-bi-gpv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="E3k-Ok-5Bq" secondAttribute="leading" id="YVa-Ng-pwJ"/>
+                            <constraint firstItem="VR7-RP-3Oo" firstAttribute="top" secondItem="jSF-Jj-gWs" secondAttribute="bottom" constant="30" id="Yck-Ln-qxD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DQB-d4-WTv" secondAttribute="trailing" constant="-20" id="ZLl-8p-9DX"/>
+                            <constraint firstItem="hhc-zy-OPO" firstAttribute="leading" secondItem="o2z-VP-3ns" secondAttribute="trailing" constant="8" id="Zin-Hp-IYr"/>
+                            <constraint firstItem="DQB-d4-WTv" firstAttribute="leading" secondItem="uOe-ao-Cda" secondAttribute="leadingMargin" constant="-20" id="hEW-Vh-WZ1"/>
+                            <constraint firstItem="hhc-zy-OPO" firstAttribute="top" secondItem="rRr-BO-r74" secondAttribute="bottom" constant="19" id="ikt-hz-Iv7"/>
+                            <constraint firstItem="jSF-Jj-gWs" firstAttribute="top" secondItem="rRr-BO-r74" secondAttribute="bottom" constant="19" id="jI6-Hl-0z7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="78i-zO-PeI" secondAttribute="trailing" id="rsq-JA-a7A"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tour Review" id="WS4-A0-yso"/>
+                    <connections>
+                        <outlet property="addToFavoritesButton" destination="E3k-Ok-5Bq" id="DUm-1d-LhK"/>
+                        <outlet property="ratingTextField" destination="o2z-VP-3ns" id="52z-hw-Acx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kDa-mE-oJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2186" y="2840"/>
         </scene>
         <!--Map-->
         <scene sceneID="gdN-Dl-AaJ">
@@ -973,7 +1104,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E6Y-rw-CTC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6Y-rw-CTC">
                                 <rect key="frame" x="0.0" y="64" width="600" height="200"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -982,7 +1113,7 @@
                                     <constraint firstAttribute="width" constant="600" id="dab-TZ-i1Q"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfc-s8-d55">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfc-s8-d55">
                                 <rect key="frame" x="0.0" y="207" width="600" height="57"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z5x-KO-zO4">
