@@ -264,21 +264,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		26D3CB951C138E6A0039F274 /* View Tour */ = {
-			isa = PBXGroup;
-			children = (
-				26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */,
-				263E9CC71C041EC800BDF077 /* SpecificLocationViewController.swift */,
-				26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */,
-				26F1B8A11C124C1800CCD63D /* WrittenDirectionsTableViewController.swift */,
-				2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */,
-				26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */,
-				26D3CB961C138EBE0039F274 /* RateTourViewController.swift */,
-				266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */,
-			);
-			name = "View Tour";
-			sourceTree = "<group>";
-		};
 		26E368651BE847B500CDBAE5 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +657,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Voyager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -693,6 +679,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Voyager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};

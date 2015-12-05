@@ -24,7 +24,7 @@ class Tour {
     var mComments: [String]?
     var mRating: Float?
     
-    init() { }
+    init () {}
     
     init(name: String, locations: [Location], category: String, author: String, description: String) {
         mName = name
