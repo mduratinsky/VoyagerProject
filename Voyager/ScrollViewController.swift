@@ -21,25 +21,24 @@ class ScrollViewController: UIViewController {
         
         setScreenScrolling()
         setIcons()
-        if PFUser.currentUser() != nil {
-            
+//        if PFUser.currentUser() != nil {
+        
             //Save the tour object
-            let tName = "Madison Bar Tour"
-            let tDescription = "Liquor Description"
-            let tour: Tour = Tour(name: tName, locations: [], category: "Test", author: "Test", description: tDescription)
-            
-            parseController.addTourByUserId(tour)
-        } else {
-            print("error: Please login!")
-        }
+//            let tName = "You are my enemy!"
+//            let tDescription = "Kill everyone you see."
+//            let tour: Tour = Tour(name: tName, locations: [], category: "Arts", author: PFUser.currentUser()!.username!, description: tDescription)
+//            parseController.addTourByUserId(tour)
+//        } else {
+//            print("error: Please login!")
+//        }
 //        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
 //        activityIndicator.center = view.center
 //        activityIndicator.startAnimating()
 //        view.addSubview(activityIndicator)
-        let tours = parseController.findToursByKey("completes", value: 0)
+//        let tours = parseController.findToursByKey("completes", value: 0)
 //        activityIndicator.stopAnimating()
 
-        print (tours)
+//        print (tours)
     }
     
     //MARK: - General Functions

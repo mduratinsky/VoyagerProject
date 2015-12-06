@@ -99,6 +99,7 @@ class ParseController {
             tourObj.starts = tour["starts"] as! Int
             tourObj.completes = tour["completes"] as! Int
             tourObj.mDescription = (tour["description"] as! String)
+            tourObj.parseId = tour.objectId
             tourObj.mRating = tour["rating"] as? Float
 //            if let tourPicture = tour["image"] as? PFFile {
 //                tourPicture.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in

@@ -47,6 +47,7 @@
 		26FCBB4D1C02A66600209C3E /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */; };
 		901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 901E79531BFABC8B00B20149 /* placeholder.jpg */; };
 		908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908278231BEEBB2800DFB52F /* SignupViewController.swift */; };
+		90AABB581C143842002DF353 /* placeholder_scene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90AABB571C143842002DF353 /* placeholder_scene.jpg */; };
 		90C442FE1BEEE8A3001A8749 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */; };
 		90C443001BEEE8B3001A8749 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FF1BEEE8B3001A8749 /* CFNetwork.framework */; };
 		90C443021BEEE96D001A8749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443011BEEE96D001A8749 /* CoreGraphics.framework */; };
@@ -120,6 +121,7 @@
 		8402E3352D099E38D2425AB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		901E79531BFABC8B00B20149 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = placeholder.jpg; path = Voyager/placeholder.jpg; sourceTree = "<group>"; };
 		908278231BEEBB2800DFB52F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		90AABB571C143842002DF353 /* placeholder_scene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder_scene.jpg; sourceTree = "<group>"; };
 		90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		90C442FF1BEEE8B3001A8749 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		90C443011BEEE96D001A8749 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -240,6 +242,7 @@
 				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
 				26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */,
 				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
+				90AABB571C143842002DF353 /* placeholder_scene.jpg */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			files = (
 				2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */,
 				26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */,
+				90AABB581C143842002DF353 /* placeholder_scene.jpg in Resources */,
 				267C63491C000FCF001AFA97 /* dancing_updated (1).jpg in Resources */,
 				901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */,
 				26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */,
