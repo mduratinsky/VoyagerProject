@@ -11,7 +11,7 @@ import Parse
 import FontAwesome_swift
 
 class ScrollViewController: UIViewController {
-
+    var parseController = ParseController()
     @IBOutlet weak var userPhoto: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var createNewTourButton: UIBarButtonItem!
@@ -21,8 +21,26 @@ class ScrollViewController: UIViewController {
         
         setScreenScrolling()
         setIcons()
-        
+        if PFUser.currentUser() != nil {
+            
+            //Save the tour object
+            let tName = "Madison Bar Tour"
+            let tDescription = "Liquor Description"
+            let tour: Tour = Tour(name: tName, locations: [], category: "Test", author: "Test", description: tDescription)
+            
+            parseController.addTourByUserId(tour)
+        } else {
+            print("error: Please login!")
         }
+//        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+//        activityIndicator.center = view.center
+//        activityIndicator.startAnimating()
+//        view.addSubview(activityIndicator)
+        let tours = parseController.findToursByKey("completes", value: 0)
+//        activityIndicator.stopAnimating()
+
+        print (tours)
+    }
     
     //MARK: - General Functions
     
