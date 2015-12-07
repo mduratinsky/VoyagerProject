@@ -11,6 +11,10 @@
 		2601AD521BD4B195004F6394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD501BD4B195004F6394 /* Main.storyboard */; };
 		2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD531BD4B195004F6394 /* Assets.xcassets */; };
 		2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD551BD4B195004F6394 /* LaunchScreen.storyboard */; };
+		261B997F1C164A6200AEDBCE /* VoyagerIcon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 261B997B1C164A6200AEDBCE /* VoyagerIcon-58.png */; };
+		261B99801C164A6200AEDBCE /* VoyagerIcon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 261B997C1C164A6200AEDBCE /* VoyagerIcon-80.png */; };
+		261B99811C164A6200AEDBCE /* VoyagerIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 261B997D1C164A6200AEDBCE /* VoyagerIcon-120.png */; };
+		261B99821C164A6200AEDBCE /* VoyagerIcon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 261B997E1C164A6200AEDBCE /* VoyagerIcon-180.png */; };
 		26513CC71BFAF0F9001DC6A6 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC61BFAF0F9001DC6A6 /* MKTextField.swift */; };
 		26513CC91BFAF113001DC6A6 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC81BFAF113001DC6A6 /* MKTableViewCell.swift */; };
 		26513CCB1BFAF132001DC6A6 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CCA1BFAF132001DC6A6 /* MKLabel.swift */; };
@@ -90,6 +94,10 @@
 		2601AD531BD4B195004F6394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2601AD561BD4B195004F6394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2601AD581BD4B196004F6394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		261B997B1C164A6200AEDBCE /* VoyagerIcon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-58.png"; sourceTree = "<group>"; };
+		261B997C1C164A6200AEDBCE /* VoyagerIcon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-80.png"; sourceTree = "<group>"; };
+		261B997D1C164A6200AEDBCE /* VoyagerIcon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-120.png"; sourceTree = "<group>"; };
+		261B997E1C164A6200AEDBCE /* VoyagerIcon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-180.png"; sourceTree = "<group>"; };
 		26513CC61BFAF0F9001DC6A6 /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
 		26513CC81BFAF113001DC6A6 /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
 		26513CCA1BFAF132001DC6A6 /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 		2601AD4B1BD4B195004F6394 /* Voyager */ = {
 			isa = PBXGroup;
 			children = (
+				261B99831C164AB900AEDBCE /* images */,
 				90C443151BEEF12C001A8749 /* Voyager-Bridging-Header.h */,
 				26BA99381BF9520A00EC4F91 /* View */,
 				2601AD5F1BD4B3F9004F6394 /* Controller */,
@@ -257,9 +266,20 @@
 				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
 				26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */,
 				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
-				90AABB571C143842002DF353 /* placeholder_scene.jpg */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		261B99831C164AB900AEDBCE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				90AABB571C143842002DF353 /* placeholder_scene.jpg */,
+				261B997B1C164A6200AEDBCE /* VoyagerIcon-58.png */,
+				261B997C1C164A6200AEDBCE /* VoyagerIcon-80.png */,
+				261B997D1C164A6200AEDBCE /* VoyagerIcon-120.png */,
+				261B997E1C164A6200AEDBCE /* VoyagerIcon-180.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		26BA99381BF9520A00EC4F91 /* View */ = {
@@ -274,21 +294,6 @@
 				26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		26D3CB951C138E6A0039F274 /* View Tour */ = {
-			isa = PBXGroup;
-			children = (
-				26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */,
-				263E9CC71C041EC800BDF077 /* SpecificLocationViewController.swift */,
-				26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */,
-				26F1B8A11C124C1800CCD63D /* WrittenDirectionsTableViewController.swift */,
-				2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */,
-				26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */,
-				26D3CB961C138EBE0039F274 /* RateTourViewController.swift */,
-				266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */,
-			);
-			name = "View Tour";
 			sourceTree = "<group>";
 		};
 		26E368651BE847B500CDBAE5 /* Categories */ = {
@@ -376,8 +381,6 @@
 		BD2A2CDB1C138B8500BC841F /* TourCreation */ = {
 			isa = PBXGroup;
 			children = (
-				F491BB281C163B6E00D71933 /* DirectionsViewController.swift */,
-				F491BB291C163B6E00D71933 /* DirectionTableViewCell.swift */,
 				BD2A2CDC1C138BB300BC841F /* NewTourViewController.swift */,
 				BD2A2CDE1C138FDD00BC841F /* AddingLocationsViewController.swift */,
 				BD2A2CE01C13949F00BC841F /* ConfirmTourViewController.swift */,
@@ -402,6 +405,8 @@
 				F491BB2F1C163B6E00D71933 /* SpecificTourViewController.swift */,
 				F491BB301C163B6E00D71933 /* TourTableViewCell.swift */,
 				F491BB311C163B6E00D71933 /* WrittenDirectionsTableViewController.swift */,
+				F491BB281C163B6E00D71933 /* DirectionsViewController.swift */,
+				F491BB291C163B6E00D71933 /* DirectionTableViewCell.swift */,
 			);
 			name = "View Tour";
 			sourceTree = "<group>";
@@ -472,9 +477,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				261B99811C164A6200AEDBCE /* VoyagerIcon-120.png in Resources */,
 				F491BB271C16389200D71933 /* up.png in Resources */,
+				261B997F1C164A6200AEDBCE /* VoyagerIcon-58.png in Resources */,
 				2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */,
 				26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */,
+				261B99801C164A6200AEDBCE /* VoyagerIcon-80.png in Resources */,
 				90AABB581C143842002DF353 /* placeholder_scene.jpg in Resources */,
 				267C63491C000FCF001AFA97 /* dancing_updated (1).jpg in Resources */,
 				901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */,
@@ -486,6 +494,7 @@
 				F491BB261C16389200D71933 /* down.png in Resources */,
 				26C429E91BE3F2E3001C56DA /* CategoriesViewController.xib in Resources */,
 				F491BB351C163B6E00D71933 /* DiscoverTableViewCell.xib in Resources */,
+				261B99821C164A6200AEDBCE /* VoyagerIcon-180.png in Resources */,
 				26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */,
 				267C634B1C000FD9001AFA97 /* dining_updated (2).jpg in Resources */,
 				2601AD521BD4B195004F6394 /* Main.storyboard in Resources */,

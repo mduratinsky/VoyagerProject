@@ -13,11 +13,32 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet weak var loadingLabel: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+
     
     
-    let parseController = ParseController()
     var navTitle: String? = nil
     var tours: [Tour]? = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navBar.title = navTitle!
+        
+        //Hide the tableView while data loads
+        tableView.hidden = true
+        spinner.hidden = false
+        spinner.startAnimating()
+        loadingLabel.hidden = false
+        
+        loadTours()
+    }
+    
+    /* MARK: - General */
+    
+    func loadTours() {
+        findToursByKey("category", value: navTitle!)
+    }
     
     func findToursByKey(key : String, value : String){ // User ID
         let query = PFQuery(className:"Tour")
@@ -28,55 +49,49 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
         query.findObjectsInBackgroundWithBlock {
             ( toursList: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
-        
-        
-        for tour in toursList! {
-            listOfLocations = []
-            tourObj.mOwnerId = tour["ownerId"] as! String
-            tourObj.mName = tour["name"] as! String
-            let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-            for obj in list {
-                locationObj.mName = obj["name"] as! String
-                locationObj.mLatitude = obj["latitude"] as! Double
-                locationObj.mLongitude = obj["longitude"] as! Double
-                listOfLocations.append(locationObj)
-            }
-            tourObj.mListOfLocations = listOfLocations
-            tourObj.mCategory = tour["category"] as! String
-            tourObj.views = tour["views"] as! Int
-            tourObj.starts = tour["starts"] as! Int
-            tourObj.completes = tour["completes"] as! Int
-            tourObj.mDescription = (tour["description"] as! String)
-            tourObj.parseId = tour.objectId
-            tourObj.mRating = tour["rating"] as? Float
-            if let tourPicture = tour["image"] as? PFFile {
-                tourPicture.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
-                    if (error == nil) {
-                        tourObj.image = UIImage(data:imageData!)
-                        
+                
+                
+                for tour in toursList! {
+                    listOfLocations = []
+                    tourObj.mOwnerId = tour["ownerId"] as! String
+                    tourObj.mName = tour["name"] as! String
+                    let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
+                    for obj in list {
+                        locationObj.mName = obj["name"] as! String
+                        locationObj.mLatitude = obj["latitude"] as! Double
+                        locationObj.mLongitude = obj["longitude"] as! Double
+                        listOfLocations.append(locationObj)
                     }
+                    tourObj.mListOfLocations = listOfLocations
+                    tourObj.mCategory = tour["category"] as! String
+                    tourObj.views = tour["views"] as! Int
+                    tourObj.starts = tour["starts"] as! Int
+                    tourObj.completes = tour["completes"] as! Int
+                    tourObj.mDescription = (tour["description"] as! String)
+                    tourObj.parseId = tour.objectId
+                    tourObj.mRating = tour["rating"] as? Float
+                    if let tourPicture = tour["image"] as? PFFile {
+                        tourPicture.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                            if (error == nil) {
+                                tourObj.image = UIImage(data:imageData!)
+                                
+                            }
+                        }
+                    }
+                    self.tours!.append(tourObj)
+                    
                 }
-            }
-            self.tours!.append(tourObj)
-            
-                }
-            self.tableView.reloadData()
+                //Show the list while it loads
+                self.tableView.hidden = false
+                self.spinner.hidden = true
+                self.spinner.stopAnimating()
+                self.loadingLabel.hidden = true
+                
+                self.tableView.reloadData()
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navBar.title = navTitle!
-        
-        loadTours()
-    }
-    
-    /* MARK: - General */
-    func loadTours() {
-        findToursByKey("category", value: navTitle!)
-    }
-    
+
     
     /* MARK: - Tableview */
     
