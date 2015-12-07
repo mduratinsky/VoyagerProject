@@ -13,9 +13,9 @@ import Parse
 
 class SignupViewController: UIViewController {
 
-    @IBOutlet weak var SkipSignin: UIButton!
+    @IBOutlet weak var SkipSignin: MKButton!
     
-    @IBOutlet weak var FBSignin: UIButton!
+    @IBOutlet weak var FBSignin: MKButton!
     
     @IBAction func enterApp(sender: UIButton) {
         if sender == SkipSignin {

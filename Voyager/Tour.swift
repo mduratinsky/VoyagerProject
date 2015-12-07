@@ -10,21 +10,28 @@ import Foundation
 
 class Tour {
     //Mandatory attributes
-    var mName: String
-    var mListOfLocations: [Location]
-    var mCategory: Category
-    var mAuthor: String
-    
+    var userId: String = ""
+    var mName: String = ""
+    var mListOfLocations: [Location] = []
+    var mCategory: String = ""
+    var mOwnerId: String = ""
+    var image: UIImage?
+    var views = 0 //number of times the tour has been viewed
+    var starts = 0 //number of times the tour has been taken
+    var completes = 0 //number of times the tour has been completed
     //Optional attributes
-    var mDescription: String?
+    var mDescription: String = ""
     var mComments: [String]?
-    var mRating: Int?
+    var mRating: Float?
     
-    init(name: String, locations: [Location], category: Category, author: String) {
+    init () {}
+    
+    init(name: String, locations: [Location], category: String, author: String, description: String) {
         mName = name
         mListOfLocations = locations
         mCategory = category
-        mAuthor = author
+        mOwnerId = author
+        mDescription = description
     }
     
     func getName() -> String {
@@ -51,24 +58,24 @@ class Tour {
         // TODO
     }
     
-    func getCategory() -> Category {
+    func getCategory() -> String {
         return mCategory
     }
     
-    func setCategory(category: Category) {
+    func setCategory(category: String) {
         mCategory = category
     }
     
     func getAuthor() -> String {
-        return mAuthor
+        return mOwnerId
     }
     
     func setAuthor(author: String) {
-        mAuthor = author
+        mOwnerId = author
     }
     
     func getDescription() -> String {
-        return mDescription!
+        return mDescription
     }
     
     func setDescription(description: String) {
@@ -91,7 +98,7 @@ class Tour {
         // TODO
     }
     
-    func getRating() -> Int {
+    func getRating() -> Float {
         return mRating!
     }
     

@@ -8,11 +8,54 @@
 
 import UIKit
 import Parse
-class NewEventViewController: UIViewController, UITextViewDelegate {
-
+class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate {
+    let parseController = ParseController()
+    //@IBOutlet weak var tourName: UITextField!
+    //@IBOutlet weak var tourName: UITextField!
     @IBOutlet weak var tourName: UITextField!
+    @IBOutlet weak var addLocationButton: MKButton!
     
+    //@IBOutlet weak var tourDescription: UITextView!
+    //@IBOutlet weak var tourDescription: UITextView!
     @IBOutlet weak var tourDescription: UITextView!
+    
+    //@IBOutlet weak var imageView: UIImageView!
+    //@IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    //Gives sense that image is button and opens users photo library
+
+    @IBAction func imageButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+/*
+    //Gives sense that image is button and opens users photo library
+    @IBAction func imageButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+*/
+    //Sets imageView to the image selected from the users photo library
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        imageView.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +65,19 @@ class NewEventViewController: UIViewController, UITextViewDelegate {
         tourDescription.text = "Enter tour description"
         tourDescription.textColor = UIColor.lightGrayColor()
         //Eventually add Border color
+        
+        scrollView.scrollEnabled = true
+        scrollView.contentSize.height = 900
+        scrollView.contentSize.width = 600
+        
+        
+        //Set button properties
+        addLocationButton.cornerRadius = 15.0
+        addLocationButton.layer.shadowOpacity = 0.75
+        addLocationButton.layer.shadowRadius = 3.5
+        addLocationButton.layer.shadowColor = UIColor.blackColor().CGColor
+        addLocationButton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
+        //self.scrollView.contentInset = UIEdgeInsets(top: 45, left: -20, bottom: 0, right: 20)
         
         // Do any additional setup after loading the view.
     }
@@ -54,6 +110,34 @@ class NewEventViewController: UIViewController, UITextViewDelegate {
             tourDescription.textColor = UIColor.lightGrayColor()
         }
     }
+    
+    @IBAction func createEventButton(sender: MKButton) {
+        //1. Check to make sure the user has filled out all of the correct fields
+        
+        //2. Create the tour object
+        
+        if PFUser.currentUser() != nil {
+        
+        //Save the tour object
+        let tName = tourName.text!
+        let tDescription = "Test Description"
+        let tour: Tour = Tour(name: tName, locations: [], category: "Test", author: "Test", description: tDescription)
+        
+        parseController.addTourByUserId(tour)
+        } else {
+            print("error: Please login!")
+        }
+        
+        let list : [Tour] = parseController.findToursByKey("Category", value: "Test")
+        print(list)
+        
+        for tour in list {
+            print("you entered!")
+            print(tour.getName())
+        }
+        
+    }
+    
     
     /*
     // MARK: - Navigation

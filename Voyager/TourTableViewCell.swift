@@ -10,8 +10,15 @@ import UIKit
 
 class TourTableViewCell: MKTableViewCell {
 
+    
+    @IBOutlet weak var tourName: UILabel!
+    
     override var layoutMargins: UIEdgeInsets {
         get { return UIEdgeInsetsZero }
         set(newVal) {}
+    }
+    
+    func setCell(title: String, image: String) {
+        self.tourName.text = title
     }
 }

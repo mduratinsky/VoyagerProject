@@ -20,12 +20,13 @@ class ScrollViewController: UIViewController {
         super.viewDidLoad()
         
         setScreenScrolling()
-        setUserPhoto()
-    }
+        setIcons()
+        
+        }
     
     //MARK: - General Functions
     
-    func setUserPhoto() {
+    func setIcons() {
         let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(25)] as Dictionary!
         userPhoto.setTitleTextAttributes(attributes, forState: .Normal)
         userPhoto.title = String.fontAwesomeIconWithName(.User)
@@ -74,14 +75,25 @@ class ScrollViewController: UIViewController {
         self.scrollView.contentOffset = CGPoint(x: startingPoint, y: totalScreenHeight)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func createNewTourSelected(sender: UIBarButtonItem) {
+        if PFUser.currentUser() !=  nil {
+            self.performSegueWithIdentifier("createTour", sender: nil)
+        } else {
+            userNotLoggedInAlert()
+        }
+        
+        print("works")
     }
-    */
-
+    
+    func userNotLoggedInAlert() {
+        let alert = UIAlertController(title: "Alert", message: "You must be logged in to create a tour.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Login", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) in
+            self.performSegueWithIdentifier("login", sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
 }
