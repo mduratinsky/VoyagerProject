@@ -56,7 +56,7 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
         //let image: UIImage = categories[indexPath.row].getPhoto()
         
         let title: String = tours[indexPath.row].getName()
-        let rating: Int = tours[indexPath.row].getRating()
+        //let rating: Int = tours[indexPath.row].getRating()
         
         /*@IBOutlet weak var titleLabel: UILabel!
         @IBOutlet weak var ratingLabel: UILabel!
@@ -70,7 +70,7 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
         cell.rippleLayerColor = UIColor.whiteColor()
         
         //3. Set the cells attributes
-        cell.setCell(title, rating)
+        //cell.setCell(title, rating)
         
         //4. Return the cell
         return cell
@@ -82,8 +82,8 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
         navigationController?.pushViewController(vc, animated: true)
         
         //Set the category title and pass it to the new view controller
-        category = categories[indexPath.row].getName()
-        vc.navTitle = category
+        //category = categories[indexPath.row].getName()
+        //vc.navTitle = category
     }
 
     /*
