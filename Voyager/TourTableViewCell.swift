@@ -10,6 +10,7 @@ import UIKit
 
 class TourTableViewCell: MKTableViewCell {
 
+    
     @IBOutlet weak var tourName: UILabel!
     
     override var layoutMargins: UIEdgeInsets {

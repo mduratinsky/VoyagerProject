@@ -68,6 +68,7 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.title = navTitle!
+        
         loadTours()
     }
     

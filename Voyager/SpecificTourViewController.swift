@@ -20,8 +20,6 @@ class SpecificTourViewController: UIViewController {
     
     var tour: Tour = Tour()
     
-    var tour: Tour = Tour()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
