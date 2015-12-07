@@ -13,6 +13,8 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
+    
+    
     let parseController = ParseController()
     var navTitle: String? = nil
     var tours: [Tour]? = []
@@ -66,18 +68,12 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.title = navTitle!
-        
         loadTours()
     }
     
     /* MARK: - General */
     func loadTours() {
-        //Testing
-        let tour = Tour(name: "A test tour", locations: [], category: "Arts", author: "Brett Oberg", description: "This tour is a fun tour that everyone will enjoy.")
-        let tour2 = Tour(name: "Test tour 2 that has a long name", locations: [], category: "Bars", author: "Aaron Rodgers", description: "This is the perfect tour for a night on the town. If I was looking for something to do in Madison, this is exactly what I would do.")
-        
-        tours!.append(tour)
-        tours!.append(tour2)
+        findToursByKey("category", value: navTitle!)
     }
     
     

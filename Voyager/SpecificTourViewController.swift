@@ -34,18 +34,11 @@ class SpecificTourViewController: UIViewController {
     
     /* MARK: - General Functions */
     func setTourInfo() {
-        //1. Set the title
+        //1. Set the tours image
         tourTitle.text = tour.getName()
-        
-        //2. Set the description
         tourDescription.text = tour.getDescription()
-        
-        //3. Set the locations
-        
-        //4. Set the rating
+        //4. Set the locations
         //tourRating.text = tour.getRating()
-        
-        //5. Set the author
         tourAuthor.text = tour.getAuthor()
         
     }

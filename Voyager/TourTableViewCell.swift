@@ -10,7 +10,6 @@ import UIKit
 
 class TourTableViewCell: MKTableViewCell {
 
-    
     @IBOutlet weak var tourName: UILabel!
     
     override var layoutMargins: UIEdgeInsets {
@@ -20,6 +19,6 @@ class TourTableViewCell: MKTableViewCell {
     
     func setCell(title: String, image: UIImage) {
         self.tourName.text = title
-        self.imageView!.image = image
+        //self.imageView!.image = image
     }
 }
