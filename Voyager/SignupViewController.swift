@@ -83,6 +83,10 @@ class SignupViewController: UIViewController {
     }
     
 
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
     /*
     // MARK: - Navigation
 

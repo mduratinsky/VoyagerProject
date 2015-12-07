@@ -27,8 +27,10 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
     func loadTours() {
         //Testing
         let tour = Tour(name: "A test tour", locations: [], category: "Arts", author: "Brett Oberg", description: "This tour is a fun tour that everyone will enjoy.")
+        let tour2 = Tour(name: "Test tour 2 that has a long name", locations: [], category: "Bars", author: "Aaron Rodgers", description: "This is the perfect tour for a night on the town. If I was looking for something to do in Madison, this is exactly what I would do.")
         
         tours!.append(tour)
+        tours!.append(tour2)
     }
     
     
@@ -61,7 +63,11 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "tourSelected" {
-            
+            if let destination = segue.destinationViewController as? SpecificTourViewController {
+                if let tourIndex: Int = tableView.indexPathForSelectedRow!.row {
+                    destination.tour = tours![tourIndex]
+                }
+            }
         }
     }
 
