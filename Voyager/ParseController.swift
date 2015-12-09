@@ -232,6 +232,7 @@ class ParseController {
         let tourObj = PFObject(className: "Tour")
         var listOfLocations : [PFObject] = []
         tourObj["name"] = tour.mName
+        
         for location in tour.mListOfLocations {
             let locObj = PFObject(className: "Location")
             locObj["name"] = location.mName
@@ -239,7 +240,8 @@ class ParseController {
             locObj["latitude"] = location.mLongitude
             listOfLocations.append(locObj)
         }
-        tourObj["listOfLocations"] = tour.mListOfLocations
+        
+        tourObj["listOfLocations"] = listOfLocations
         tourObj["category"] = tour.mCategory
         tourObj["ownerId"] = tour.mOwnerId
         tourObj["views"] = tour.views
@@ -323,6 +325,15 @@ class ParseController {
                 // Log details of the failure
                 NSLog("\(self.logLabel) Error: location", error!);
             }
+            tourObj.mListOfLocations = listOfLocations
+            tourObj.mCategory = tour["category"] as! String
+            tourObj.views = tour["views"] as! Int
+            tourObj.starts = tour["starts"] as! Int
+            tourObj.completes = tour["completes"] as! Int
+            tourObj.mDescription = (tour["description"] as! String)
+            tourObj.mRating = tour["rating"] as? Float
+            //                            tourObj["image"] = getImageAsParseFile(tour)
+            tours.append(tourObj)
         }
         return listOfLocations
     }

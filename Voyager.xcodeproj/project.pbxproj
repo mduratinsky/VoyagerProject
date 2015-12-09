@@ -18,6 +18,11 @@
 		267C63471C000A50001AFA97 /* VoyagerBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C63461C000A50001AFA97 /* VoyagerBackground.jpg */; };
 		267C63491C000FCF001AFA97 /* dancing_updated (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C63481C000FCF001AFA97 /* dancing_updated (1).jpg */; };
 		267C634B1C000FD9001AFA97 /* dining_updated (2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C634A1C000FD9001AFA97 /* dining_updated (2).jpg */; };
+		2692F66D1C1793C300A26F9F /* VoyagerIcon-new-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 2692F66C1C1793C300A26F9F /* VoyagerIcon-new-180.png */; };
+		26B96D051C17970A00671D39 /* VoyagerIcon-new-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */; };
+		26B96D061C17970A00671D39 /* VoyagerIcon-new-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */; };
+		26B96D071C17970A00671D39 /* VoyagerIcon-new-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D041C17970A00671D39 /* VoyagerIcon-new-120.png */; };
+		26B96D091C179FAC00671D39 /* sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D081C179FAC00671D39 /* sports.png */; };
 		26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */; };
 		26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99391BF9579D00EC4F91 /* MKButton.swift */; };
 		26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA993B1BF9590800EC4F91 /* MKLayer.swift */; };
@@ -39,6 +44,7 @@
 		26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B51BFD7362002AAACC /* bars_updated (1).jpg */; };
 		901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 901E79531BFABC8B00B20149 /* placeholder.jpg */; };
 		908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908278231BEEBB2800DFB52F /* SignupViewController.swift */; };
+		90AABB581C143842002DF353 /* placeholder_scene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90AABB571C143842002DF353 /* placeholder_scene.jpg */; };
 		90C442FE1BEEE8A3001A8749 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */; };
 		90C443001BEEE8B3001A8749 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FF1BEEE8B3001A8749 /* CFNetwork.framework */; };
 		90C443021BEEE96D001A8749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443011BEEE96D001A8749 /* CoreGraphics.framework */; };
@@ -96,6 +102,11 @@
 		267C63461C000A50001AFA97 /* VoyagerBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = VoyagerBackground.jpg; path = Voyager/VoyagerBackground.jpg; sourceTree = "<group>"; };
 		267C63481C000FCF001AFA97 /* dancing_updated (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "dancing_updated (1).jpg"; path = "Voyager/dancing_updated (1).jpg"; sourceTree = "<group>"; };
 		267C634A1C000FD9001AFA97 /* dining_updated (2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "dining_updated (2).jpg"; path = "Voyager/dining_updated (2).jpg"; sourceTree = "<group>"; };
+		2692F66C1C1793C300A26F9F /* VoyagerIcon-new-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-180.png"; sourceTree = "<group>"; };
+		26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-58.png"; sourceTree = "<group>"; };
+		26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-80.png"; sourceTree = "<group>"; };
+		26B96D041C17970A00671D39 /* VoyagerIcon-new-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-120.png"; sourceTree = "<group>"; };
+		26B96D081C179FAC00671D39 /* sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sports.png; sourceTree = "<group>"; };
 		26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		26BA99391BF9579D00EC4F91 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		26BA993B1BF9590800EC4F91 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -119,6 +130,7 @@
 		8402E3352D099E38D2425AB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		901E79531BFABC8B00B20149 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = placeholder.jpg; path = Voyager/placeholder.jpg; sourceTree = "<group>"; };
 		908278231BEEBB2800DFB52F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		90AABB571C143842002DF353 /* placeholder_scene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder_scene.jpg; sourceTree = "<group>"; };
 		90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		90C442FF1BEEE8B3001A8749 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		90C443011BEEE96D001A8749 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -217,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				90C443151BEEF12C001A8749 /* Voyager-Bridging-Header.h */,
+				261B99831C164AB900AEDBCE /* images */,
 				26BA99381BF9520A00EC4F91 /* View */,
 				2601AD5F1BD4B3F9004F6394 /* Controller */,
 				2601AD5E1BD4B3F2004F6394 /* Model */,
@@ -257,6 +270,19 @@
 				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		261B99831C164AB900AEDBCE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				26B96D081C179FAC00671D39 /* sports.png */,
+				90AABB571C143842002DF353 /* placeholder_scene.jpg */,
+				26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */,
+				26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */,
+				26B96D041C17970A00671D39 /* VoyagerIcon-new-120.png */,
+				2692F66C1C1793C300A26F9F /* VoyagerIcon-new-180.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		26BA99381BF9520A00EC4F91 /* View */ = {
@@ -457,8 +483,12 @@
 				F491BB271C16389200D71933 /* up.png in Resources */,
 				2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */,
 				26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */,
+				90AABB581C143842002DF353 /* placeholder_scene.jpg in Resources */,
+				2692F66D1C1793C300A26F9F /* VoyagerIcon-new-180.png in Resources */,
 				267C63491C000FCF001AFA97 /* dancing_updated (1).jpg in Resources */,
+				26B96D091C179FAC00671D39 /* sports.png in Resources */,
 				901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */,
+				26B96D061C17970A00671D39 /* VoyagerIcon-new-80.png in Resources */,
 				26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */,
 				26C429ED1BE3F2F1001C56DA /* DiscoverViewController.xib in Resources */,
 				2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */,
@@ -469,7 +499,9 @@
 				F491BB351C163B6E00D71933 /* DiscoverTableViewCell.xib in Resources */,
 				26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */,
 				267C634B1C000FD9001AFA97 /* dining_updated (2).jpg in Resources */,
+				26B96D071C17970A00671D39 /* VoyagerIcon-new-120.png in Resources */,
 				2601AD521BD4B195004F6394 /* Main.storyboard in Resources */,
+				26B96D051C17970A00671D39 /* VoyagerIcon-new-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
