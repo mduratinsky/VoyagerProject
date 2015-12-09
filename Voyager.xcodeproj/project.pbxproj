@@ -163,18 +163,6 @@
 		BDCEDE711C14E02C0094002A /* NewTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTourViewController.swift; sourceTree = "<group>"; };
 		BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationsViewController.swift; sourceTree = "<group>"; };
 		BDCEDE751C14F09B0094002A /* SingleLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLocationViewController.swift; sourceTree = "<group>"; };
-		F491BB241C16389200D71933 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = Voyager/down.png; sourceTree = "<group>"; };
-		F491BB251C16389200D71933 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = Voyager/up.png; sourceTree = "<group>"; };
-		F491BB281C163B6E00D71933 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
-		F491BB291C163B6E00D71933 /* DirectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionTableViewCell.swift; sourceTree = "<group>"; };
-		F491BB2A1C163B6E00D71933 /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
-		F491BB2B1C163B6E00D71933 /* DiscoverTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverTableViewCell.xib; sourceTree = "<group>"; };
-		F491BB2C1C163B6E00D71933 /* IndividualCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualCategoryViewController.swift; sourceTree = "<group>"; };
-		F491BB2D1C163B6E00D71933 /* RateTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTourViewController.swift; sourceTree = "<group>"; };
-		F491BB2E1C163B6E00D71933 /* SpecificLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificLocationViewController.swift; sourceTree = "<group>"; };
-		F491BB2F1C163B6E00D71933 /* SpecificTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificTourViewController.swift; sourceTree = "<group>"; };
-		F491BB301C163B6E00D71933 /* TourTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
-		F491BB311C163B6E00D71933 /* WrittenDirectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrittenDirectionsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,8 +249,6 @@
 			children = (
 				BDCEDE701C14DF0B0094002A /* Tour Creation */,
 				26D3CB951C138E6A0039F274 /* View Tour */,
-				F491BB3C1C163CDB00D71933 /* View Tour */,
-				BD2A2CDB1C138B8500BC841F /* TourCreation */,
 				26E368671BE847DF00CDBAE5 /* Discover */,
 				26E368661BE847D200CDBAE5 /* Search */,
 				26E368651BE847B500CDBAE5 /* Categories */,
@@ -397,11 +383,6 @@
 				BD6426FA1C167A32002D87BD /* TourTableListCell.swift */,
 			);
 			name = "Tour Creation";
-		BD2A2CDB1C138B8500BC841F /* TourCreation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = TourCreation;
 			sourceTree = "<group>";
 		};
 		CCA2BF4041BF0B2CC33562AC /* Frameworks */ = {
@@ -611,7 +592,6 @@
 				2601AD4D1BD4B195004F6394 /* AppDelegate.swift in Sources */,
 				26C429DB1BE3F215001C56DA /* ScrollViewController.swift in Sources */,
 				BDCEDE761C14F09C0094002A /* SingleLocationViewController.swift in Sources */,
-				F491BB331C163B6E00D71933 /* DirectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

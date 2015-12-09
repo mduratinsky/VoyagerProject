@@ -10,15 +10,33 @@ import Foundation
 import UIKit
 import Parse
 
-class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate {
+class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, ParseAPIControllerProtocol {
     
-    let parseController = ParseController()
+    //let parseController = ParseController()
+    var api : ParseController!
     
     @IBOutlet weak var tourName: MKTextField!
     
     @IBOutlet weak var tourDescription: UITextView!
 
     @IBOutlet weak var tourCategory: MKTextField!
+    
+    /*** Parse Controller API Protocol Functions ***/
+    func receivedToursList(results: NSArray) {
+        dispatch_async(dispatch_get_main_queue(), {
+            // Now have data
+            UIApplication.sharedApplication().networkActivityIndicatorVisible
+                = false
+        })
+    }
+    
+    func receivedRecentToursList(results: NSArray) {
+        // Now have data
+    }
+    
+    func receivedSearchToursList(results: NSArray) {
+        // Now have data
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +93,8 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         //1. Check to make sure the user has filled out all of the correct fields
         
         //2. Create the tour object
-        
+       
+        /*
         if PFUser.currentUser() != nil {
             
             //Save the tour object
@@ -97,6 +116,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
             print("error: Please login!")
         }
 
+        */
         //Send Data to next view
         //let destViewController = (segue.destinationViewController as! AddingLocationController)
         //destViewController.locationLabelText = thoroughFareInfo
