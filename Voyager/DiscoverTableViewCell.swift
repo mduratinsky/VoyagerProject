@@ -31,12 +31,8 @@ class DiscoverTableViewCell: MKTableViewCell {
         
         // Configure the view for the selected state
     }
-    
+
     func setCell(title: String, rating: Int) {
-        let ratingStr = rating.description
         titleLabel.text = title
-        ratingLabel.text = ratingStr
-        
-        //categoryTitle.text = title
-        //categoryImage.image = image
+        ratingLabel.text = "\(rating)"
     }}

@@ -9,21 +9,23 @@
 import Foundation
 
 class Tour {
-    //Mandatory attributes
+    
+    // Mandatory attributes
     var userId: String = ""
     var mName: String = ""
     var mListOfLocations: [Location] = []
     var parseId : String?
     var mCategory: String = ""
     var mOwnerId: String = ""
-    var image = UIImage(named: "placeholder_scene.jpg")
-    var views = 0 //number of times the tour has been viewed
-    var starts = 0 //number of times the tour has been taken
-    var completes = 0 //number of times the tour has been completed
-    //Optional attributes
+    var image: UIImage?
+    var views = 0           //number of times the tour has been viewed
+    var starts = 0          //number of times the tour has been taken
+    var completes = 0       //number of times the tour has been completed
+    var mRating: Int = 0    //number of upvotes + downvotes
+    
+    // Optional attributes
     var mDescription: String = ""
     var mComments: [String]?
-    var mRating: Float?
     
     init() { }
     
@@ -55,8 +57,9 @@ class Tour {
         mListOfLocations.append(location)
     }
     
-    func removeLocation(location: Location) {
+    func removeLocation(index: Int) {
         // TODO
+        mListOfLocations.removeAtIndex(index)
     }
     
     func getCategory() -> String {
@@ -99,11 +102,12 @@ class Tour {
         // TODO
     }
     
-    func getRating() -> Float {
-        return mRating!
+    func getRating() -> Int {
+        return mRating
     }
     
     func addNewRating(rating: Int) {
         //TODO
+        mRating = mRating + 1
     }
 }

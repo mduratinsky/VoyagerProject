@@ -9,10 +9,9 @@
 import Foundation
 import Parse
 
-class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate {
+class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, ParseAPIControllerProtocol {
     
-    let parseController = ParseController()
-    
+    var api : ParseController!
     
     
     @IBOutlet weak var tourName: MKTextField!
@@ -22,6 +21,10 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /* Initialize API Control */
+        api = ParseController(delegate: self)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
         tourDescription.delegate = self
         tourName.placeholder = "Enter tour name"
         category.placeholder = "Enter category"
@@ -29,6 +32,24 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         tourDescription.textColor = UIColor.lightGrayColor()
         //Eventually add Border color
     }
+    
+    /*** Parse Controller API Protocol Functions ***/
+    func receivedToursList(results: NSArray) {
+        dispatch_async(dispatch_get_main_queue(), {
+            // Now have data
+            UIApplication.sharedApplication().networkActivityIndicatorVisible
+                = false
+        })
+    }
+    
+    func receivedRecentToursList(results: NSArray) {
+        // Now have data
+    }
+
+    func receivedSearchToursList(results: NSArray) {
+        // Now have data
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -69,7 +90,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
             let tDescription = tourDescription.text!
             tour = Tour(name: tName, locations: [], category: tCategory, author: "Test", description: tDescription)
             
-            let list : [Tour] = parseController.findToursByKey("Category", value: "Test")
+            let list : [Tour] = api.findToursBySearchValue("Category", value: "Test")
             print(list)
             
             for tour in list {
@@ -77,7 +98,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
                 print(tour.getName())
             }
             
-            parseController.addTourByUserId(tour)
+            api.addTourByUserId(tour)
         } else {
             print("error: Please login!")
         }
