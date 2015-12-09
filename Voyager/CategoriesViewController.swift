@@ -27,6 +27,8 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         categories.append(newCategory)
         newCategory = Category(name: "Dining", image: UIImage(named: "dining")!)
         categories.append(newCategory)
+        newCategory = Category(name: "Sports", image: UIImage(named: "sports")!)
+        categories.append(newCategory)
     }
     
     //MARK: General

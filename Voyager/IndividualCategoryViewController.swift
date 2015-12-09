@@ -41,26 +41,36 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
     }
     
     func findToursByKey(key : String, value : String){ // User ID
+       
         let query = PFQuery(className:"Tour")
         let tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
-        let locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
+        var locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
         var listOfLocations : [Location] = []
         query.whereKey(key, equalTo: value)
         query.findObjectsInBackgroundWithBlock {
             ( toursList: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
-                
-                
+           
                 for tour in toursList! {
                     listOfLocations = []
                     tourObj.mOwnerId = tour["ownerId"] as! String
                     tourObj.mName = tour["name"] as! String
                     let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                    for obj in list {
-                        locationObj.mName = obj["name"] as! String
-                        locationObj.mLatitude = obj["latitude"] as! Double
-                        locationObj.mLongitude = obj["longitude"] as! Double
-                        listOfLocations.append(locationObj)
+                    print("reading list of locations")
+                    let locQuery = PFQuery(className:"Location")
+                    locQuery.limit = list.count  // Default is 100, if not specified
+                    locQuery.findObjectsInBackgroundWithBlock {
+                        ( locs: [PFObject]?, error: NSError?) -> Void in
+                        if (error == nil) {
+                            for obj in locs! {
+                                locationObj.mName = obj["name"] as! String
+                                locationObj.mLatitude = obj["latitude"] as! Double
+                                locationObj.mLongitude = obj["longitude"] as! Double
+                                listOfLocations.append(locationObj)
+                            }
+                        } else {
+                            print("Error with location")
+                        }
                     }
                     tourObj.mListOfLocations = listOfLocations
                     tourObj.mCategory = tour["category"] as! String
@@ -79,7 +89,6 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
                         }
                     }
                     self.tours!.append(tourObj)
-                    
                 }
                 //Show the list while it loads
                 self.tableView.hidden = false

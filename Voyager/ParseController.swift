@@ -32,11 +32,13 @@ class ParseController {
             let data = UIImageJPEGRepresentation(tour.image!, 1.0)
             return PFFile(data: data!)
     }
+    
     func addTourByUserId (tour: Tour) -> Void {
         
         let tourObj = PFObject(className: "Tour")
         var listOfLocations : [PFObject] = []
         tourObj["name"] = tour.mName
+        
         for location in tour.mListOfLocations {
             let locObj = PFObject(className: "Location")
             locObj["name"] = location.mName
@@ -44,7 +46,8 @@ class ParseController {
             locObj["latitude"] = location.mLongitude
             listOfLocations.append(locObj)
         }
-        tourObj["listOfLocations"] = tour.mListOfLocations
+        
+        tourObj["listOfLocations"] = listOfLocations
         tourObj["category"] = tour.mCategory
         tourObj["ownerId"] = tour.mOwnerId
         tourObj["views"] = tour.views

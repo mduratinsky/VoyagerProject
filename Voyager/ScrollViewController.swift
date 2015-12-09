@@ -21,24 +21,20 @@ class ScrollViewController: UIViewController {
         
         setScreenScrolling()
         setIcons()
-//        if PFUser.currentUser() != nil {
         
-            //Save the tour object
-//            let tName = "You are my enemy!"
-//            let tDescription = "Kill everyone you see."
-//            let tour: Tour = Tour(name: tName, locations: [], category: "Arts", author: PFUser.currentUser()!.username!, description: tDescription)
-//            parseController.addTourByUserId(tour)
-//        } else {
-//            print("error: Please login!")
-//        }
-//        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
-//        activityIndicator.center = view.center
-//        activityIndicator.startAnimating()
-//        view.addSubview(activityIndicator)
-//        let tours = parseController.findToursByKey("completes", value: 0)
-//        activityIndicator.stopAnimating()
-
-//        print (tours)
+        
+        //Testing -----
+//        var listOfTours: [Location] = []
+//        let chasers: Location = Location(name: "Chasers", longitude: -89.391954, latitude: 43.074178)
+//        listOfTours.append(chasers)
+//        let madhatters: Location = Location (name: "Madhatters", longitude: -89.392620, latitude: 43.074503)
+//        listOfTours.append(madhatters)
+//        let kk: Location = Location(name: "Kollege Klub", longitude: -89.397064, latitude: 43.075622)
+//        listOfTours.append(kk)
+//        
+//        let tour: Tour = Tour(name: "A night in college", locations: listOfTours, category: "Bars", author: "Brett Oberg", description: "Want to experience a night like you did back in college? If so, this is a tour for you. Hit all of the hot college bars for a night you will always remember.")
+//        
+//        parseController.addTourByUserId(tour)
     }
     
     //MARK: - General Functions

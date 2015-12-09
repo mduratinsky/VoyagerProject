@@ -22,6 +22,7 @@
 		26B96D051C17970A00671D39 /* VoyagerIcon-new-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */; };
 		26B96D061C17970A00671D39 /* VoyagerIcon-new-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */; };
 		26B96D071C17970A00671D39 /* VoyagerIcon-new-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D041C17970A00671D39 /* VoyagerIcon-new-120.png */; };
+		26B96D091C179FAC00671D39 /* sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D081C179FAC00671D39 /* sports.png */; };
 		26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */; };
 		26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99391BF9579D00EC4F91 /* MKButton.swift */; };
 		26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA993B1BF9590800EC4F91 /* MKLayer.swift */; };
@@ -105,6 +106,7 @@
 		26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-58.png"; sourceTree = "<group>"; };
 		26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-80.png"; sourceTree = "<group>"; };
 		26B96D041C17970A00671D39 /* VoyagerIcon-new-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-120.png"; sourceTree = "<group>"; };
+		26B96D081C179FAC00671D39 /* sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sports.png; sourceTree = "<group>"; };
 		26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		26BA99391BF9579D00EC4F91 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		26BA993B1BF9590800EC4F91 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -226,8 +228,8 @@
 		2601AD4B1BD4B195004F6394 /* Voyager */ = {
 			isa = PBXGroup;
 			children = (
-				261B99831C164AB900AEDBCE /* images */,
 				90C443151BEEF12C001A8749 /* Voyager-Bridging-Header.h */,
+				261B99831C164AB900AEDBCE /* images */,
 				26BA99381BF9520A00EC4F91 /* View */,
 				2601AD5F1BD4B3F9004F6394 /* Controller */,
 				2601AD5E1BD4B3F2004F6394 /* Model */,
@@ -273,6 +275,7 @@
 		261B99831C164AB900AEDBCE /* images */ = {
 			isa = PBXGroup;
 			children = (
+				26B96D081C179FAC00671D39 /* sports.png */,
 				90AABB571C143842002DF353 /* placeholder_scene.jpg */,
 				26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */,
 				26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */,
@@ -483,6 +486,7 @@
 				90AABB581C143842002DF353 /* placeholder_scene.jpg in Resources */,
 				2692F66D1C1793C300A26F9F /* VoyagerIcon-new-180.png in Resources */,
 				267C63491C000FCF001AFA97 /* dancing_updated (1).jpg in Resources */,
+				26B96D091C179FAC00671D39 /* sports.png in Resources */,
 				901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */,
 				26B96D061C17970A00671D39 /* VoyagerIcon-new-80.png in Resources */,
 				26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */,
