@@ -11,7 +11,7 @@ import Parse
 import FontAwesome_swift
 
 class ScrollViewController: UIViewController {
-    var parseController = ParseController()
+
     @IBOutlet weak var userPhoto: UIBarButtonItem!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var createNewTourButton: UIBarButtonItem!
