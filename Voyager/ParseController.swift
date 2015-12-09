@@ -176,7 +176,6 @@ class ParseController {
         tourObj["completes"] = tour.completes
         tourObj["description"] = tour.mDescription
         tourObj["rating"] = tour.mRating
-        //        tourObj["image"] = getImageAsParseFile(tour)
         tourObj["image"] = getImageAsParseFile(tour)
         
         tourObj.saveInBackgroundWithBlock {
@@ -209,6 +208,13 @@ class ParseController {
             print("error in reading image")
             return nil
         }
+    }
+    
+    func getParseFileAsUIImage(tour : PFObject) -> UIImage? {
+        let image = tour["image"] as! PFFile
+        let uiimg = try! image.getData()
+        return UIImage(data: uiimg)
+        
     }
     /*func getImageAsParseFile(tour: PFObject) -> UIImage? {
         if tour["image"] == nil {
