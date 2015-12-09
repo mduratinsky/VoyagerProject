@@ -9,18 +9,10 @@
 import Foundation
 import Parse
 
-//protocol findTours {
-        //func findToursBySearchValue(key: String, value: String) -> [Tour]
-    //func findRecentTours(count : Int)
-    //func findToursByKey(key: String, value: Int) -> [Tour]
-
-//}
-
 protocol ParseAPIControllerProtocol {
     func loadLocations(objId: String, list: [Location])
-    func receivedToursList(results: NSArray)        // When toursList is loaded
-    func receivedRecentToursList(results: NSArray)  // When recentList is loaded
-    func receivedSearchToursList(results: NSArray)  // When searchList is loaded
+    func receivedToursList(results: [Tour])        // When toursList is loaded
+    func receivedCategoriesList(results: [Tour])  // When searchList is loaded
 }
 
 class ParseController {
@@ -30,13 +22,9 @@ class ParseController {
     let logLabel = "ParseController:"   // Beginning of string for in NSLog
     
     var toursList   : [Tour]        // List of all Tours
-    var recentList  : [Tour]        // List of most recent tours
-    var searchList  : [Tour]        // List of previously searched tours
     
-    let NUM_TOTAL   : Int = 50          // Number of total tours to load at a time
-    let NUM_RECENT  : Int = 20          // Number of recently added tours to load at a time
-    let NUM_SEARCHED: Int = 25          // Number of queried tours by key/value
-    
+    let NUM_TOTAL   : Int = 25          // Number of total tours to load at a time
+    let NUM_SEARCHED: Int = 20
     
     /***************************************************************************
      *      Functions for Initial Loading of Tours from Parse
@@ -48,11 +36,8 @@ class ParseController {
     init(delegate: ParseAPIControllerProtocol){
         NSLog("\(self.logLabel) init")
         toursList = [Tour]()
-        recentList = [Tour]()
-        searchList = [Tour]()
         self.delegate = delegate
         self.loadTours()
-        self.findRecentTours()
     }
     
     /***************************************************************************
@@ -62,16 +47,16 @@ class ParseController {
     /*
      *  Initial Setup of toursList
      *
-     *  Loads 1st NUM_TOTAL Tours in Parse Database into toursList field
+     *  Loads NUM_TOTAL Tours in Parse Database into toursList field, by top rating
      */
     func loadTours() {
         let query = PFQuery(className:"Tour")
         var tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
-        query.limit = NUM_TOTAL  // Default is 100, if not specified
+        query.limit = NUM_TOTAL                 // Default is 100, if not specified
+        query.orderByDescending("rating")       // use "createdAt" for recent list
         query.findObjectsInBackgroundWithBlock {
             ( tours: [PFObject]?, error: NSError?) -> Void in
             if (error == nil) {
-                // The find succeeded. The first 100 objects are available in objects
                 for tour in tours! {
                     tourObj = Tour(name: "", locations: [], category: "", author: "", description: "")
                     tourObj.mOwnerId = tour["ownerId"] as! String
@@ -84,7 +69,7 @@ class ParseController {
                     tourObj.starts = tour["starts"] as! Int
                     tourObj.completes = tour["completes"] as! Int
                     tourObj.mDescription = (tour["description"] as! String)
-                    tourObj.mRating = (tour["rating"] as! NSString).integerValue
+                    tourObj.mRating = tour["rating"] as! Int
                 //tourObj["image"] = getImageAsParseFile(tour)
                     self.toursList.append(tourObj)
                     NSLog("\(self.logLabel) tour added = \(tourObj.getName())")
@@ -116,14 +101,15 @@ class ParseController {
      * Returns list of tours that match criteria given by key and value
      *
      * Parameters:
-     *      key   = the means to search by
      *      value = the value to look for in a Tour's "key" field
      */
-    func findToursBySearchValue(key : String, value : String) -> [Tour] { // User ID
+    func findCategoriesList(value : String) -> [Tour] {
         let query = PFQuery(className:"Tour")
         var tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
+        var searchList : [Tour] = []
         query.limit = NUM_SEARCHED
-        query.whereKey(key, equalTo: value)
+        query.whereKey("category", equalTo: value)
+        query.orderByDescending("rating")
         query.findObjectsInBackgroundWithBlock {
             ( tours: [PFObject]?, error: NSError?) -> Void in
                 if error == nil {
@@ -139,15 +125,15 @@ class ParseController {
                         tourObj.starts = tour["starts"] as! Int
                         tourObj.completes = tour["completes"] as! Int
                         tourObj.mDescription = (tour["description"] as! String)
-                        tourObj.mRating = (tour["rating"] as! NSString).integerValue
+                        tourObj.mRating = tour["rating"] as! Int
 //                      tourObj["image"] = getImageAsParseFile(tour)
-                        self.searchList.append(tourObj)
+                        searchList.append(tourObj)
                         NSLog("\(self.logLabel) search tour added = \(tourObj.getName())")
                     }
                     
-                    NSLog("\(self.logLabel) # search tours added = \(self.searchList.count)")
-                    if self.searchList.count > 0 {
-                        self.delegate.receivedSearchToursList(self.searchList)
+                    NSLog("\(self.logLabel) # search tours added = \(searchList.count)")
+                    if searchList.count > 0 {
+                        self.delegate.receivedCategoriesList(searchList)
                     }
                     
                 } else {
@@ -157,69 +143,6 @@ class ParseController {
         }
         return self.toursList
     }
-    
-    /*
-     *  Returns searchList field
-     *  To be called in receivedRecentToursList
-     */
-    func getSearchedList() -> [Tour] {
-        NSLog("\(self.logLabel) # searchTours = \(self.toursList.count)")
-        return searchList
-    }
-
-    /*
-     * Returns list of most recent tours
-     *
-     * Parameters:
-     *      count = # of tours to return in the list
-     */
-    func findRecentTours() {
-        let query = PFQuery(className:"Tour")
-        var tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
-        query.limit = NUM_RECENT
-        query.orderByDescending("createdAt")
-        query.findObjectsInBackgroundWithBlock {
-            ( tours: [PFObject]?, error: NSError?) -> Void in
-            if error == nil {
-                for tour in tours! {
-                    tourObj = Tour(name: "", locations: [], category: "", author: "", description: "")
-                    tourObj.mOwnerId = tour["ownerId"] as! String
-                    tourObj.mName = tour["name"] as! String
-                    tourObj.parseId = tour.objectId! as String
-                    let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                    tourObj.mListOfLocations = self.parseTourLocations(tourObj.parseId, list: list)
-                    NSLog("\(self.logLabel) mListOfLocations added = \(tourObj.mListOfLocations.count)")
-                    tourObj.mCategory = tour["category"] as! String
-                    tourObj.views = tour["views"] as! Int
-                    tourObj.starts = tour["starts"] as! Int
-                    tourObj.completes = tour["completes"] as! Int
-                    tourObj.mDescription = (tour["description"] as! String)
-                    tourObj.mRating = (tour["rating"] as! NSString).integerValue
-                    
-                    self.recentList.append(tourObj)
-                    NSLog("\(self.logLabel) recent tour added = \(tourObj.getName())")
-                }
-                
-                NSLog("\(self.logLabel) # recent tours added = \(self.recentList.count)")
-                if self.recentList.count > 0 {
-                    self.delegate.receivedRecentToursList(self.recentList)
-                }
-            } else {
-                // Log details of the failure
-                NSLog("\(self.logLabel) Error: recent tour", error!);
-            }
-        }
-    }
-    
-    /*
-     *  Returns recentList field
-     *  To be called in receivedRecentToursList
-     */
-    func getRecentList() -> [Tour] {
-        NSLog("\(self.logLabel) # searchTours = \(self.toursList.count)")
-        return recentList
-    }
-    
     
     /***************************************************************************
      *      Functions for Persisting to Parse (creating & updating Tours)
@@ -349,6 +272,9 @@ class ParseController {
     
     func getTourIndexByObjectId(objId: String, list: [Tour]) -> Int? {
         //var i: Int = 0
+        if list.count == 0 {
+            return -1
+        }
         for i in 0...list.count-1 {
             if list[i].parseId == objId {
                 return i

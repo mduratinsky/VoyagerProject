@@ -33,12 +33,12 @@ ParseAPIControllerProtocol {
         spinner.startAnimating()
         loadingLabel.hidden = false
         
-        api.findToursBySearchValue("category", value: navTitle!)
+        api.findCategoriesList(navTitle!)
     }
     
     /* MARK: - Parse controller protocol */
     
-    func receivedToursList(results: NSArray) {
+    func receivedToursList(results: [Tour]) {
 //        tableView.hidden = false
 //        loadingLabel.hidden = true
 //        spinner.hidden = true
@@ -51,28 +51,27 @@ ParseAPIControllerProtocol {
 //        })
     }
     
-    func receivedRecentToursList(results: NSArray) {
-//        tableView.hidden = false
-//        loadingLabel.hidden = true
-//        spinner.hidden = true
-//        spinner.stopAnimating()
-//        dispatch_async(dispatch_get_main_queue(), {
-//            self.tours = self.api.getToursList()
-//            self.tableView!.reloadData()
-//            UIApplication.sharedApplication().networkActivityIndicatorVisible
-//                = false
-//        })
-    }
-    
-    func receivedSearchToursList(results: NSArray) {
-        tours = api.getSearchedList()
+    func receivedCategoriesList(results: [Tour]) {
+        tours = results 
         tableView.reloadData()
         tableView.hidden = false
         loadingLabel.hidden = true
         spinner.hidden = true
         spinner.stopAnimating()
     }
-
+    
+    func loadLocations(objId: String, list: [Location]) {
+        var i: Int = 0
+        i = api.getTourIndexByObjectId(objId, list: tours!)!
+        var tour : Tour?
+        if i > -1 {
+            tour = api.getTourByIndex(i, list: tours!)
+            tour!.mListOfLocations = list
+        }
+        tableView.reloadData()
+        NSLog("IndividualCategoryView: loadLocations = \(list.count)")
+        
+    }
     
     /* MARK: - Tableview */
     
@@ -94,19 +93,6 @@ ParseAPIControllerProtocol {
         cell.setCell(title, image: "test")
         print("\(title) has \(tours![indexPath.row].getListOfLocations().count)")
         return cell
-    }
-    
-    func loadLocations(objId: String, list: [Location]) {
-        var i: Int = 0
-        i = api.getTourIndexByObjectId(objId, list: api.searchList)!
-        var tour : Tour?
-        if i > -1 {
-            tour = api.getTourByIndex(i, list: api.searchList)
-            tour!.mListOfLocations = list
-        } 
-        tableView.reloadData()
-        NSLog("IndividualCategoryView: loadLocations = \(list.count)")
-        
     }
 
     
