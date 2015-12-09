@@ -71,6 +71,11 @@
 		BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37A7201BED59DD00F92534 /* MapKit.framework */; };
 		BD45453A1BFE9BEB0017EE99 /* SingleMediaTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */; };
 		BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */; };
+		BD6426F91C1673A8002D87BD /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6426F81C1673A7002D87BD /* LocationsViewController.swift */; };
+		BD6426FB1C167A32002D87BD /* TourTableListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6426FA1C167A32002D87BD /* TourTableListCell.swift */; };
+		BDCEDE721C14E02C0094002A /* NewTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCEDE711C14E02C0094002A /* NewTourViewController.swift */; };
+		BDCEDE741C14EF100094002A /* AddingLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */; };
+		BDCEDE761C14F09C0094002A /* SingleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCEDE751C14F09B0094002A /* SingleLocationViewController.swift */; };
 		EE56906C8B25AF90DD18525D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A225ED54F582248A0FB7C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -145,6 +150,11 @@
 		BD37A7201BED59DD00F92534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMediaTourViewController.swift; sourceTree = "<group>"; };
 		BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationController.swift; sourceTree = "<group>"; };
+		BD6426F81C1673A7002D87BD /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		BD6426FA1C167A32002D87BD /* TourTableListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourTableListCell.swift; sourceTree = "<group>"; };
+		BDCEDE711C14E02C0094002A /* NewTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTourViewController.swift; sourceTree = "<group>"; };
+		BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationsViewController.swift; sourceTree = "<group>"; };
+		BDCEDE751C14F09B0094002A /* SingleLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +238,7 @@
 		2601AD5F1BD4B3F9004F6394 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BDCEDE701C14DF0B0094002A /* Tour Creation */,
 				26D3CB951C138E6A0039F274 /* View Tour */,
 				26E368671BE847DF00CDBAE5 /* Discover */,
 				26E368661BE847D200CDBAE5 /* Search */,
@@ -237,7 +248,6 @@
 				90C7323C1BFFCC920051C5E3 /* ParseController.swift */,
 				26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */,
 				BD61A7FD1BEC481C0011ECA4 /* AddingLocationController.swift */,
-				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
 				26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */,
 				908278231BEEBB2800DFB52F /* SignupViewController.swift */,
 			);
@@ -349,6 +359,19 @@
 				76C8530CF00CEE2B03FB00AE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BDCEDE701C14DF0B0094002A /* Tour Creation */ = {
+			isa = PBXGroup;
+			children = (
+				BDCEDE711C14E02C0094002A /* NewTourViewController.swift */,
+				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
+				BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */,
+				BDCEDE751C14F09B0094002A /* SingleLocationViewController.swift */,
+				BD6426F81C1673A7002D87BD /* LocationsViewController.swift */,
+				BD6426FA1C167A32002D87BD /* TourTableListCell.swift */,
+			);
+			name = "Tour Creation";
 			sourceTree = "<group>";
 		};
 		CCA2BF4041BF0B2CC33562AC /* Frameworks */ = {
@@ -496,15 +519,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD6426FB1C167A32002D87BD /* TourTableListCell.swift in Sources */,
 				26E368541BE8379A00CDBAE5 /* Tour.swift in Sources */,
 				BD45453A1BFE9BEB0017EE99 /* SingleMediaTourViewController.swift in Sources */,
 				26513CC71BFAF0F9001DC6A6 /* MKTextField.swift in Sources */,
 				26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */,
 				26F1B8A21C124C1800CCD63D /* WrittenDirectionsTableViewController.swift in Sources */,
 				26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */,
+				BDCEDE741C14EF100094002A /* AddingLocationsViewController.swift in Sources */,
 				263E9CC81C041EC800BDF077 /* SpecificLocationViewController.swift in Sources */,
 				90C7323D1BFFCC920051C5E3 /* ParseController.swift in Sources */,
 				BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */,
+				BDCEDE721C14E02C0094002A /* NewTourViewController.swift in Sources */,
 				26513CC91BFAF113001DC6A6 /* MKTableViewCell.swift in Sources */,
 				266A10FC1BFFD59B0044EBF8 /* SpecificTourViewController.swift in Sources */,
 				26E368561BE8380600CDBAE5 /* Location.swift in Sources */,
@@ -515,6 +541,7 @@
 				BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */,
 				2650FDB11C096DFF00C3E20A /* DirectionTableViewCell.swift in Sources */,
 				26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */,
+				BD6426F91C1673A8002D87BD /* LocationsViewController.swift in Sources */,
 				26FCBB4D1C02A66600209C3E /* DirectionsViewController.swift in Sources */,
 				908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */,
 				26C429E81BE3F2E3001C56DA /* CategoriesViewController.swift in Sources */,
@@ -527,6 +554,7 @@
 				26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */,
 				2601AD4D1BD4B195004F6394 /* AppDelegate.swift in Sources */,
 				26C429DB1BE3F215001C56DA /* ScrollViewController.swift in Sources */,
+				BDCEDE761C14F09C0094002A /* SingleLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,23 +33,32 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     weak var delegate: DataEnteredDelegate?
     
+    //@IBAction func confirmAnnotationButton(sender: AnyObject) {
+    //    if let myDelegate = delegate {
+    //        myDelegate.userEnteredInfo(thoroughFareInfo)
+    //    }
+    //    self.navigationController?.popViewControllerAnimated(true)
+    //}
     
+    
+    
+    /*
     @IBAction func confirmLocationButton(sender: AnyObject) {
         if let myDelegate = delegate {
             myDelegate.userEnteredInfo(thoroughFareInfo)
             self.navigationController?.popViewControllerAnimated(true)
         }
     }
+    */
     
+    //Passes Data to another class
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //let destViewController: AddingLocationController = segue.destinationViewController as! AddingLocationController
-        //destViewController.mDe
-        let destViewController = (segue.destinationViewController as! AddingLocationController)
-        destViewController.locationLabelText = thoroughFareInfo
+
+        let destViewController = (segue.destinationViewController as! SingleLocationViewController)
+        destViewController.locationText.text! = thoroughFareInfo
+        //print("**************************************")
     }
 
- 
-    
     func back(sender: UIBarButtonItem) {
         //let goNext = storyboard?.instantiateViewControllerWithIdentifier("AddingLocation") as! AddingLocationController
         //goNext.locationAddText.text = "Hello"//thoroughFareInfo
@@ -92,13 +101,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func longPressGesture() {
         let lpg = UILongPressGestureRecognizer(target: self, action: "longPressAction:")
-        lpg.minimumPressDuration = 2
+        lpg.minimumPressDuration = 0.5
         
         mapView.addGestureRecognizer(lpg)
 
-        
-        
     }
+    
     
     func centerMapOnLocation(longitude: Double, latitude: Double) {
         let latitude:CLLocationDegrees = latitude
@@ -118,6 +126,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.setRegion(region, animated: true)
     }
     
+    /*
     func getUsersCurrentLocation() -> CLLocation {
         //Make sure the user allows us to use their location
         let locManager = CLLocationManager()
@@ -133,9 +142,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 
         }
         
+        if(currentLocation == nil) {
+            
+            
+        }
+        
         return currentLocation
     }
-
+*/
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -143,47 +157,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
         mapView.showsUserLocation = true
         
-        // Do any additional setup after loading the view, typically from a nib.
-        /*
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        */
+        //Used to obtain user location dynmaically
+        //let currentLocation =  getUsersCurrentLocation()
         
-        //Obtains current location
-        //let locationManager = CLLocationManager()
-        //locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        //locationManager.delegate = self;
-        //locationManager.requestAlwaysAuthorization()
-        //locationManager.startUpdatingLocation()
-        //locationManager.startUpdatingHeading()
-        
-        //CLLocationManager locationManager = new CLLocationManager();
-        
-        //locationManager.requestWhenInUseAuthorization();
-        mapView.showsUserLocation = true;
-        
-        //Zooms into current location
-//        location = CLLocationCoordinate2D(latitude: mapView.userLocation.coordinate.longitude, longitude: mapView.userLocation.coordinate.latitude)
-        
-        let currentLocation =  getUsersCurrentLocation()
-        
-        let longitude = currentLocation.coordinate.longitude
-        let latitude = currentLocation.coordinate.latitude
+        //obtain location by using currentLocation, currently set to UW Madison location
+        let longitude = -89.398949//currentLocation.coordinate.longitude
+        let latitude = 43.072083//currentLocation.coordinate.latitude
         
         myPosition.longitude = longitude
         myPosition.latitude = latitude
         
         centerMapOnLocation(longitude, latitude: latitude)
-        
-        //Does not grab users current location currently
-        //let currentLocation = getUsersCurrentLocation()
-        
-        //UW Madison location
-        //let longitude = -89.4172
-        //let latitude = 43.0750
         
         //Used to grab current location (Does not work)
         myPosition.longitude = longitude
@@ -196,32 +180,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         var tap = UITapGestureRecognizer(target: self, action: "removeAnnotation:")
         tap.numberOfTapsRequired = 1
         mapView.addGestureRecognizer(tap)
-        
-        //User can add pins with longPress
-        
-        //location = CLLocationCoordinate2D(latitude: 51.5072, longitude: 0.1275)
-        //let span = MKCoordinateSpanMake(1.0, 1.0)
-        //let region = MKCoordinateRegion(center: location, span: span)
-        //mapView.setRegion(region, animated: true)
-        
-        //Sets up
-        //annotation.coordinate = location
-        //annotation.title = "Roatan"
-        //annotation.subtitle = "Honduras"
-
-        /*
-        print("**********")
-        print(mapView.userLocation.coordinate)
-        let mapCenter = mapView.userLocation.coordinate
-        let mapCamera = MKMapCamera(lookingAtCenterCoordinate: mapCenter, fromEyeCoordinate: mapCenter, eyeAltitude: 5000)
-        mapView.setCamera(mapCamera, animated: true)
-        */
-        // Do any additional setup after loading the view.
+ 
     }
-    
-    //func longPressAction() {
-    //    print(" did long press")
-    //}
     
     func removeAnnotation(gesture: UIGestureRecognizer) {
         
@@ -235,50 +195,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         
     }
-    /*
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        
-        mapView.removeAnnotations(self.mapView.annotations)
-        print("********HELLO DUDE********")
-        
-    }
-    */
-  
-    
-    /*func getUsersCurrentLocation() -> CLLocation {
-        //Make sure the user allows us to use their location
-        locationManager.requestWhenInUseAuthorization()
-        
-        var currentLocation = CLLocation!()
-        
-        //Check to make sure we allow location
-        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse ||
-            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Authorized){
-                
-                currentLocation = locationManager.location
-                
-        }
-        
-        return currentLocation
-    }
-    
-    func centerMapOnLocation(longitude: Double, latitude: Double) {
-        let latitude:CLLocationDegrees = latitude
-        
-        let longitude:CLLocationDegrees = longitude
-        
-        let latDelta:CLLocationDegrees = 0.02
-        
-        let lonDelta:CLLocationDegrees = 0.02
-        
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
-        
-        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        
-        mapView.setRegion(region, animated: true)
-    }*/
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
         print("present location : \(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude)")
@@ -306,22 +222,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    /*
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-        CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) -> Void in
-            
-            if error != nil {
-                print("error")
-                return
-            }
-            
-            if(placemarks!.count > 0) {
-                let pm = placemarks![0] as CLPlacemark
-                self.displayLocationInfo(pm)
-            }
-        }
-    }
-    */
     func displayLocationInfo(placemark: CLPlacemark) {
         self.locationManager.stopUpdatingLocation()
     }
