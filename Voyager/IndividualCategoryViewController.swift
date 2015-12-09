@@ -79,7 +79,7 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
                     tourObj.completes = tour["completes"] as! Int
                     tourObj.mDescription = (tour["description"] as! String)
                     tourObj.parseId = tour.objectId
-                    tourObj.mRating = tour["rating"] as? Float
+                    tourObj.mRating = (tour["rating"] as! NSString).integerValue
                     if let tourPicture = tour["image"] as? PFFile {
                         tourPicture.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
                             if (error == nil) {

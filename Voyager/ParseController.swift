@@ -84,7 +84,6 @@ class ParseController {
                     tourObj.mDescription = (tour["description"] as! String)
                     tourObj.mRating = (tour["rating"] as! NSString).integerValue
                 //tourObj["image"] = getImageAsParseFile(tour)
-                    tourObj.image = self.getImageAsParseFile(tour)
                     self.toursList.append(tourObj)
                     NSLog("\(self.logLabel) tour added = \(tourObj.getName())")
                 }
@@ -275,7 +274,16 @@ class ParseController {
       * Parameters:
       *      Tour = tour to get the image file from
       */
-    func getImageAsParseFile(tour: PFObject) -> UIImage? {
+    func getImageAsParseFile(tour: Tour) -> PFFile? {
+        if tour.image != nil {
+            let data = UIImageJPEGRepresentation(tour.image!, 1.0)
+            return PFFile(data: data!)
+        } else {
+            print("error in reading image")
+            return nil
+        }
+    }
+    /*func getImageAsParseFile(tour: PFObject) -> UIImage? {
         if tour["image"] == nil {
             return nil
         }
@@ -293,14 +301,7 @@ class ParseController {
             }
         }
         return image
-        /*if tour["image"] != nil {
-            let data = UIImageJPEGRepresentation(tour["image"], 1.0)
-            return PFFile(data: data!)
-        } else {
-            print("error in reading image")
-            return nil
-        }*/
-    }
+    }*/
     
     /*
      * Given a list of locations from Parse database from a Tour object, 
@@ -331,4 +332,4 @@ class ParseController {
         return listOfLocations
     }
     
-
+}

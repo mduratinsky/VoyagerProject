@@ -108,6 +108,9 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
         
         //Set the category title and pass it to the new view controller
         tourCell = tours[indexPath.row].getName()
+        if tourCell == nil {
+            tourCell = ""
+        }
         vc.navTitle = tourCell
     }
     
