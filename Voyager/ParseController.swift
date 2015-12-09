@@ -9,14 +9,15 @@
 import Foundation
 import Parse
 
-/*protocol findTours {
-    func findToursBySearchValue(key: String, value: String) -> [Tour]
-    func findRecentTours(count : Int)
+//protocol findTours {
+        //func findToursBySearchValue(key: String, value: String) -> [Tour]
+    //func findRecentTours(count : Int)
     //func findToursByKey(key: String, value: Int) -> [Tour]
 
-}*/
+//}
 
 protocol ParseAPIControllerProtocol {
+    func loadLocations(objId: String, list: [Location])
     func receivedToursList(results: NSArray)        // When toursList is loaded
     func receivedRecentToursList(results: NSArray)  // When recentList is loaded
     func receivedSearchToursList(results: NSArray)  // When searchList is loaded
@@ -75,8 +76,9 @@ class ParseController {
                     tourObj = Tour(name: "", locations: [], category: "", author: "", description: "")
                     tourObj.mOwnerId = tour["ownerId"] as! String
                     tourObj.mName = tour["name"] as! String
+                    tourObj.parseId = tour.objectId! as String
                     let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                    tourObj.mListOfLocations = self.parseTourLocations(list)
+                    tourObj.mListOfLocations = self.parseTourLocations(tourObj.parseId, list: list)
                     tourObj.mCategory = tour["category"] as! String
                     tourObj.views = tour["views"] as! Int
                     tourObj.starts = tour["starts"] as! Int
@@ -129,8 +131,9 @@ class ParseController {
                         tourObj = Tour(name: "", locations: [], category: "", author: "", description: "")
                         tourObj.mOwnerId = tour["ownerId"] as! String
                         tourObj.mName = tour["name"] as! String
+                        tourObj.parseId = tour.objectId! as String
                         let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                        tourObj.mListOfLocations = self.parseTourLocations(list)
+                        tourObj.mListOfLocations = self.parseTourLocations(tourObj.parseId, list: list)
                         tourObj.mCategory = tour["category"] as! String
                         tourObj.views = tour["views"] as! Int
                         tourObj.starts = tour["starts"] as! Int
@@ -182,8 +185,10 @@ class ParseController {
                     tourObj = Tour(name: "", locations: [], category: "", author: "", description: "")
                     tourObj.mOwnerId = tour["ownerId"] as! String
                     tourObj.mName = tour["name"] as! String
+                    tourObj.parseId = tour.objectId! as String
                     let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                    tourObj.mListOfLocations = self.parseTourLocations(list)
+                    tourObj.mListOfLocations = self.parseTourLocations(tourObj.parseId, list: list)
+                    NSLog("\(self.logLabel) mListOfLocations added = \(tourObj.mListOfLocations.count)")
                     tourObj.mCategory = tour["category"] as! String
                     tourObj.views = tour["views"] as! Int
                     tourObj.starts = tour["starts"] as! Int
@@ -315,8 +320,8 @@ class ParseController {
      * Parameters:
      *      list = list of objects from Parse database to transfer into this app
      */
-    func parseTourLocations(list: [PFObject]) -> [Location] {
-        let locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
+    func parseTourLocations(objId: String, list: [PFObject]) -> [Location] {
+        var locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
         var listOfLocations : [Location] = []
         let locQuery = PFQuery(className:"Location")
         locQuery.limit = list.count  // Default is 100, if not specified
@@ -324,17 +329,43 @@ class ParseController {
             ( locs: [PFObject]?, error: NSError?) -> Void in
             if (error == nil) {
                 for obj in locs! {
+                    locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
                     locationObj.mName = obj["name"] as! String
                     locationObj.mLatitude = obj["latitude"] as! Double
                     locationObj.mLongitude = obj["longitude"] as! Double
                     listOfLocations.append(locationObj)
+                }
+                NSLog("\(self.logLabel) locations added = \(listOfLocations.count)")
+                NSLog("\(self.logLabel) total locations added = \(listOfLocations)")
+                if listOfLocations.count > 0 {
+                    self.delegate.loadLocations(objId, list: listOfLocations)
+                } else {
+                    self.delegate.loadLocations(objId, list: [])
                 }
             } else {
                 // Log details of the failure
                 NSLog("\(self.logLabel) Error: location", error!);
             }
         }
+        //NSLog("\(self.logLabel) total locations added = \(listOfLocations)")
         return listOfLocations
+    }
+    
+    
+    
+    func getTourIndexByObjectId(objId: String, list: [Tour]) -> Int? {
+        //var i: Int = 0
+        for i in 0...list.count-1 {
+            if list[i].parseId == objId {
+                return i
+            }
+        }
+        return -1
+    }
+    
+    func getTourByIndex(index: Int, list: [Tour]) -> Tour? {
+        //var i: Int = 0
+        return list[index]
     }
     
 }
