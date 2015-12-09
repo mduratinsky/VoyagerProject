@@ -83,7 +83,7 @@ class ParseController {
                     tourObj.completes = tour["completes"] as! Int
                     tourObj.mDescription = (tour["description"] as! String)
                     tourObj.mRating = (tour["rating"] as! NSString).integerValue
-                //tourObj["image"] = getImageAsParseFile(tour)
+                    tourObj.image = getParseFileAsUIImage(tour)
                     self.toursList.append(tourObj)
                     NSLog("\(self.logLabel) tour added = \(tourObj.getName())")
                 }
@@ -137,7 +137,7 @@ class ParseController {
                         tourObj.completes = tour["completes"] as! Int
                         tourObj.mDescription = (tour["description"] as! String)
                         tourObj.mRating = (tour["rating"] as! NSString).integerValue
-//                      tourObj["image"] = getImageAsParseFile(tour)
+//                        tourObj["image"] = getImageAsParseFile(tour)
                         self.searchList.append(tourObj)
                         NSLog("\(self.logLabel) search tour added = \(tourObj.getName())")
                     }
@@ -248,8 +248,6 @@ class ParseController {
         tourObj["completes"] = tour.completes
         tourObj["description"] = tour.mDescription
         tourObj["rating"] = tour.mRating
-        //        tourObj["image"] = getImageAsParseFile(tour)
-        
         tourObj["image"] = getImageAsParseFile(tour)
         
         tourObj.saveInBackgroundWithBlock {
@@ -282,6 +280,13 @@ class ParseController {
             print("error in reading image")
             return nil
         }
+    }
+    
+    func getParseFileAsUIImage(tour : PFObject) -> UIImage? {
+        let image = tour["image"] as! PFFile
+        let uiimg = try! image.getData()
+        return UIImage(data: uiimg)
+        
     }
     /*func getImageAsParseFile(tour: PFObject) -> UIImage? {
         if tour["image"] == nil {
