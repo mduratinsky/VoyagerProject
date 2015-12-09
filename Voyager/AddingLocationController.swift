@@ -62,6 +62,10 @@ class AddingLocationController: UIViewController, UITextViewDelegate, UIImagePic
         locationAddText.text = info
     }
     
+    override func viewWillAppear(animated: Bool) {
+        singleTourTableView.reloadData()
+    }
+    
     //Opens view so user can add location and updates locationText var with information
     @IBAction func locationAddButton(sender: AnyObject) {
     }

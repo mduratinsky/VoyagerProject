@@ -2077,39 +2077,47 @@
                                 <rect key="frame" x="0.0" y="72" width="600" height="477"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tV2-nK-Mo3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="locationCell" id="tV2-nK-Mo3" customClass="TourTableListCell" customModule="Voyager" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tV2-nK-Mo3" id="tAD-xI-O5L">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ag2-pC-SC4">
-                                                    <rect key="frame" x="247" y="11" width="43" height="21"/>
+                                                    <rect key="frame" x="13" y="11" width="43" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="8b2-lJ-Kj8"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Specfied" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fef-1X-kbS">
-                                                    <rect key="frame" x="291" y="11" width="101" height="21"/>
+                                                    <rect key="frame" x="57" y="11" width="101" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ag2-pC-SC4" firstAttribute="top" secondItem="tAD-xI-O5L" secondAttribute="topMargin" constant="3" id="Ocw-0p-dLq"/>
-                                                <constraint firstItem="Fef-1X-kbS" firstAttribute="top" secondItem="tAD-xI-O5L" secondAttribute="topMargin" constant="3" id="R7F-6U-isA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Fef-1X-kbS" secondAttribute="trailing" constant="200" id="ddz-Qq-ZN4"/>
-                                                <constraint firstItem="ag2-pC-SC4" firstAttribute="leading" secondItem="tAD-xI-O5L" secondAttribute="leadingMargin" constant="239" id="fVd-Ov-GQH"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Fef-1X-kbS" secondAttribute="bottom" constant="3" id="jFO-Dg-eAU"/>
-                                                <constraint firstItem="Fef-1X-kbS" firstAttribute="leading" secondItem="ag2-pC-SC4" secondAttribute="trailing" constant="1" id="nUH-ZT-P4P"/>
-                                                <constraint firstItem="Fef-1X-kbS" firstAttribute="leading" secondItem="ag2-pC-SC4" secondAttribute="trailing" constant="1" id="ooo-tE-bfO"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ag2-pC-SC4" secondAttribute="bottom" constant="3" id="ud7-FO-0DO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ag2-pC-SC4" secondAttribute="bottom" constant="3" id="6tu-tp-W6C"/>
+                                                <constraint firstItem="ag2-pC-SC4" firstAttribute="leading" secondItem="tAD-xI-O5L" secondAttribute="leadingMargin" constant="5" id="79o-Nq-wbx"/>
+                                                <constraint firstItem="ag2-pC-SC4" firstAttribute="top" secondItem="tAD-xI-O5L" secondAttribute="topMargin" constant="3" id="Fvf-3Q-fWh"/>
+                                                <constraint firstItem="Fef-1X-kbS" firstAttribute="top" secondItem="tAD-xI-O5L" secondAttribute="topMargin" constant="3" id="MAQ-Ra-Nu4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Fef-1X-kbS" secondAttribute="bottom" constant="3" id="ZDi-1a-szs"/>
+                                                <constraint firstItem="Fef-1X-kbS" firstAttribute="leading" secondItem="ag2-pC-SC4" secondAttribute="trailing" constant="1" id="xJ1-76-L4x"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="locationTitle" destination="Fef-1X-kbS" id="Kiw-fV-uZI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bSC-xl-kZt" id="HRB-v7-hHn"/>
+                                    <outlet property="delegate" destination="bSC-xl-kZt" id="kKs-gq-1Nq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -2164,6 +2172,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createEventButton:" destination="FfM-Gg-O6h" eventType="touchUpInside" id="ocP-6H-KIa"/>
+                                    <segue destination="gTd-wI-S3e" kind="show" id="IKQ-Kh-rM6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2179,7 +2188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1G7-Bk-Kit" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2794" y="198"/>
+            <point key="canvasLocation" x="2726" y="198"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bwC-tn-par">
@@ -2227,5 +2236,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qdf-34-VB1"/>
+        <segue reference="IKQ-Kh-rM6"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,8 +10,7 @@ import UIKit
 
 class TourTableListCell: MKTableViewCell {
     
-    
-    @IBOutlet weak var tourName: UILabel!
+    @IBOutlet weak var locationTitle: UILabel!
     
     override var layoutMargins: UIEdgeInsets {
         get { return UIEdgeInsetsZero }
@@ -19,6 +18,6 @@ class TourTableListCell: MKTableViewCell {
     }
     
     func setCell(title: String) {
-        self.tourName.text = title
+        self.locationTitle.text = title
     }
 }
