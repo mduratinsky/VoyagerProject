@@ -56,9 +56,8 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
                     tourObj.mOwnerId = tour["ownerId"] as! String
                     tourObj.mName = tour["name"] as! String
                     let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                    print("reading list of locations")
                     let locQuery = PFQuery(className:"Location")
-                    locQuery.limit = list.count  // Default is 100, if not specified
+                    locQuery.limit = list.count
                     locQuery.findObjectsInBackgroundWithBlock {
                         ( locs: [PFObject]?, error: NSError?) -> Void in
                         if (error == nil) {
@@ -66,7 +65,7 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
                                 locationObj.mName = obj["name"] as! String
                                 locationObj.mLatitude = obj["latitude"] as! Double
                                 locationObj.mLongitude = obj["longitude"] as! Double
-                                listOfLocations.append(locationObj)
+                                listOfLocations.append(locationObj) 
                             }
                         } else {
                             print("Error with location")

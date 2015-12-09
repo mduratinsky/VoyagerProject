@@ -21,6 +21,8 @@ class SpecificLocationViewController: UIViewController {
         
         //Testing ----------------
         locationTitle.text = "Nitty Gritty"
+        //locationTitle.text = locations[0].getName()
+        print(locations.count)
     }
 
     @IBAction func cancelButtonSelected(sender: UIBarButtonItem) {

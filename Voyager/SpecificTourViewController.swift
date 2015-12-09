@@ -30,6 +30,7 @@ class SpecificTourViewController: UIViewController {
         
         //Set up the screen info
         setTourInfo()
+        print(tour.getListOfLocations().count)
     }
     
     /* MARK: - General Functions */
