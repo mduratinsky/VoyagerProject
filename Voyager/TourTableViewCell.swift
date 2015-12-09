@@ -18,7 +18,7 @@ class TourTableViewCell: MKTableViewCell {
         set(newVal) {}
     }
     
-    func setCell(title: String, image: UIImage) {
+    func setCell(title: String, image: String) {
         self.tourName.text = title
         //self.imageView!.image = image
     }

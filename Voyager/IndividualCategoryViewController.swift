@@ -9,21 +9,23 @@
 import UIKit
 import Parse
 
-class IndividualCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class IndividualCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,
+ParseAPIControllerProtocol {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
 
-    
-    
+    var api : ParseController!
     var navTitle: String? = nil
     var tours: [Tour]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.title = navTitle!
+        api = ParseController(delegate: self)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         //Hide the tableView while data loads
         tableView.hidden = true
@@ -31,73 +33,44 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
         spinner.startAnimating()
         loadingLabel.hidden = false
         
-        loadTours()
+        api.findToursBySearchValue("category", value: navTitle!)
     }
     
-    /* MARK: - General */
+    /* MARK: - Parse controller protocol */
     
-    func loadTours() {
-        findToursByKey("category", value: navTitle!)
+    func receivedToursList(results: NSArray) {
+//        tableView.hidden = false
+//        loadingLabel.hidden = true
+//        spinner.hidden = true
+//        spinner.stopAnimating()
+//        dispatch_async(dispatch_get_main_queue(), {
+//            self.tours = self.api.getToursList()
+//            self.tableView!.reloadData()
+//            UIApplication.sharedApplication().networkActivityIndicatorVisible
+//                = false
+//        })
     }
     
-    func findToursByKey(key : String, value : String){ // User ID
-       
-        let query = PFQuery(className:"Tour")
-        let tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
-        var locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
-        var listOfLocations : [Location] = []
-        query.whereKey(key, equalTo: value)
-        query.findObjectsInBackgroundWithBlock {
-            ( toursList: [PFObject]?, error: NSError?) -> Void in
-            if error == nil {
-           
-                for tour in toursList! {
-                    listOfLocations = []
-                    tourObj.mOwnerId = tour["ownerId"] as! String
-                    tourObj.mName = tour["name"] as! String
-                    let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                    let locQuery = PFQuery(className:"Location")
-                    locQuery.limit = list.count
-                    locQuery.findObjectsInBackgroundWithBlock {
-                        ( locs: [PFObject]?, error: NSError?) -> Void in
-                        if (error == nil) {
-                            for obj in locs! {
-                                locationObj.mName = obj["name"] as! String
-                                locationObj.mLatitude = obj["latitude"] as! Double
-                                locationObj.mLongitude = obj["longitude"] as! Double
-                                listOfLocations.append(locationObj) 
-                            }
-                        } else {
-                            print("Error with location")
-                        }
-                    }
-                    tourObj.mListOfLocations = listOfLocations
-                    tourObj.mCategory = tour["category"] as! String
-                    tourObj.views = tour["views"] as! Int
-                    tourObj.starts = tour["starts"] as! Int
-                    tourObj.completes = tour["completes"] as! Int
-                    tourObj.mDescription = (tour["description"] as! String)
-                    tourObj.parseId = tour.objectId
-                    tourObj.mRating = (tour["rating"] as! NSString).integerValue
-                    if let tourPicture = tour["image"] as? PFFile {
-                        tourPicture.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
-                            if (error == nil) {
-                                tourObj.image = UIImage(data:imageData!)
-                                
-                            }
-                        }
-                    }
-                    self.tours!.append(tourObj)
-                }
-                //Show the list while it loads
-                self.tableView.hidden = false
-                self.spinner.hidden = true
-                self.spinner.stopAnimating()
-                self.loadingLabel.hidden = true
-                
-                self.tableView.reloadData()
-            }
-        }
+    func receivedRecentToursList(results: NSArray) {
+//        tableView.hidden = false
+//        loadingLabel.hidden = true
+//        spinner.hidden = true
+//        spinner.stopAnimating()
+//        dispatch_async(dispatch_get_main_queue(), {
+//            self.tours = self.api.getToursList()
+//            self.tableView!.reloadData()
+//            UIApplication.sharedApplication().networkActivityIndicatorVisible
+//                = false
+//        })
+    }
+    
+    func receivedSearchToursList(results: NSArray) {
+        tours = api.getSearchedList()
+        tableView.reloadData()
+        tableView.hidden = false
+        loadingLabel.hidden = true
+        spinner.hidden = true
+        spinner.stopAnimating()
     }
 
     
@@ -118,8 +91,22 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
         cell.rippleLayerColor = UIColor.MKColor.Grey
         
         let title: String = tours![indexPath.row].getName()
-        cell.setCell(title, image: tours![indexPath.row].image!)
+        cell.setCell(title, image: "test")
+        print("\(title) has \(tours![indexPath.row].getListOfLocations().count)")
         return cell
+    }
+    
+    func loadLocations(objId: String, list: [Location]) {
+        var i: Int = 0
+        i = api.getTourIndexByObjectId(objId, list: api.searchList)!
+        var tour : Tour?
+        if i > -1 {
+            tour = api.getTourByIndex(i, list: api.searchList)
+            tour!.mListOfLocations = list
+        } 
+        tableView.reloadData()
+        NSLog("IndividualCategoryView: loadLocations = \(list.count)")
+        
     }
 
     
@@ -127,6 +114,7 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "tourSelected" {
             if let destination = segue.destinationViewController as? SpecificTourViewController {
                 if let tourIndex: Int = tableView.indexPathForSelectedRow!.row {
@@ -135,6 +123,4 @@ class IndividualCategoryViewController: UIViewController, UITableViewDelegate, U
             }
         }
     }
-
-
 }

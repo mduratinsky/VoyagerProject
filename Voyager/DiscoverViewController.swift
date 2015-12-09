@@ -67,6 +67,10 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
                 = false
         })
     }
+    
+    func loadLocations(objId: String, list: [Location]) {
+        // Locations loaded
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

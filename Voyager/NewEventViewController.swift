@@ -104,6 +104,10 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
     func receivedSearchToursList(results: NSArray) {
         // Now have data
     }
+    
+    func loadLocations(objId: String, list: [Location]) {
+        //
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
