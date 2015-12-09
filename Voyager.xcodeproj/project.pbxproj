@@ -358,8 +358,6 @@
 		BD2A2CDB1C138B8500BC841F /* TourCreation */ = {
 			isa = PBXGroup;
 			children = (
-				F491BB281C163B6E00D71933 /* DirectionsViewController.swift */,
-				F491BB291C163B6E00D71933 /* DirectionTableViewCell.swift */,
 				BD2A2CDC1C138BB300BC841F /* NewTourViewController.swift */,
 				BD2A2CDE1C138FDD00BC841F /* AddingLocationsViewController.swift */,
 				BD2A2CE01C13949F00BC841F /* ConfirmTourViewController.swift */,
@@ -384,6 +382,8 @@
 				F491BB2F1C163B6E00D71933 /* SpecificTourViewController.swift */,
 				F491BB301C163B6E00D71933 /* TourTableViewCell.swift */,
 				F491BB311C163B6E00D71933 /* WrittenDirectionsTableViewController.swift */,
+				F491BB281C163B6E00D71933 /* DirectionsViewController.swift */,
+				F491BB291C163B6E00D71933 /* DirectionTableViewCell.swift */,
 			);
 			name = "View Tour";
 			sourceTree = "<group>";
