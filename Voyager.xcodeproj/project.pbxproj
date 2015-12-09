@@ -11,18 +11,18 @@
 		2601AD521BD4B195004F6394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD501BD4B195004F6394 /* Main.storyboard */; };
 		2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD531BD4B195004F6394 /* Assets.xcassets */; };
 		2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2601AD551BD4B195004F6394 /* LaunchScreen.storyboard */; };
-		263E9CC81C041EC800BDF077 /* SpecificLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263E9CC71C041EC800BDF077 /* SpecificLocationViewController.swift */; };
-		2650FDB11C096DFF00C3E20A /* DirectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */; };
-		26513CC31BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */; };
-		26513CC51BFAF00F001DC6A6 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */; };
 		26513CC71BFAF0F9001DC6A6 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC61BFAF0F9001DC6A6 /* MKTextField.swift */; };
 		26513CC91BFAF113001DC6A6 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CC81BFAF113001DC6A6 /* MKTableViewCell.swift */; };
 		26513CCB1BFAF132001DC6A6 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CCA1BFAF132001DC6A6 /* MKLabel.swift */; };
 		26513CCD1BFAF15C001DC6A6 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */; };
-		266A10FC1BFFD59B0044EBF8 /* SpecificTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */; };
 		267C63471C000A50001AFA97 /* VoyagerBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C63461C000A50001AFA97 /* VoyagerBackground.jpg */; };
 		267C63491C000FCF001AFA97 /* dancing_updated (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C63481C000FCF001AFA97 /* dancing_updated (1).jpg */; };
 		267C634B1C000FD9001AFA97 /* dining_updated (2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 267C634A1C000FD9001AFA97 /* dining_updated (2).jpg */; };
+		2692F66D1C1793C300A26F9F /* VoyagerIcon-new-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 2692F66C1C1793C300A26F9F /* VoyagerIcon-new-180.png */; };
+		26B96D051C17970A00671D39 /* VoyagerIcon-new-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */; };
+		26B96D061C17970A00671D39 /* VoyagerIcon-new-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */; };
+		26B96D071C17970A00671D39 /* VoyagerIcon-new-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D041C17970A00671D39 /* VoyagerIcon-new-120.png */; };
+		26B96D091C179FAC00671D39 /* sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 26B96D081C179FAC00671D39 /* sports.png */; };
 		26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */; };
 		26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA99391BF9579D00EC4F91 /* MKButton.swift */; };
 		26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BA993B1BF9590800EC4F91 /* MKLayer.swift */; };
@@ -35,7 +35,6 @@
 		26C429EC1BE3F2F1001C56DA /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429EA1BE3F2F1001C56DA /* DiscoverViewController.swift */; };
 		26C429ED1BE3F2F1001C56DA /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C429EB1BE3F2F1001C56DA /* DiscoverViewController.xib */; };
 		26C429EF1BE3FA2F001C56DA /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */; };
-		26D3CB971C138EBE0039F274 /* RateTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D3CB961C138EBE0039F274 /* RateTourViewController.swift */; };
 		26E368541BE8379A00CDBAE5 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368531BE8379A00CDBAE5 /* Tour.swift */; };
 		26E368561BE8380600CDBAE5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368551BE8380600CDBAE5 /* Location.swift */; };
 		26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E368591BE8387800CDBAE5 /* Category.swift */; };
@@ -43,10 +42,9 @@
 		26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */; };
 		26E678B41BFD7317002AAACC /* arts_updated (3).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B31BFD7317002AAACC /* arts_updated (3).jpg */; };
 		26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26E678B51BFD7362002AAACC /* bars_updated (1).jpg */; };
-		26F1B8A21C124C1800CCD63D /* WrittenDirectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1B8A11C124C1800CCD63D /* WrittenDirectionsTableViewController.swift */; };
-		26FCBB4D1C02A66600209C3E /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */; };
 		901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 901E79531BFABC8B00B20149 /* placeholder.jpg */; };
 		908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908278231BEEBB2800DFB52F /* SignupViewController.swift */; };
+		90AABB581C143842002DF353 /* placeholder_scene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90AABB571C143842002DF353 /* placeholder_scene.jpg */; };
 		90C442FE1BEEE8A3001A8749 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */; };
 		90C443001BEEE8B3001A8749 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C442FF1BEEE8B3001A8749 /* CFNetwork.framework */; };
 		90C443021BEEE96D001A8749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443011BEEE96D001A8749 /* CoreGraphics.framework */; };
@@ -77,6 +75,18 @@
 		BDCEDE741C14EF100094002A /* AddingLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */; };
 		BDCEDE761C14F09C0094002A /* SingleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCEDE751C14F09B0094002A /* SingleLocationViewController.swift */; };
 		EE56906C8B25AF90DD18525D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A225ED54F582248A0FB7C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F491BB261C16389200D71933 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = F491BB241C16389200D71933 /* down.png */; };
+		F491BB271C16389200D71933 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = F491BB251C16389200D71933 /* up.png */; };
+		F491BB321C163B6E00D71933 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BB281C163B6E00D71933 /* DirectionsViewController.swift */; };
+		F491BB331C163B6E00D71933 /* DirectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BB291C163B6E00D71933 /* DirectionTableViewCell.swift */; };
+		F491BB341C163B6E00D71933 /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BB2A1C163B6E00D71933 /* DiscoverTableViewCell.swift */; };
+		F491BB351C163B6E00D71933 /* DiscoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F491BB2B1C163B6E00D71933 /* DiscoverTableViewCell.xib */; };
+		F491BB361C163B6E00D71933 /* IndividualCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BB2C1C163B6E00D71933 /* IndividualCategoryViewController.swift */; };
+		F491BB371C163B6E00D71933 /* RateTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BB2D1C163B6E00D71933 /* RateTourViewController.swift */; };
+		F491BB381C163B6E00D71933 /* SpecificLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BB2E1C163B6E00D71933 /* SpecificLocationViewController.swift */; };
+		F491BB391C163B6E00D71933 /* SpecificTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BB2F1C163B6E00D71933 /* SpecificTourViewController.swift */; };
+		F491BB3A1C163B6E00D71933 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BB301C163B6E00D71933 /* TourTableViewCell.swift */; };
+		F491BB3B1C163B6E00D71933 /* WrittenDirectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BB311C163B6E00D71933 /* WrittenDirectionsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,18 +97,18 @@
 		2601AD531BD4B195004F6394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2601AD561BD4B195004F6394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2601AD581BD4B196004F6394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		263E9CC71C041EC800BDF077 /* SpecificLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificLocationViewController.swift; sourceTree = "<group>"; };
-		2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionTableViewCell.swift; sourceTree = "<group>"; };
-		26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualCategoryViewController.swift; sourceTree = "<group>"; };
-		26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
 		26513CC61BFAF0F9001DC6A6 /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
 		26513CC81BFAF113001DC6A6 /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
 		26513CCA1BFAF132001DC6A6 /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
 		26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
-		266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificTourViewController.swift; sourceTree = "<group>"; };
 		267C63461C000A50001AFA97 /* VoyagerBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = VoyagerBackground.jpg; path = Voyager/VoyagerBackground.jpg; sourceTree = "<group>"; };
 		267C63481C000FCF001AFA97 /* dancing_updated (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "dancing_updated (1).jpg"; path = "Voyager/dancing_updated (1).jpg"; sourceTree = "<group>"; };
 		267C634A1C000FD9001AFA97 /* dining_updated (2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "dining_updated (2).jpg"; path = "Voyager/dining_updated (2).jpg"; sourceTree = "<group>"; };
+		2692F66C1C1793C300A26F9F /* VoyagerIcon-new-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-180.png"; sourceTree = "<group>"; };
+		26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-58.png"; sourceTree = "<group>"; };
+		26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-80.png"; sourceTree = "<group>"; };
+		26B96D041C17970A00671D39 /* VoyagerIcon-new-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoyagerIcon-new-120.png"; sourceTree = "<group>"; };
+		26B96D081C179FAC00671D39 /* sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sports.png; sourceTree = "<group>"; };
 		26BA99301BF94E9100EC4F91 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		26BA99391BF9579D00EC4F91 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		26BA993B1BF9590800EC4F91 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -111,7 +121,6 @@
 		26C429EA1BE3F2F1001C56DA /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		26C429EB1BE3F2F1001C56DA /* DiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverViewController.xib; sourceTree = "<group>"; };
 		26C429EE1BE3FA2F001C56DA /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
-		26D3CB961C138EBE0039F274 /* RateTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTourViewController.swift; sourceTree = "<group>"; };
 		26E368531BE8379A00CDBAE5 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		26E368551BE8380600CDBAE5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		26E368591BE8387800CDBAE5 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -119,12 +128,11 @@
 		26E368621BE8470D00CDBAE5 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		26E678B31BFD7317002AAACC /* arts_updated (3).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "arts_updated (3).jpg"; path = "Voyager/arts_updated (3).jpg"; sourceTree = "<group>"; };
 		26E678B51BFD7362002AAACC /* bars_updated (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bars_updated (1).jpg"; path = "Voyager/bars_updated (1).jpg"; sourceTree = "<group>"; };
-		26F1B8A11C124C1800CCD63D /* WrittenDirectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrittenDirectionsTableViewController.swift; sourceTree = "<group>"; };
-		26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		76C8530CF00CEE2B03FB00AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8402E3352D099E38D2425AB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		901E79531BFABC8B00B20149 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = placeholder.jpg; path = Voyager/placeholder.jpg; sourceTree = "<group>"; };
 		908278231BEEBB2800DFB52F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		90AABB571C143842002DF353 /* placeholder_scene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder_scene.jpg; sourceTree = "<group>"; };
 		90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		90C442FF1BEEE8B3001A8749 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		90C443011BEEE96D001A8749 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -155,6 +163,18 @@
 		BDCEDE711C14E02C0094002A /* NewTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTourViewController.swift; sourceTree = "<group>"; };
 		BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationsViewController.swift; sourceTree = "<group>"; };
 		BDCEDE751C14F09B0094002A /* SingleLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLocationViewController.swift; sourceTree = "<group>"; };
+		F491BB241C16389200D71933 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = Voyager/down.png; sourceTree = "<group>"; };
+		F491BB251C16389200D71933 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = Voyager/up.png; sourceTree = "<group>"; };
+		F491BB281C163B6E00D71933 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
+		F491BB291C163B6E00D71933 /* DirectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionTableViewCell.swift; sourceTree = "<group>"; };
+		F491BB2A1C163B6E00D71933 /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
+		F491BB2B1C163B6E00D71933 /* DiscoverTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverTableViewCell.xib; sourceTree = "<group>"; };
+		F491BB2C1C163B6E00D71933 /* IndividualCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualCategoryViewController.swift; sourceTree = "<group>"; };
+		F491BB2D1C163B6E00D71933 /* RateTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTourViewController.swift; sourceTree = "<group>"; };
+		F491BB2E1C163B6E00D71933 /* SpecificLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificLocationViewController.swift; sourceTree = "<group>"; };
+		F491BB2F1C163B6E00D71933 /* SpecificTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificTourViewController.swift; sourceTree = "<group>"; };
+		F491BB301C163B6E00D71933 /* TourTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
+		F491BB311C163B6E00D71933 /* WrittenDirectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrittenDirectionsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				90C443151BEEF12C001A8749 /* Voyager-Bridging-Header.h */,
+				261B99831C164AB900AEDBCE /* images */,
 				26BA99381BF9520A00EC4F91 /* View */,
 				2601AD5F1BD4B3F9004F6394 /* Controller */,
 				2601AD5E1BD4B3F2004F6394 /* Model */,
@@ -240,6 +261,8 @@
 			children = (
 				BDCEDE701C14DF0B0094002A /* Tour Creation */,
 				26D3CB951C138E6A0039F274 /* View Tour */,
+				F491BB3C1C163CDB00D71933 /* View Tour */,
+				BD2A2CDB1C138B8500BC841F /* TourCreation */,
 				26E368671BE847DF00CDBAE5 /* Discover */,
 				26E368661BE847D200CDBAE5 /* Search */,
 				26E368651BE847B500CDBAE5 /* Categories */,
@@ -254,6 +277,19 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		261B99831C164AB900AEDBCE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				26B96D081C179FAC00671D39 /* sports.png */,
+				90AABB571C143842002DF353 /* placeholder_scene.jpg */,
+				26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */,
+				26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */,
+				26B96D041C17970A00671D39 /* VoyagerIcon-new-120.png */,
+				2692F66C1C1793C300A26F9F /* VoyagerIcon-new-180.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		26BA99381BF9520A00EC4F91 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,21 +302,6 @@
 				26513CCC1BFAF15C001DC6A6 /* MKImageView.swift */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		26D3CB951C138E6A0039F274 /* View Tour */ = {
-			isa = PBXGroup;
-			children = (
-				26513CC41BFAF00F001DC6A6 /* TourTableViewCell.swift */,
-				263E9CC71C041EC800BDF077 /* SpecificLocationViewController.swift */,
-				26FCBB4C1C02A66600209C3E /* DirectionsViewController.swift */,
-				26F1B8A11C124C1800CCD63D /* WrittenDirectionsTableViewController.swift */,
-				2650FDB01C096DFF00C3E20A /* DirectionTableViewCell.swift */,
-				26513CC21BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift */,
-				26D3CB961C138EBE0039F274 /* RateTourViewController.swift */,
-				266A10FB1BFFD59B0044EBF8 /* SpecificTourViewController.swift */,
-			);
-			name = "View Tour";
 			sourceTree = "<group>";
 		};
 		26E368651BE847B500CDBAE5 /* Categories */ = {
@@ -306,6 +327,8 @@
 		26E368671BE847DF00CDBAE5 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				F491BB2A1C163B6E00D71933 /* DiscoverTableViewCell.swift */,
+				F491BB2B1C163B6E00D71933 /* DiscoverTableViewCell.xib */,
 				26C429EA1BE3F2F1001C56DA /* DiscoverViewController.swift */,
 				26C429EB1BE3F2F1001C56DA /* DiscoverViewController.xib */,
 			);
@@ -315,6 +338,8 @@
 		26E678B71BFD7386002AAACC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F491BB241C16389200D71933 /* down.png */,
+				F491BB251C16389200D71933 /* up.png */,
 				26E678B31BFD7317002AAACC /* arts_updated (3).jpg */,
 				26E678B51BFD7362002AAACC /* bars_updated (1).jpg */,
 				267C63481C000FCF001AFA97 /* dancing_updated (1).jpg */,
@@ -372,6 +397,11 @@
 				BD6426FA1C167A32002D87BD /* TourTableListCell.swift */,
 			);
 			name = "Tour Creation";
+		BD2A2CDB1C138B8500BC841F /* TourCreation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TourCreation;
 			sourceTree = "<group>";
 		};
 		CCA2BF4041BF0B2CC33562AC /* Frameworks */ = {
@@ -380,6 +410,21 @@
 				1D3A225ED54F582248A0FB7C /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F491BB3C1C163CDB00D71933 /* View Tour */ = {
+			isa = PBXGroup;
+			children = (
+				F491BB2C1C163B6E00D71933 /* IndividualCategoryViewController.swift */,
+				F491BB2D1C163B6E00D71933 /* RateTourViewController.swift */,
+				F491BB2E1C163B6E00D71933 /* SpecificLocationViewController.swift */,
+				F491BB2F1C163B6E00D71933 /* SpecificTourViewController.swift */,
+				F491BB301C163B6E00D71933 /* TourTableViewCell.swift */,
+				F491BB311C163B6E00D71933 /* WrittenDirectionsTableViewController.swift */,
+				F491BB281C163B6E00D71933 /* DirectionsViewController.swift */,
+				F491BB291C163B6E00D71933 /* DirectionTableViewCell.swift */,
+			);
+			name = "View Tour";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,19 +493,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F491BB271C16389200D71933 /* up.png in Resources */,
 				2601AD571BD4B195004F6394 /* LaunchScreen.storyboard in Resources */,
 				26E678B61BFD7362002AAACC /* bars_updated (1).jpg in Resources */,
+				90AABB581C143842002DF353 /* placeholder_scene.jpg in Resources */,
+				2692F66D1C1793C300A26F9F /* VoyagerIcon-new-180.png in Resources */,
 				267C63491C000FCF001AFA97 /* dancing_updated (1).jpg in Resources */,
+				26B96D091C179FAC00671D39 /* sports.png in Resources */,
 				901E79541BFABC8B00B20149 /* placeholder.jpg in Resources */,
+				26B96D061C17970A00671D39 /* VoyagerIcon-new-80.png in Resources */,
 				26E368641BE8470D00CDBAE5 /* CategoryTableViewCell.xib in Resources */,
 				26C429ED1BE3F2F1001C56DA /* DiscoverViewController.xib in Resources */,
 				2601AD541BD4B195004F6394 /* Assets.xcassets in Resources */,
 				267C63471C000A50001AFA97 /* VoyagerBackground.jpg in Resources */,
 				26E678B41BFD7317002AAACC /* arts_updated (3).jpg in Resources */,
+				F491BB261C16389200D71933 /* down.png in Resources */,
 				26C429E91BE3F2E3001C56DA /* CategoriesViewController.xib in Resources */,
+				F491BB351C163B6E00D71933 /* DiscoverTableViewCell.xib in Resources */,
 				26C429E51BE3F2CE001C56DA /* SearchViewController.xib in Resources */,
 				267C634B1C000FD9001AFA97 /* dining_updated (2).jpg in Resources */,
+				26B96D071C17970A00671D39 /* VoyagerIcon-new-120.png in Resources */,
 				2601AD521BD4B195004F6394 /* Main.storyboard in Resources */,
+				26B96D051C17970A00671D39 /* VoyagerIcon-new-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,9 +576,9 @@
 				BD6426FB1C167A32002D87BD /* TourTableListCell.swift in Sources */,
 				26E368541BE8379A00CDBAE5 /* Tour.swift in Sources */,
 				BD45453A1BFE9BEB0017EE99 /* SingleMediaTourViewController.swift in Sources */,
+				F491BB3B1C163B6E00D71933 /* WrittenDirectionsTableViewController.swift in Sources */,
 				26513CC71BFAF0F9001DC6A6 /* MKTextField.swift in Sources */,
 				26BA99311BF94E9100EC4F91 /* UserInfoViewController.swift in Sources */,
-				26F1B8A21C124C1800CCD63D /* WrittenDirectionsTableViewController.swift in Sources */,
 				26C429E41BE3F2CE001C56DA /* SearchViewController.swift in Sources */,
 				BDCEDE741C14EF100094002A /* AddingLocationsViewController.swift in Sources */,
 				263E9CC81C041EC800BDF077 /* SpecificLocationViewController.swift in Sources */,
@@ -532,29 +586,32 @@
 				BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */,
 				BDCEDE721C14E02C0094002A /* NewTourViewController.swift in Sources */,
 				26513CC91BFAF113001DC6A6 /* MKTableViewCell.swift in Sources */,
-				266A10FC1BFFD59B0044EBF8 /* SpecificTourViewController.swift in Sources */,
 				26E368561BE8380600CDBAE5 /* Location.swift in Sources */,
 				26C429EF1BE3FA2F001C56DA /* NewEventViewController.swift in Sources */,
 				26C429EC1BE3F2F1001C56DA /* DiscoverViewController.swift in Sources */,
 				26E368631BE8470D00CDBAE5 /* CategoryTableViewCell.swift in Sources */,
+				F491BB3A1C163B6E00D71933 /* TourTableViewCell.swift in Sources */,
+				F491BB381C163B6E00D71933 /* SpecificLocationViewController.swift in Sources */,
+				F491BB341C163B6E00D71933 /* DiscoverTableViewCell.swift in Sources */,
 				26BA99401BF9597600EC4F91 /* MKColor.swift in Sources */,
 				BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */,
-				2650FDB11C096DFF00C3E20A /* DirectionTableViewCell.swift in Sources */,
+				F491BB321C163B6E00D71933 /* DirectionsViewController.swift in Sources */,
 				26E3685A1BE8387800CDBAE5 /* Category.swift in Sources */,
 				BD6426F91C1673A8002D87BD /* LocationsViewController.swift in Sources */,
 				26FCBB4D1C02A66600209C3E /* DirectionsViewController.swift in Sources */,
 				908278241BEEBB2800DFB52F /* SignupViewController.swift in Sources */,
+				F491BB391C163B6E00D71933 /* SpecificTourViewController.swift in Sources */,
 				26C429E81BE3F2E3001C56DA /* CategoriesViewController.swift in Sources */,
-				26513CC31BFAEEC8001DC6A6 /* IndividualCategoryViewController.swift in Sources */,
 				26BA993A1BF9579D00EC4F91 /* MKButton.swift in Sources */,
 				26513CCD1BFAF15C001DC6A6 /* MKImageView.swift in Sources */,
-				26D3CB971C138EBE0039F274 /* RateTourViewController.swift in Sources */,
-				26513CC51BFAF00F001DC6A6 /* TourTableViewCell.swift in Sources */,
 				26513CCB1BFAF132001DC6A6 /* MKLabel.swift in Sources */,
+				F491BB371C163B6E00D71933 /* RateTourViewController.swift in Sources */,
+				F491BB361C163B6E00D71933 /* IndividualCategoryViewController.swift in Sources */,
 				26BA993C1BF9590800EC4F91 /* MKLayer.swift in Sources */,
 				2601AD4D1BD4B195004F6394 /* AppDelegate.swift in Sources */,
 				26C429DB1BE3F215001C56DA /* ScrollViewController.swift in Sources */,
 				BDCEDE761C14F09C0094002A /* SingleLocationViewController.swift in Sources */,
+				F491BB331C163B6E00D71933 /* DirectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +738,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Voyager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -702,6 +760,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Voyager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};

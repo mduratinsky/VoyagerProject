@@ -9,10 +9,14 @@
 import UIKit
 
 class SpecificTourViewController: UIViewController {
-
+    
     @IBOutlet weak var photoGallery: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var startButton: MKButton!
+    @IBOutlet weak var tourDescription: UITextView!
+    @IBOutlet weak var tourRating: UILabel!
+    @IBOutlet weak var tourAuthor: UILabel!
+    @IBOutlet weak var tourTitle: UILabel!
     
     var tour: Tour = Tour()
     
@@ -21,28 +25,32 @@ class SpecificTourViewController: UIViewController {
         
         //Set up the scroll view
         scrollView.scrollEnabled = true
-        scrollView.contentSize.height = 487
+        scrollView.contentSize.height = 486
         scrollView.contentSize.width = self.view.frame.width
         
         //Set up the screen info
-        
+        setTourInfo()
+        print(tour.getListOfLocations().count)
     }
-
-
+    
     /* MARK: - General Functions */
     func setTourInfo() {
+        //1. Set the tours image
+        tourTitle.text = tour.getName()
+        tourDescription.text = tour.getDescription()
+        //4. Set the locations
+        //tourRating.text = tour.getRating()
+        tourAuthor.text = tour.getAuthor()
         
     }
     
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "startTour" {
+            let destination = segue.destinationViewController as? SpecificLocationViewController
+            destination?.locations = tour.getListOfLocations()
+        }
     }
-    */
 
 }

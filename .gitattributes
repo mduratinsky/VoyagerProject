@@ -1,0 +1,9 @@
+################################################################################
+# Adding a .gitattributes file to your project allows you to affect how certain
+# operations are performed in git by assigning attributes to a particular path.
+# Place a .gitattributes file in your project’s root directory.
+################################################################################
+
+
+# Tell git any file with the extension .pbxproj should be treated as binary.
+*.pbxproj binary merge=union

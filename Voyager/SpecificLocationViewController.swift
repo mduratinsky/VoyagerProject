@@ -13,11 +13,16 @@ class SpecificLocationViewController: UIViewController {
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
+    var locations: [Location] = []
+    var currLocationIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Testing ----------------
         locationTitle.text = "Nitty Gritty"
+        //locationTitle.text = locations[0].getName()
+        print(locations.count)
     }
 
     @IBAction func cancelButtonSelected(sender: UIBarButtonItem) {
@@ -25,6 +30,7 @@ class SpecificLocationViewController: UIViewController {
     }
     
     // MARK: - General Functions
+    
     func cancelAlert() {
         let alert = UIAlertController(title: "Alert", message: "Are you sure you wish to cancel? Your current progress will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
         
@@ -37,7 +43,23 @@ class SpecificLocationViewController: UIViewController {
 
     }
     
-
+    func goToNextLocation() {
+        if (currLocationIndex + 1) >= locations.count {
+            //Segue to the rating view
+            self.performSegueWithIdentifier("ratingView", sender: nil)
+        } else {
+            //Update the information for the new location
+            
+        }
+        
+        
+        currLocationIndex++
+    }
+    
+    @IBAction func nextButtonSelected(sender: MKButton) {
+        goToNextLocation()
+    }
+    
     
     // MARK: - Navigation
 

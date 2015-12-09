@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiscoverViewController" customModule="Voyager" customModuleProvider="target">
             <connections>
+                <outlet property="discoverTableView" destination="Abw-kj-ifz" id="Lg9-N7-LgE"/>
+                <outlet property="spinner" destination="F0S-Gb-pvh" id="JDu-YZ-Efe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,19 +16,30 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrD-hp-f0H">
-                    <rect key="frame" x="267" y="289" width="67" height="21"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Abw-kj-ifz">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Rcs-pE-2hr"/>
+                        <outlet property="delegate" destination="-1" id="XWk-61-F73"/>
+                    </connections>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-Gb-pvh">
+                    <rect key="frame" x="282" y="281" width="37" height="37"/>
+                    <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.93717115110000004" green="0.96990883260000005" blue="0.98970170449999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="VrD-hp-f0H" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XLl-Cs-l4x"/>
-                <constraint firstItem="VrD-hp-f0H" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XmC-27-V2D"/>
+                <constraint firstItem="Abw-kj-ifz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6Cx-1K-pIf"/>
+                <constraint firstItem="Abw-kj-ifz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AYa-Nb-Ru3"/>
+                <constraint firstItem="F0S-Gb-pvh" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ISj-2k-Upn"/>
+                <constraint firstItem="Abw-kj-ifz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Va2-HO-AY3"/>
+                <constraint firstAttribute="trailing" secondItem="Abw-kj-ifz" secondAttribute="trailing" id="Yna-07-Bvv"/>
+                <constraint firstItem="Abw-kj-ifz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ZeH-32-krf"/>
+                <constraint firstItem="F0S-Gb-pvh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hdO-ec-OMq"/>
+                <constraint firstAttribute="bottom" secondItem="Abw-kj-ifz" secondAttribute="bottom" id="j0l-oZ-369"/>
             </constraints>
         </view>
     </objects>
