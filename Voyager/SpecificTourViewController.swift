@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SpecificTourViewController: UIViewController {
+class SpecificTourViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var photoGallery: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -17,8 +17,11 @@ class SpecificTourViewController: UIViewController {
     @IBOutlet weak var tourRating: UILabel!
     @IBOutlet weak var tourAuthor: UILabel!
     @IBOutlet weak var tourTitle: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     var tour: Tour = Tour()
+    var locations: [Location] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +33,35 @@ class SpecificTourViewController: UIViewController {
         
         //Set up the screen info
         setTourInfo()
-        print(tour.getListOfLocations().count)
+        locations = tour.getListOfLocations()
     }
     
     /* MARK: - General Functions */
+    
     func setTourInfo() {
         //1. Set the tours image
         tourTitle.text = tour.getName()
         tourDescription.text = tour.getDescription()
-        //4. Set the locations
-        
         //tourRating.text = tour.getRating()
         tourAuthor.text = tour.getAuthor()
         
+    }
+    
+    /* MARK: - Table View */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return locations.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("locationCell") as! LocationTableViewCell
+        
+//        cell.rippleLocation = .TapLocation
+//        cell.rippleLayerColor = UIColor.MKColor.Grey
+        
+        let title: String = locations[indexPath.row].getName()
+        cell.setCell(title)
+        
+        return cell
     }
     
     // MARK: - Navigation
@@ -51,7 +70,7 @@ class SpecificTourViewController: UIViewController {
         if segue.identifier == "startTour" {
             if let destination = segue.destinationViewController as? UINavigationController {
                 let destVC = destination.viewControllers.first as! SpecificLocationViewController
-                destVC.locations = self.tour.getListOfLocations()
+                destVC.tour = self.tour
             }
         }
     }

@@ -13,6 +13,7 @@ class SpecificLocationViewController: UIViewController {
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
+    var tour: Tour = Tour()
     var locations: [Location] = []
     var latitude: Double = 0
     var longitude: Double = 0
@@ -20,6 +21,7 @@ class SpecificLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locations = tour.mListOfLocations
         setScreen()
     }
 
