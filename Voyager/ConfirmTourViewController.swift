@@ -44,9 +44,6 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
     func loadLocations(objId: String, list: [Location]) {
         
     }
-    
-    func loadLocations(objId: String, list: [Location]) {
-        //
-    }
+
     
 }

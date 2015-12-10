@@ -70,7 +70,7 @@ class ParseController {
                     tourObj.completes = tour["completes"] as! Int
                     tourObj.mDescription = (tour["description"] as! String)
                     tourObj.mRating = tour["rating"] as! Int
-                //tourObj["image"] = getImageAsParseFile(tour)
+                    tourObj.image = self.getParseFileAsUIImage(tour)
                     self.toursList.append(tourObj)
                     NSLog("\(self.logLabel) tour added = \(tourObj.getName())")
                 }
@@ -142,68 +142,6 @@ class ParseController {
             }
         }
         return self.toursList
-    }
-    
-    /*
-     *  Returns searchList field
-     *  To be called in receivedRecentToursList
-     */
-    func getSearchedList() -> [Tour] {
-        NSLog("\(self.logLabel) # searchTours = \(self.toursList.count)")
-        return searchList
-    }
-
-    /*
-     * Returns list of most recent tours
-     *
-     * Parameters:
-     *      count = # of tours to return in the list
-     */
-    func findRecentTours() {
-        let query = PFQuery(className:"Tour")
-        var tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
-        query.limit = NUM_RECENT
-        query.orderByDescending("createdAt")
-        query.findObjectsInBackgroundWithBlock {
-            ( tours: [PFObject]?, error: NSError?) -> Void in
-            if error == nil {
-                for tour in tours! {
-                    tourObj = Tour(name: "", locations: [], category: "", author: "", description: "")
-                    tourObj.mOwnerId = tour["ownerId"] as! String
-                    tourObj.mName = tour["name"] as! String
-                    tourObj.parseId = tour.objectId! as String
-                    let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                    tourObj.mListOfLocations = self.parseTourLocations(tourObj.parseId, list: list)
-                    NSLog("\(self.logLabel) mListOfLocations added = \(tourObj.mListOfLocations.count)")
-                    tourObj.mCategory = tour["category"] as! String
-                    tourObj.views = tour["views"] as! Int
-                    tourObj.starts = tour["starts"] as! Int
-                    tourObj.completes = tour["completes"] as! Int
-                    tourObj.mDescription = (tour["description"] as! String)
-                    tourObj.mRating = tour["rating"] as! Int
-                    
-                    self.recentList.append(tourObj)
-                    NSLog("\(self.logLabel) recent tour added = \(tourObj.getName())")
-                }
-                
-                NSLog("\(self.logLabel) # recent tours added = \(self.recentList.count)")
-                if self.recentList.count > 0 {
-                    self.delegate.receivedRecentToursList(self.recentList)
-                }
-            } else {
-                // Log details of the failure
-                NSLog("\(self.logLabel) Error: recent tour", error!);
-            }
-        }
-    }
-    
-    /*
-     *  Returns recentList field
-     *  To be called in receivedRecentToursList
-     */
-    func getRecentList() -> [Tour] {
-        NSLog("\(self.logLabel) # searchTours = \(self.toursList.count)")
-        return recentList
     }
     
     
