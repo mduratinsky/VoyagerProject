@@ -29,7 +29,7 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
     }
     
     /*** Parse Controller API Protocol Functions ***/
-    func receivedToursList(results: NSArray) {
+    func receivedToursList(results: [Tour]) {
         dispatch_async(dispatch_get_main_queue(), {
             // Now have data
             UIApplication.sharedApplication().networkActivityIndicatorVisible
@@ -37,12 +37,12 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
         })
     }
     
-    func receivedRecentToursList(results: NSArray) {
+    func receivedCategoriesList(results: [Tour]) {
         // Now have data
     }
     
-    func receivedSearchToursList(results: NSArray) {
-        // Now have data
+    func loadLocations(objId: String, list: [Location]) {
+        
     }
     
     func loadLocations(objId: String, list: [Location]) {

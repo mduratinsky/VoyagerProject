@@ -12,7 +12,6 @@ import Parse
 
 class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, ParseAPIControllerProtocol {
     
-    //let parseController = ParseController()
     var api : ParseController!
     
     @IBOutlet weak var tourName: MKTextField!
@@ -22,7 +21,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
     @IBOutlet weak var tourCategory: MKTextField!
     
     /*** Parse Controller API Protocol Functions ***/
-    func receivedToursList(results: NSArray) {
+    func receivedToursList(results: [Tour]) {
         dispatch_async(dispatch_get_main_queue(), {
             // Now have data
             UIApplication.sharedApplication().networkActivityIndicatorVisible
@@ -30,11 +29,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         })
     }
     
-    func receivedRecentToursList(results: NSArray) {
-        // Now have data
-    }
-    
-    func receivedSearchToursList(results: NSArray) {
+    func receivedCategoriesList(results: [Tour]) {
         // Now have data
     }
     

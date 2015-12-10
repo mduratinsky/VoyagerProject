@@ -400,6 +400,7 @@
 		BD6E5FCD1C18D07F00AA50DC /* View Tour */ = {
 			isa = PBXGroup;
 			children = (
+				BD6E5FBD1C18D00200AA50DC /* IndividualCategoryViewController.swift */,
 				BD6E5FD41C18D1D900AA50DC /* RateTourViewController.swift */,
 				BD6E5FBD1C18D00200AA50DC /* IndividualCategoryViewController.swift */,
 				BD6E5FD51C18D1D900AA50DC /* WrittenDirectionsTableViewController.swift */,

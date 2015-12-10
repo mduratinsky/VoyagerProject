@@ -35,37 +35,19 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
         // Do any additional setup after loading the view.
     }
     
-    func receivedToursList(results: NSArray) {
+    func receivedToursList(results: [Tour]) {
         spinner.hidden = true
         spinner.stopAnimating()
         dispatch_async(dispatch_get_main_queue(), {
-            self.tours = self.api.getToursList()
+            self.tours = results
             self.discoverTableView!.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible
                 = false
         })
     }
     
-    func receivedRecentToursList(results: NSArray) {
-        spinner.hidden = true
-        spinner.stopAnimating()
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tours = self.api.getToursList()
-            self.discoverTableView!.reloadData()
-            UIApplication.sharedApplication().networkActivityIndicatorVisible
-                = false
-        })
-    }
-    
-    func receivedSearchToursList(results: NSArray) {
-        spinner.hidden = true
-        spinner.stopAnimating()
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tours = self.api.getToursList()
-            self.discoverTableView!.reloadData()
-            UIApplication.sharedApplication().networkActivityIndicatorVisible
-                = false
-        })
+    func receivedCategoriesList(results: [Tour]) {
+        // 
     }
     
     func loadLocations(objId: String, list: [Location]) {
@@ -107,15 +89,15 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("specificCategory") as! IndividualCategoryViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("specificTour") as! SpecificTourViewController
         navigationController?.pushViewController(vc, animated: true)
         
-        //Set the category title and pass it to the new view controller
-        tourCell = tours[indexPath.row].getName()
-        if tourCell == nil {
-            tourCell = ""
-        }
-        vc.navTitle = tourCell
+//        Set the category title and pass it to the new view controller
+//tourCell = tours[indexPath.row].getName()
+//        if tourCell == nil {
+//            tourCell = ""
+//        }
+        vc.tour = tours[indexPath.row]
     }
     
     /*
@@ -125,7 +107,14 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == "tourSelected" {
+            if let destination = segue.destinationViewController as? SpecificTourViewController {
+                if let tourIndex: Int = discoverTableView.indexPathForSelectedRow!.row {
+                    destination.tour = tours[tourIndex]
+                }
+            }
+        }
+    }*/
+    
 
 }
