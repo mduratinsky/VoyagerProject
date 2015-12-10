@@ -30,6 +30,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var name, street, city, zipcode, country: String!
     var tapLimit = 0
     var thoroughFareInfo: String! = "nothing"
+    var annotationLatitude: Double = 0.0
+    var annotationLongitude: Double = 0.0
+    
     
     weak var delegate: DataEnteredDelegate?
     
@@ -56,6 +59,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
         let destViewController = (segue.destinationViewController as! SingleLocationViewController)
         destViewController.locationText.text! = thoroughFareInfo
+        
+        destViewController.locationLatitude = annotationLatitude
+        destViewController.locationLongitude = annotationLongitude
+        
+        
+        print(annotationLongitude)
+        print(annotationLatitude)
+        
         //print("**************************************")
     }
 
@@ -92,6 +103,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             self.thoroughFareInfo = self.placeMark.thoroughfare! + ", " +
             self.placeMark.subLocality!
+            
+            self.annotationLatitude = tourAnnotation.coordinate.latitude
+            self.annotationLongitude = tourAnnotation.coordinate.longitude
             print(self.placeMark.addressDictionary)
         })
         tapLimit++

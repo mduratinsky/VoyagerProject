@@ -14,14 +14,32 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
     
     var api : ParseController!
     
+    
     var tourTitle : String = ""
     var tourDescription : String = ""
     var tourCategory : String = ""
+    var locationsHolder: [Location] = []
+    
+    
     
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //Add parse object
+        
+        print("******************")
+        print(tourTitle)
+        print(tourDescription)
+        print(tourCategory)
+        print(locationsHolder)
+        //print(PFUser()["id"])
+        print("******************")
+
+        
+        let tour = Tour(name: tourTitle, locations: locationsHolder, category: tourCategory, author: "Mike", description: tourDescription)
+        api.addTourByUserId(tour)
+        
+        print("A TOUR WAS ADDED!!!!!!!!!!!")
+        
     }
     
     override func viewDidLoad() {

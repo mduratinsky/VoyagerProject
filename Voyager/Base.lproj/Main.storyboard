@@ -279,7 +279,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tourCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="tourCell" rowHeight="76" id="1Eo-6T-qmM" customClass="TourTableViewCell" customModule="Voyager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="76"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Eo-6T-qmM" id="tIK-hj-kDv">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="75"/>
@@ -2151,7 +2151,7 @@
         <!--Review-->
         <scene sceneID="IQz-EO-4Ty">
             <objects>
-                <viewController id="2Pe-YS-7x8" sceneMemberID="viewController">
+                <viewController id="2Pe-YS-7x8" customClass="ConfirmTourViewController" customModule="Voyager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dYy-Fy-dAP"/>
                         <viewControllerLayoutGuide type="bottom" id="Pxk-OQ-ObZ"/>
@@ -2171,8 +2171,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="createEventButton:" destination="FfM-Gg-O6h" eventType="touchUpInside" id="ocP-6H-KIa"/>
-                                    <segue destination="gTd-wI-S3e" kind="show" id="IKQ-Kh-rM6"/>
+                                    <segue destination="Pfr-Ek-jXT" kind="show" id="O6D-dc-FZw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2188,7 +2187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1G7-Bk-Kit" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2726" y="198"/>
+            <point key="canvasLocation" x="2813" y="198"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bwC-tn-par">
@@ -2235,7 +2234,7 @@
         <image name="placeholder_scene.jpg" width="1280" height="800"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="O6D-dc-FZw"/>
         <segue reference="qdf-34-VB1"/>
-        <segue reference="IKQ-Kh-rM6"/>
     </inferredMetricsTieBreakers>
 </document>
