@@ -20,10 +20,13 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
     var myPosition = CLLocationCoordinate2D()
     var pinLocation = CLLocationCoordinate2D()
     var destination = MKMapItem()
-    var locationTitle: String = ""
-    var locationDescription: String = ""
     var writtenDirections: [String] = []
     var count: Int = 1
+    
+    var locationTitle: String = ""
+    var locationDescription: String = ""
+    var locationLatitude: Double = 0
+    var locationLongitude: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +51,23 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
         
         centerMapOnLocation(longitude, latitude: latitude)
         
-        pinLocation.longitude = -89.3956120
-        pinLocation.latitude = 43.0718120
+//        pinLocation.longitude = -89.3956120
+//        pinLocation.latitude = 43.0718120
+        
+        print(locationLongitude)
+        print(locationLatitude)
+        pinLocation.longitude = locationLongitude
+        pinLocation.latitude = locationLatitude
+
         addPin(pinLocation)
         
         drawDirections()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print(locationLongitude)
+        print(locationLatitude)
     }
     
     //MARK: - MapView

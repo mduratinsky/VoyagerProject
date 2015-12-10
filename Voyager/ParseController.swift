@@ -84,7 +84,7 @@ class ParseController {
                     tourObj.starts = tour["starts"] as! Int
                     tourObj.completes = tour["completes"] as! Int
                     tourObj.mDescription = (tour["description"] as! String)
-                    tourObj.mRating = (tour["rating"] as! NSString).integerValue
+                    tourObj.mRating = tour["rating"] as! Int
                 //tourObj["image"] = getImageAsParseFile(tour)
                     self.toursList.append(tourObj)
                     NSLog("\(self.logLabel) tour added = \(tourObj.getName())")
@@ -139,7 +139,7 @@ class ParseController {
                         tourObj.starts = tour["starts"] as! Int
                         tourObj.completes = tour["completes"] as! Int
                         tourObj.mDescription = (tour["description"] as! String)
-                        tourObj.mRating = (tour["rating"] as! NSString).integerValue
+                        tourObj.mRating = tour["rating"] as! Int
 //                      tourObj["image"] = getImageAsParseFile(tour)
                         self.searchList.append(tourObj)
                         NSLog("\(self.logLabel) search tour added = \(tourObj.getName())")
@@ -194,7 +194,7 @@ class ParseController {
                     tourObj.starts = tour["starts"] as! Int
                     tourObj.completes = tour["completes"] as! Int
                     tourObj.mDescription = (tour["description"] as! String)
-                    tourObj.mRating = (tour["rating"] as! NSString).integerValue
+                    tourObj.mRating = tour["rating"] as! Int
                     
                     self.recentList.append(tourObj)
                     NSLog("\(self.logLabel) recent tour added = \(tourObj.getName())")
@@ -349,6 +349,9 @@ class ParseController {
     
     func getTourIndexByObjectId(objId: String, list: [Tour]) -> Int? {
         //var i: Int = 0
+        if list.count == 0 {
+            return -1
+        }
         for i in 0...list.count-1 {
             if list[i].parseId == objId {
                 return i

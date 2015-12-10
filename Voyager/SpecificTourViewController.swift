@@ -39,6 +39,7 @@ class SpecificTourViewController: UIViewController {
         tourTitle.text = tour.getName()
         tourDescription.text = tour.getDescription()
         //4. Set the locations
+        
         //tourRating.text = tour.getRating()
         tourAuthor.text = tour.getAuthor()
         
@@ -48,8 +49,10 @@ class SpecificTourViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "startTour" {
-            let destination = segue.destinationViewController as? SpecificLocationViewController
-            destination?.locations = tour.getListOfLocations()
+            if let destination = segue.destinationViewController as? UINavigationController {
+                let destVC = destination.viewControllers.first as! SpecificLocationViewController
+                destVC.locations = self.tour.getListOfLocations()
+            }
         }
     }
 
