@@ -179,7 +179,7 @@ class ParseController {
         tourObj["completes"] = tour.completes
         tourObj["description"] = tour.mDescription
         tourObj["rating"] = tour.mRating
-        tourObj["image"] = getImageAsParseFile(tour)
+        //tourObj["image"] = getImageAsParseFile(tour)
         
         tourObj.saveInBackgroundWithBlock {
             (success: Bool,error: NSError?) -> Void in

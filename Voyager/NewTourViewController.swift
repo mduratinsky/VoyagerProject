@@ -21,6 +21,10 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
     @IBOutlet weak var tourCategory: MKTextField!
     
     override func viewDidLoad() {
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
         tourDescription.delegate = self
         tourName.placeholder = "Enter Tour Name"
         tourCategory.placeholder = "Enter Category Type"
@@ -125,11 +129,6 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         //let destViewController = (segue.destinationViewController as! AddingLocationController)
         //destViewController.locationLabelText = thoroughFareInfo
         
-    }
-    
-    override func viewDidLoad() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
     }
     
     //Calls this function when the tap is recognized.

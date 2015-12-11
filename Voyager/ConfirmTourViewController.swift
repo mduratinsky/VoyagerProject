@@ -53,6 +53,8 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
         
         
         //api.addTourByUserId(tour)
+        
+        tour.image = self.image
         api.addTourByUserId(tour)
         
         print("A TOUR WAS ADDED!!!!!!!!!!!")
