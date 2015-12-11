@@ -19,6 +19,7 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
     var tourDescription : String = ""
     var tourCategory : String = ""
     var locationsHolder: [Location] = []
+    var image : UIImage = UIImage(named: "placeholder_scene.png")!
     
     
     

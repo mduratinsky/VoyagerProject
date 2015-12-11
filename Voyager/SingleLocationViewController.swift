@@ -38,6 +38,7 @@ class SingleLocationViewController: UIViewController, UITextViewDelegate, UIImag
     
     var locationLongitude = 0.0
     var locationLatitude = 0.0
+    var passedImage : UIImage = UIImage(named: "placeholder_scene.png")!
     
     @IBAction func reset(sender: UIStoryboardSegue) {
         //Do something
@@ -53,6 +54,7 @@ class SingleLocationViewController: UIViewController, UITextViewDelegate, UIImag
             locationObj.mLatitude = locationLatitude
             locationObj.mLongitude = locationLongitude
             destViewController.locationsHolder.append(locationObj)
+            destViewController.passedImage = self.passedImage
             
             print(destViewController.numberOfLocations)
             print(destViewController.locationTitle)
@@ -110,6 +112,7 @@ class SingleLocationViewController: UIViewController, UITextViewDelegate, UIImag
         //Can Save the image here
         
         imageText.text = "Image Saved"
+        passedImage = image
         
 /*        if(imageFlag == 0) {
             //For testing

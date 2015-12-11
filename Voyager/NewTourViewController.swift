@@ -17,8 +17,16 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
     @IBOutlet weak var tourName: MKTextField!
     
     @IBOutlet weak var tourDescription: UITextView!
-
+    
     @IBOutlet weak var tourCategory: MKTextField!
+    
+    override func viewDidLoad() {
+        tourDescription.delegate = self
+        tourName.placeholder = "Enter Tour Name"
+        tourCategory.placeholder = "Enter Category Type"
+        tourDescription.text = "Enter tour description"
+        tourDescription.textColor = UIColor.lightGrayColor()
+    }
     
     /*** Parse Controller API Protocol Functions ***/
     func receivedToursList(results: [Tour]) {
@@ -36,7 +44,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
     func loadLocations(objId: String, list: [Location]) {
         //
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -89,29 +97,29 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         //1. Check to make sure the user has filled out all of the correct fields
         
         //2. Create the tour object
-       
+        
         /*
         if PFUser.currentUser() != nil {
-            
-            //Save the tour object
-            let tName = tourName.text!
-            let tDescription = tourDescription.text!
-            let tCategory = tourCategory.text!
-            let tour: Tour = Tour(name: tName, locations: [], category: tCategory, author: "Mike", description: tDescription)
-            
-            let list : [Tour] = parseController.findToursByKey("Category", value: "Test")
-            print(list)
-            
-            for tour in list {
-                print("you entered!")
-                print(tour.getName())
-            }
-            
-            parseController.addTourByUserId(tour)
-        } else {
-            print("error: Please login!")
+        
+        //Save the tour object
+        let tName = tourName.text!
+        let tDescription = tourDescription.text!
+        let tCategory = tourCategory.text!
+        let tour: Tour = Tour(name: tName, locations: [], category: tCategory, author: "Mike", description: tDescription)
+        
+        let list : [Tour] = parseController.findToursByKey("Category", value: "Test")
+        print(list)
+        
+        for tour in list {
+        print("you entered!")
+        print(tour.getName())
         }
-
+        
+        parseController.addTourByUserId(tour)
+        } else {
+        print("error: Please login!")
+        }
+        
         */
         //Send Data to next view
         //let destViewController = (segue.destinationViewController as! AddingLocationController)
