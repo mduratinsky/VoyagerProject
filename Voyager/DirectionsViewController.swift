@@ -70,6 +70,7 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
         print(locationLatitude)
     }
     
+    
     //MARK: - MapView
     
     func getUsersCurrentLocation() -> CLLocation {
