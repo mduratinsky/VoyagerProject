@@ -51,7 +51,18 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
     }
     
     func loadLocations(objId: String, list: [Location]) {
-        // Locations loaded
+        spinner.hidden = true
+        spinner.stopAnimating()
+        var i: Int = 0
+        i = api.getTourIndexByObjectId(objId, list: tours)!
+        var tour : Tour?
+        if i > -1 {
+            tour = api.getTourByIndex(i, list: tours)
+            tour!.mListOfLocations = list
+        }
+        discoverTableView.reloadData()
+        NSLog("DiscoverTableView: loadLocations = \(list.count)")
+
     }
 
     override func didReceiveMemoryWarning() {
