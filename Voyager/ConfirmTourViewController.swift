@@ -37,6 +37,10 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
         
         let tour = Tour(name: tourTitle, locations: locationsHolder, category: tourCategory, author: "Mike", description: tourDescription)
         
+        
+        //let image = UIImage(named: "placeholder.jpg")
+        //tour.image = image
+        
         print("******************")
         print(tour.getName())
         print(tour.getListOfLocations())
@@ -57,6 +61,17 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
     
     override func viewDidLoad() {
         //Do Something
+        /* Initialize API Control */
+        api = ParseController(delegate: self)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     /*** Parse Controller API Protocol Functions ***/
