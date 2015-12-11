@@ -66,6 +66,7 @@
 		90C4432A1BF14D67001A8749 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443271BF14D67001A8749 /* FBSDKLoginKit.framework */; };
 		90C4432B1BF14D67001A8749 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C443281BF14D67001A8749 /* FBSDKShareKit.framework */; };
 		90C7323D1BFFCC920051C5E3 /* ParseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7323C1BFFCC920051C5E3 /* ParseController.swift */; };
+		BD1047361C1B7BD700E7F531 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1047351C1B7BD700E7F531 /* DirectionsViewController.swift */; };
 		BD37A71B1BED4E5A00F92534 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37A71A1BED4E5900F92534 /* MapViewController.swift */; };
 		BD37A7211BED59DD00F92534 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD37A7201BED59DD00F92534 /* MapKit.framework */; };
 		BD45453A1BFE9BEB0017EE99 /* SingleMediaTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */; };
@@ -167,6 +168,7 @@
 		90C443271BF14D67001A8749 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		90C443281BF14D67001A8749 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		90C7323C1BFFCC920051C5E3 /* ParseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseController.swift; sourceTree = "<group>"; };
+		BD1047351C1B7BD700E7F531 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		BD37A71A1BED4E5900F92534 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BD37A7201BED59DD00F92534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BD4545391BFE9BEB0017EE99 /* SingleMediaTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleMediaTourViewController.swift; sourceTree = "<group>"; };
@@ -400,12 +402,11 @@
 		BD6E5FCD1C18D07F00AA50DC /* View Tour */ = {
 			isa = PBXGroup;
 			children = (
+				BD1047351C1B7BD700E7F531 /* DirectionsViewController.swift */,
 				BD6E5FD41C18D1D900AA50DC /* RateTourViewController.swift */,
 				BD6E5FBD1C18D00200AA50DC /* IndividualCategoryViewController.swift */,
 				BD6E5FD51C18D1D900AA50DC /* WrittenDirectionsTableViewController.swift */,
 				BD6E5FD21C18D1AA00AA50DC /* DirectionTableViewCell.swift */,
-				BD6E5FC31C18D06200AA50DC /* SpecificTourViewController.swift */,
-				BD6E5FD01C18D18600AA50DC /* DirectionsViewController.swift */,
 				BD6E5FC41C18D06200AA50DC /* TourTableViewCell.swift */,
 				BD6E5FC31C18D06200AA50DC /* SpecificTourViewController.swift */,
 				BD6E5FC21C18D06200AA50DC /* SpecificLocationViewController.swift */,
@@ -598,6 +599,7 @@
 				BD61A7FE1BEC481C0011ECA4 /* AddingLocationController.swift in Sources */,
 				BDCEDE721C14E02C0094002A /* NewTourViewController.swift in Sources */,
 				26513CC91BFAF113001DC6A6 /* MKTableViewCell.swift in Sources */,
+				BD1047361C1B7BD700E7F531 /* DirectionsViewController.swift in Sources */,
 				BD6E5FCA1C18D06200AA50DC /* SpecificTourViewController.swift in Sources */,
 				BD6E5FC61C18D06200AA50DC /* DiscoverTableViewCell.swift in Sources */,
 				BD6E5FCB1C18D06200AA50DC /* TourTableViewCell.swift in Sources */,
