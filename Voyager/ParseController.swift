@@ -70,7 +70,7 @@ class ParseController {
                     tourObj.completes = tour["completes"] as! Int
                     tourObj.mDescription = (tour["description"] as! String)
                     tourObj.mRating = tour["rating"] as! Int
-                    tourObj.image = self.getParseFileAsUIImage(tour)
+                    //tourObj.image = self.getParseFileAsUIImage(tour)
                     self.toursList.append(tourObj)
                     NSLog("\(self.logLabel) tour added = \(tourObj.getName())")
                 }

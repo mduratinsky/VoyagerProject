@@ -30,6 +30,8 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         tourCategory.placeholder = "Enter Category Type"
         tourDescription.text = "Enter tour description"
         tourDescription.textColor = UIColor.lightGrayColor()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     /*** Parse Controller API Protocol Functions ***/
