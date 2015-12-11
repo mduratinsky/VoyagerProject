@@ -227,10 +227,12 @@ class ParseController {
       *      Tour = the newly created tour to add to the database
       */
     func addTourByUserId (tour: Tour) -> Void {
-        
+        print("in add tour by user ID")
         let tourObj = PFObject(className: "Tour")
         var listOfLocations : [PFObject] = []
         tourObj["name"] = tour.mName
+        
+        print("Before the for loop")
         
         for location in tour.mListOfLocations {
             let locObj = PFObject(className: "Location")
@@ -240,6 +242,9 @@ class ParseController {
             listOfLocations.append(locObj)
         }
         
+        
+        
+        print("Past the  for loop")
         tourObj["listOfLocations"] = listOfLocations
         tourObj["category"] = tour.mCategory
         tourObj["ownerId"] = tour.mOwnerId
@@ -247,7 +252,7 @@ class ParseController {
         tourObj["starts"] = tour.starts
         tourObj["completes"] = tour.completes
         tourObj["description"] = tour.mDescription
-        tourObj["rating"] = tour.mRating
+        //tourObj["rating"] = tour.mRating
         //        tourObj["image"] = getImageAsParseFile(tour)
         
         tourObj["image"] = getImageAsParseFile(tour)
@@ -262,6 +267,24 @@ class ParseController {
         }
         //tourObj["comments"] = tour.mComments
     }
+    
+//    func addLocationByTour(loc: Location) -> [Location]{
+//        var locQuery = PFObject(className:"Location")
+//        locQuery.saveInBackgroundWithBlock {
+//            ( locs: [PFObject]?, error: NSError?) -> Void in
+//            if (error == nil) {
+//                for obj in locs! {
+//                    llocObj["name"] = location.mName
+//                    locObj["longitude"] = location.mLongitude
+//                    locObj["latitude"] = location.mLongitude
+//                    listOfLocations.append(locObj)
+//                }
+//            } else {
+//                // Log details of the failure
+//                NSLog("\(self.logLabel) Error: location", error!);
+//            }
+//        }
+//    }
     
     
     /***************************************************************************
