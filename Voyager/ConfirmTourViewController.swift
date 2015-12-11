@@ -31,9 +31,8 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
         print(tourDescription)
         print(tourCategory)
         print(locationsHolder)
-        //print(PFUser()["id"])
         print("******************")
-
+        
         
         let tour = Tour(name: tourTitle, locations: locationsHolder, category: tourCategory, author: "Mike", description: tourDescription)
         api.addTourByUserId(tour)
