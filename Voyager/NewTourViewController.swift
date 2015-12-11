@@ -26,6 +26,8 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         tourCategory.placeholder = "Enter Category Type"
         tourDescription.text = "Enter tour description"
         tourDescription.textColor = UIColor.lightGrayColor()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     /*** Parse Controller API Protocol Functions ***/
@@ -125,11 +127,6 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         //let destViewController = (segue.destinationViewController as! AddingLocationController)
         //destViewController.locationLabelText = thoroughFareInfo
         
-    }
-    
-    override func viewDidLoad() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
     }
     
     //Calls this function when the tap is recognized.

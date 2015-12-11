@@ -24,15 +24,13 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
     
     
     
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-//        print("******************")
-//        print(tourTitle)
-//        print(tourDescription)
-//        print(tourCategory)
-//        print(locationsHolder)
-//        print("******************")
+    @IBAction func createTour(sender: MKButton) {
+        //        print("******************")
+        //        print(tourTitle)
+        //        print(tourDescription)
+        //        print(tourCategory)
+        //        print(locationsHolder)
+        //        print("******************")
         
         
         let tour = Tour(name: tourTitle, locations: locationsHolder, category: tourCategory, author: "Mike", description: tourDescription)
@@ -57,6 +55,7 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
         
         print("A TOUR WAS ADDED!!!!!!!!!!!")
         
+        self.dismissViewControllerAnimated(true, completion: {})
     }
     
     override func viewDidLoad() {

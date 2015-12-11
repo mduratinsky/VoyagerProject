@@ -70,7 +70,7 @@ class ParseController {
                     tourObj.completes = tour["completes"] as! Int
                     tourObj.mDescription = (tour["description"] as! String)
                     tourObj.mRating = tour["rating"] as! Int
-                    tourObj.image = self.getParseFileAsUIImage(tour)
+                    //tourObj.image = self.getParseFileAsUIImage(tour)
                     self.toursList.append(tourObj)
                     NSLog("\(self.logLabel) tour added = \(tourObj.getName())")
                 }
@@ -179,7 +179,7 @@ class ParseController {
         tourObj["completes"] = tour.completes
         tourObj["description"] = tour.mDescription
         tourObj["rating"] = tour.mRating
-        tourObj["image"] = getImageAsParseFile(tour)
+        //tourObj["image"] = getImageAsParseFile(tour)
         
         tourObj.saveInBackgroundWithBlock {
             (success: Bool,error: NSError?) -> Void in
