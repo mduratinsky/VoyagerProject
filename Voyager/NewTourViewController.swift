@@ -12,7 +12,6 @@ import Parse
 
 class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, ParseAPIControllerProtocol {
     
-    //let parseController = ParseController()
     var api : ParseController!
     
     @IBOutlet weak var tourName: MKTextField!
@@ -22,7 +21,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
     @IBOutlet weak var tourCategory: MKTextField!
     
     /*** Parse Controller API Protocol Functions ***/
-    func receivedToursList(results: NSArray) {
+    func receivedToursList(results: [Tour]) {
         dispatch_async(dispatch_get_main_queue(), {
             // Now have data
             UIApplication.sharedApplication().networkActivityIndicatorVisible
@@ -30,27 +29,14 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         })
     }
     
-    func receivedRecentToursList(results: NSArray) {
+    func receivedCategoriesList(results: [Tour]) {
         // Now have data
     }
     
-    func receivedSearchToursList(results: NSArray) {
-        // Now have data
+    func loadLocations(objId: String, list: [Location]) {
+        //
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tourName.placeholder = "Enter tour name"
-        //tourName.textColor = UIColor.lightGrayColor()
-        
-        tourDescription.delegate = self
-        tourDescription.text = "Enter tour description"
-        tourDescription.textColor = UIColor.lightGrayColor()
-        
-        tourCategory.placeholder = "Enter Category"
-        // Do any additional setup after loading the view.
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

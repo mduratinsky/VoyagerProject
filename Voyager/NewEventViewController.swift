@@ -89,7 +89,7 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
     }
     
     /*** Parse Controller API Protocol Functions ***/
-    func receivedToursList(results: NSArray) {
+    func receivedToursList(results: [Tour]) {
         dispatch_async(dispatch_get_main_queue(), {
             // Now have data
             UIApplication.sharedApplication().networkActivityIndicatorVisible
@@ -97,12 +97,12 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
         })
     }
     
-    func receivedRecentToursList(results: NSArray) {
+    func receivedCategoriesList(results: [Tour]) {
         // Now have data
     }
     
-    func receivedSearchToursList(results: NSArray) {
-        // Now have data
+    func loadLocations(objId: String, list: [Location]) {
+        //
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,26 +139,7 @@ class NewEventViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         //2. Create the tour object
         
-        if PFUser.currentUser() != nil {
-        
-        //Save the tour object
-        let tName = tourName.text!
-        let tDescription = "Test Description"
-        let tour: Tour = Tour(name: tName, locations: [], category: "Test", author: "Test", description: tDescription)
-        
-        api.addTourByUserId(tour)
-        } else {
-            print("error: Please login!")
-        }
-        
-        let list : [Tour] = api.findToursBySearchValue("Category", value: "Test")
-        print(list)
-        
-        for tour in list {
-            print("you entered!")
-            print(tour.getName())
-        }
-        
+                
     }
     
     

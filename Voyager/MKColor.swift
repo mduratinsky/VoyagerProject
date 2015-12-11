@@ -37,5 +37,6 @@ extension UIColor {
         public static let Grey = UIColor(hex: 0x9E9E9E)
         public static let BlueGrey = UIColor(hex: 0x607D8B)
         public static let FacebookBlue = UIColor(hex: 0x3B5998)
+        public static let Gold = UIColor(hex: 0xFFD700)
     }
 }

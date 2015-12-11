@@ -12,17 +12,18 @@ class SpecificLocationViewController: UIViewController {
 
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var mapItButton: MKButton!
     
+    var tour: Tour = Tour()
     var locations: [Location] = []
+    var latitude: Double = 0
+    var longitude: Double = 0
     var currLocationIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Testing ----------------
-        locationTitle.text = "Nitty Gritty"
-        //locationTitle.text = locations[0].getName()
-        print(locations.count)
+        locations = tour.mListOfLocations
+        setScreen()
     }
 
     @IBAction func cancelButtonSelected(sender: UIBarButtonItem) {
@@ -30,6 +31,12 @@ class SpecificLocationViewController: UIViewController {
     }
     
     // MARK: - General Functions
+    
+    func setScreen() {
+        locationTitle.text = locations[currLocationIndex].getName()
+        latitude = locations[currLocationIndex].getLatitude()
+        longitude = locations[currLocationIndex].getLongitude()
+    }
     
     func cancelAlert() {
         let alert = UIAlertController(title: "Alert", message: "Are you sure you wish to cancel? Your current progress will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -43,16 +50,24 @@ class SpecificLocationViewController: UIViewController {
 
     }
     
+    @IBAction func backButtonSelected(sender: MKButton) {
+        if(currLocationIndex > 0 ) {
+            currLocationIndex--
+            setScreen()
+            return
+        }
+    }
+    
+    
     func goToNextLocation() {
         if (currLocationIndex + 1) >= locations.count {
             //Segue to the rating view
             self.performSegueWithIdentifier("ratingView", sender: nil)
         } else {
-            //Update the information for the new location
-            
+            currLocationIndex++
+            setScreen()
+            return
         }
-        
-        
         currLocationIndex++
     }
     
@@ -65,8 +80,12 @@ class SpecificLocationViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "mapLocation" {
-            let vc:DirectionsViewController = segue.destinationViewController as! DirectionsViewController
-            vc.locationTitle = self.locationTitle.text!
+            if let destination: DirectionsViewController = segue.destinationViewController as? DirectionsViewController {
+                print("true")
+                destination.locationTitle = self.locationTitle.text!
+                destination.locationLatitude = self.latitude
+                destination.locationLongitude = self.longitude
+            }
         }
     }
 

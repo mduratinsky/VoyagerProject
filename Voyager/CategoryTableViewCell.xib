@@ -59,7 +59,7 @@
                 <outlet property="categoryImage" destination="kdg-4A-GHY" id="HUK-Tq-dgo"/>
                 <outlet property="categoryTitle" destination="bml-vy-pys" id="cRK-oi-Fe7"/>
             </connections>
-            <point key="canvasLocation" x="447.5" y="248.5"/>
+            <point key="canvasLocation" x="422.5" y="248.5"/>
         </tableViewCell>
     </objects>
     <resources>
