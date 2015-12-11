@@ -39,16 +39,7 @@ ParseAPIControllerProtocol {
     /* MARK: - Parse controller protocol */
     
     func receivedToursList(results: [Tour]) {
-//        tableView.hidden = false
-//        loadingLabel.hidden = true
-//        spinner.hidden = true
-//        spinner.stopAnimating()
-//        dispatch_async(dispatch_get_main_queue(), {
-//            self.tours = self.api.getToursList()
-//            self.tableView!.reloadData()
-//            UIApplication.sharedApplication().networkActivityIndicatorVisible
-//                = false
-//        })
+        //For the protocol
     }
     
     func receivedCategoriesList(results: [Tour]) {

@@ -97,6 +97,7 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
 //        if tourCell == nil {
 //            tourCell = ""
 //        }
+        
         vc.tour = tours[indexPath.row]
     }
     
@@ -114,7 +115,7 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
                 }
             }
         }
-    }*/
-    
+    }
+    */
 
 }

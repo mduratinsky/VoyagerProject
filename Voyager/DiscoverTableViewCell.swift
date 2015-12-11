@@ -10,6 +10,7 @@ import Foundation
 
 class DiscoverTableViewCell: MKTableViewCell {
     
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var ratingLabel: UILabel!

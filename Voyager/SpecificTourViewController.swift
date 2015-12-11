@@ -31,6 +31,8 @@ class SpecificTourViewController: UIViewController, UITableViewDataSource, UITab
         scrollView.contentSize.height = 486
         scrollView.contentSize.width = self.view.frame.width
         
+        print(tour.getName())
+        
         //Set up the screen info
         setTourInfo()
         locations = tour.getListOfLocations()
