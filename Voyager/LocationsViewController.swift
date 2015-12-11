@@ -15,8 +15,22 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     var numberOfLocations = 0;
     var locationTitle: String = "nothing"
+    var locationsHolder: [Location] = []
     
+    var tourName: String = ""
+    var tourDescription: String = ""
+    var tourCategories: String = ""
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let destViewController = segue.destinationViewController as? ConfirmTourViewController {
+            destViewController.locationsHolder = self.locationsHolder
+            destViewController.tourTitle = self.tourName
+            destViewController.tourDescription = self.tourDescription
+            destViewController.tourCategory = self.tourCategories
+            
+        }
+    }
     
     override func viewDidLoad() {
         
@@ -42,7 +56,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     /* MARK: - Tableview */
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfLocations
+        return locationsHolder.count
         //return 20
     }
     
@@ -52,9 +66,9 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.rippleLocation = .TapLocation
         cell.rippleLayerColor = UIColor.MKColor.Grey
         
-        //title: String = tours![indexPath.row].getName()
+        let title: String = locationsHolder[indexPath.row].getName()
         
-        cell.setCell(locationTitle)
+        cell.setCell(title)
         
         return cell
     }

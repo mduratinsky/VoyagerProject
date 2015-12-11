@@ -31,8 +31,6 @@ class DiscoverViewController:  UIViewController, UITableViewDataSource, UITableV
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         discoverTableView.registerNib(UINib(nibName: "DiscoverTableViewCell", bundle: nil), forCellReuseIdentifier: "discoverCell")
-        
-        // Do any additional setup after loading the view.
     }
     
     func receivedToursList(results: [Tour]) {

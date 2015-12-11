@@ -144,6 +144,56 @@ class ParseController {
         return self.toursList
     }
     
+    /*
+     *  Returns searchList field
+     *  To be called in receivedRecentToursList
+     */
+    func getSearchedList() -> [Tour] {
+        NSLog("\(self.logLabel) # searchTours = \(self.toursList.count)")
+        return searchList
+    }
+
+    /*
+     * Returns list of most recent tours
+     *
+     * Parameters:
+     *      count = # of tours to return in the list
+     */
+    func findRecentTours() {
+        let query = PFQuery(className:"Tour")
+        var tourObj : Tour = Tour(name: "", locations: [], category: "", author: "", description: "")
+        query.limit = NUM_RECENT
+        query.orderByDescending("createdAt")
+        query.findObjectsInBackgroundWithBlock {
+            ( tours: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                for tour in tours! {
+                    tourObj = Tour(name: "", locations: [], category: "", author: "", description: "")
+                    tourObj.mOwnerId = tour["ownerId"] as! String
+                    tourObj.mName = tour["name"] as! String
+                    let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
+                    tourObj.mListOfLocations = self.parseTourLocations(list)
+                    tourObj.mCategory = tour["category"] as! String
+                    tourObj.views = tour["views"] as! Int
+                    tourObj.starts = tour["starts"] as! Int
+                    tourObj.completes = tour["completes"] as! Int
+                    tourObj.mDescription = (tour["description"] as! String)
+                    tourObj.mRating = tour["rating"] as! Int
+                    
+                    self.recentList.append(tourObj)
+                    NSLog("\(self.logLabel) recent tour added = \(tourObj.getName())")
+                }
+                
+                NSLog("\(self.logLabel) # recent tours added = \(self.recentList.count)")
+                if self.recentList.count > 0 {
+                    self.delegate.receivedRecentToursList(self.recentList)
+                }
+            } else {
+                // Log details of the failure
+                NSLog("\(self.logLabel) Error: recent tour", error!);
+            }
+        }
+    }
     
     /***************************************************************************
      *      Functions for Persisting to Parse (creating & updating Tours)
@@ -156,15 +206,20 @@ class ParseController {
       *      Tour = the newly created tour to add to the database
       */
     func addTourByUserId (tour: Tour) -> Void {
-        
+        print("in add tour by user ID")
         let tourObj = PFObject(className: "Tour")
         var listOfLocations : [PFObject] = []
         tourObj["name"] = tour.mName
+        
+        print("Before the for loop")
         
         for location in tour.mListOfLocations {
             listOfLocations.append(addTourLocation(location))
         }
         
+        
+        
+        print("Past the  for loop")
         tourObj["listOfLocations"] = listOfLocations
         tourObj["category"] = tour.mCategory
         tourObj["ownerId"] = tour.mOwnerId

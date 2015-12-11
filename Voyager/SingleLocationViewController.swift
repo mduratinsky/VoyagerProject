@@ -29,22 +29,48 @@ class SingleLocationViewController: UIViewController, UITextViewDelegate, UIImag
     @IBOutlet weak var imageText: UILabel!
     //@IBOutlet weak var imageText: UILabel!
     
+    var locationObj = Location(name: "", longitude: 0.0, latitude: 0.0)
+    
     var locationLabelText = String()
     var locationFlag = 0
     var imageFlag = 0
     var coords: CLLocationCoordinate2D?
+    
+    var locationLongitude = 0.0
+    var locationLatitude = 0.0
     
     @IBAction func reset(sender: UIStoryboardSegue) {
         //Do something
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destViewController = (segue.destinationViewController as! LocationsViewController)
-        destViewController.numberOfLocations = destViewController.numberOfLocations + 1
-        destViewController.locationTitle = locationName.text!
         
-        print(destViewController.numberOfLocations)
-        print(destViewController.locationTitle)
+        
+        if let destViewController = segue.destinationViewController as? LocationsViewController {
+            destViewController.numberOfLocations = destViewController.numberOfLocations + 1
+            destViewController.locationTitle = locationName.text!
+            locationObj.mName = locationName.text!
+            locationObj.mLatitude = locationLatitude
+            locationObj.mLongitude = locationLongitude
+            destViewController.locationsHolder.append(locationObj)
+            
+            print(destViewController.numberOfLocations)
+            print(destViewController.locationTitle)
+        }
+        
+        
+//        let destViewController = (segue.destinationViewController as! LocationsViewController)
+//        if(segue.destinationViewController == destViewController) {
+//        destViewController.numberOfLocations = destViewController.numberOfLocations + 1
+//        destViewController.locationTitle = locationName.text!
+//        locationObj.mName = locationName.text!
+//        locationObj.mLatitude = locationLatitude
+//        locationObj.mLongitude = locationLongitude
+//        destViewController.locationsHolder.append(locationObj)
+//        
+//        print(destViewController.numberOfLocations)
+//        print(destViewController.locationTitle)
+//        
         
     }
     

@@ -76,6 +76,16 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let destViewController = segue.destinationViewController as? LocationsViewController {
+            destViewController.tourName = self.tourName.text!
+            destViewController.tourDescription = self.tourDescription.text!
+            destViewController.tourCategories = self.tourCategory.text!
+        }
+        
+        
+        
+        
         //1. Check to make sure the user has filled out all of the correct fields
         
         //2. Create the tour object
