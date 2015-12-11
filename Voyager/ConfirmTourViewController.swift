@@ -36,6 +36,10 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
         
         let tour = Tour(name: tourTitle, locations: locationsHolder, category: tourCategory, author: "Mike", description: tourDescription)
         
+        
+        //let image = UIImage(named: "placeholder.jpg")
+        //tour.image = image
+        
         print("******************")
         print(tour.getName())
         print(tour.getListOfLocations())
@@ -56,6 +60,9 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
     
     override func viewDidLoad() {
         //Do Something
+        /* Initialize API Control */
+        api = ParseController(delegate: self)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     
     /*** Parse Controller API Protocol Functions ***/

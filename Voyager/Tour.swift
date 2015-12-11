@@ -35,6 +35,7 @@ class Tour {
         mCategory = category
         mOwnerId = author
         mDescription = description
+        mComments = []
     }
     
     func getName() -> String {

@@ -163,10 +163,12 @@ class ParseController {
         print("Before the for loop")
         
         for location in tour.mListOfLocations {
-            listOfLocations.append(addTourLocation(location))
+            let locObj = PFObject(className: "Location")
+            locObj["name"] = location.mName
+            locObj["longitude"] = location.mLongitude
+            locObj["latitude"] = location.mLatitude
+            listOfLocations.append(locObj)
         }
-        
-        
         
         print("Past the  for loop")
         tourObj["listOfLocations"] = listOfLocations
@@ -188,26 +190,6 @@ class ParseController {
             }
         }
         //tourObj["comments"] = tour.mComments
-    }
-    
-    func addTourLocation(loc: Location) -> PFObject {
-        var locObj = Location(name: "",longitude: 0.0,latitude: 0.0)
-        let locQuery = PFObject(className:"Location")
-        locQuery["name"] = loc.getName()
-        locQuery["longitude"] = loc.mLongitude
-        locQuery["latitude"] = loc.mLongitude
-        locQuery.saveInBackgroundWithBlock {
-            (success: Bool,error: NSError?) -> Void in
-            if (success) {
-                NSLog("\(self.logLabel) location persisted = \(locObj.getName())")
-                
-            } else {
-                // Log details of the failure
-                NSLog("\(self.logLabel) Error: location", error!);
-            }
-        }
-        //NSLog("\(self.logLabel) total locations added = \(listOfLocations)")
-        return locQuery
     }
 
     
