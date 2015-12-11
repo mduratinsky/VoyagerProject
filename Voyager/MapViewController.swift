@@ -194,7 +194,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         var tap = UITapGestureRecognizer(target: self, action: "removeAnnotation:")
         tap.numberOfTapsRequired = 1
         mapView.addGestureRecognizer(tap)
- 
     }
     
     func removeAnnotation(gesture: UIGestureRecognizer) {
