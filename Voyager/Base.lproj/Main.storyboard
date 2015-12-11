@@ -612,21 +612,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGJ-hs-m2C" customClass="MKButton" customModule="Voyager" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="KvE-Vt-OL3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButtonSelected:" destination="m4d-ZB-2Yi" eventType="touchUpInside" id="x17-fh-Sly"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arts_updated (3).jpg" translatesAutoresizingMaskIntoConstraints="NO" id="exO-UN-F3C">
                                 <rect key="frame" x="0.0" y="64" width="600" height="200"/>
                                 <animations/>
@@ -641,10 +626,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWp-nn-KyH">
-                                <rect key="frame" x="279" y="491" width="43" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWp-nn-KyH" customClass="MKButton" customModule="Voyager" customModuleProvider="target">
+                                <rect key="frame" x="191" y="491" width="219" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Map it"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="fyf-4f-NSw"/>
+                                </constraints>
+                                <state key="normal" title="Map it">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="PG2-fE-7mf" kind="show" identifier="mapLocation" id="8QV-a1-7iV"/>
                                 </connections>
@@ -660,6 +650,38 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EJK-oN-n40">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd7-7L-j4o" customClass="MKButton" customModule="Voyager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.12549019610000001" green="0.52156862749999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonSelected:" destination="m4d-ZB-2Yi" eventType="touchUpInside" id="Ye5-LB-HI3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGJ-hs-m2C" customClass="MKButton" customModule="Voyager" customModuleProvider="target">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="50"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextButtonSelected:" destination="m4d-ZB-2Yi" eventType="touchUpInside" id="x17-fh-Sly"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qw1-aS-2oL"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -667,17 +689,17 @@
                             <constraint firstItem="wWp-nn-KyH" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="1nl-fi-Xn1"/>
                             <constraint firstItem="x8H-iP-H1Y" firstAttribute="top" secondItem="3YT-cT-guR" secondAttribute="bottom" constant="8" id="4Ex-Ht-HdX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="exO-UN-F3C" secondAttribute="trailing" constant="-20" id="7Tk-A8-VtY"/>
-                            <constraint firstItem="bGJ-hs-m2C" firstAttribute="leading" secondItem="ryD-2f-ylF" secondAttribute="leadingMargin" constant="-20" id="Awn-4Z-bbc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="x8H-iP-H1Y" secondAttribute="leading" id="HUD-bf-lsG"/>
+                            <constraint firstItem="EJK-oN-n40" firstAttribute="leading" secondItem="ryD-2f-ylF" secondAttribute="leadingMargin" constant="-20" id="J0a-HR-YIa"/>
                             <constraint firstItem="3YT-cT-guR" firstAttribute="centerY" secondItem="ryD-2f-ylF" secondAttribute="centerY" id="Jr4-1S-f8S"/>
                             <constraint firstItem="exO-UN-F3C" firstAttribute="top" secondItem="AFd-Yd-1oV" secondAttribute="bottom" id="KPb-I0-GPN"/>
                             <constraint firstItem="exO-UN-F3C" firstAttribute="leading" secondItem="ryD-2f-ylF" secondAttribute="leadingMargin" constant="-20" id="M11-eK-EUy"/>
                             <constraint firstItem="wWp-nn-KyH" firstAttribute="top" secondItem="x8H-iP-H1Y" secondAttribute="bottom" constant="29" id="PhF-wn-QQb"/>
-                            <constraint firstItem="QHy-dT-RRX" firstAttribute="top" secondItem="bGJ-hs-m2C" secondAttribute="bottom" id="ed9-He-Acz"/>
+                            <constraint firstItem="QHy-dT-RRX" firstAttribute="top" secondItem="EJK-oN-n40" secondAttribute="bottom" id="RX0-6N-ewR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EJK-oN-n40" secondAttribute="trailing" constant="-20" id="X2v-gj-SVu"/>
                             <constraint firstItem="3YT-cT-guR" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="h0u-2g-Chq"/>
                             <constraint firstItem="3YT-cT-guR" firstAttribute="top" secondItem="exO-UN-F3C" secondAttribute="bottom" constant="10" id="lar-gv-00h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="x8H-iP-H1Y" secondAttribute="trailing" id="paz-tv-OgD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bGJ-hs-m2C" secondAttribute="trailing" constant="-20" id="wqo-ze-lhf"/>
                             <constraint firstItem="x8H-iP-H1Y" firstAttribute="centerX" secondItem="ryD-2f-ylF" secondAttribute="centerX" id="xaF-jZ-8wr"/>
                         </constraints>
                     </view>
@@ -693,6 +715,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="vi3-Eq-AdE" id="lam-mg-1uj"/>
                         <outlet property="locationTitle" destination="3YT-cT-guR" id="yeq-FU-4p0"/>
+                        <outlet property="mapItButton" destination="wWp-nn-KyH" id="tzO-Jg-ylB"/>
                         <segue destination="T9d-kA-aBd" kind="show" identifier="ratingView" id="kUN-d6-KDB"/>
                     </connections>
                 </viewController>

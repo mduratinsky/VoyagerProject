@@ -12,6 +12,7 @@ class SpecificLocationViewController: UIViewController {
 
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var mapItButton: MKButton!
     
     var tour: Tour = Tour()
     var locations: [Location] = []
@@ -48,6 +49,15 @@ class SpecificLocationViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
 
     }
+    
+    @IBAction func backButtonSelected(sender: MKButton) {
+        if(currLocationIndex > 0 ) {
+            currLocationIndex--
+            setScreen()
+            return
+        }
+    }
+    
     
     func goToNextLocation() {
         if (currLocationIndex + 1) >= locations.count {
