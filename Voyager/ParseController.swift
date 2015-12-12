@@ -61,9 +61,9 @@ class ParseController {
                     tourObj = Tour(name: "", locations: [], category: "", author: "", description: "")
                     tourObj.mOwnerId = tour["ownerId"] as! String
                     tourObj.mName = tour["name"] as! String
-                    tourObj.parseId = tour.objectId! as String
+                    tourObj.objectId = tour.objectId! as String
                     let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                    tourObj.mListOfLocations = self.parseTourLocations(tourObj.parseId, list: list)
+                    tourObj.mListOfLocations = self.parseTourLocations(tourObj.objectId, list: list)
                     tourObj.mCategory = tour["category"] as! String
                     tourObj.views = tour["views"] as! Int
                     tourObj.starts = tour["starts"] as! Int
@@ -74,12 +74,8 @@ class ParseController {
                     self.toursList.append(tourObj)
                     NSLog("\(self.logLabel) tour added = \(tourObj.getName())")
                 }
-                
                 NSLog("\(self.logLabel) # tours added = \(self.toursList.count)")
-                if self.toursList.count > 0 {
-                    self.delegate.receivedToursList(self.toursList)
-                }
-
+                self.delegate.receivedToursList(self.toursList)
             } else {
                 // Log details of the failure
                 NSLog("\(self.logLabel) loadTours: Error: ", error!);
@@ -117,9 +113,9 @@ class ParseController {
                         tourObj = Tour(name: "", locations: [], category: "", author: "", description: "")
                         tourObj.mOwnerId = tour["ownerId"] as! String
                         tourObj.mName = tour["name"] as! String
-                        tourObj.parseId = tour.objectId! as String
+                        tourObj.objectId = tour.objectId! as String
                         let list: [PFObject] = tour["listOfLocations"] as! [PFObject]
-                        tourObj.mListOfLocations = self.parseTourLocations(tourObj.parseId, list: list)
+                        tourObj.mListOfLocations = self.parseTourLocations(tourObj.objectId, list: list)
                         tourObj.mCategory = tour["category"] as! String
                         tourObj.views = tour["views"] as! Int
                         tourObj.starts = tour["starts"] as! Int
@@ -130,15 +126,10 @@ class ParseController {
                         searchList.append(tourObj)
                         NSLog("\(self.logLabel) search tour added = \(tourObj.getName())")
                     }
-                    
-                    NSLog("\(self.logLabel) # search tours added = \(searchList.count)")
-                    if searchList.count > 0 {
-                        self.delegate.receivedCategoriesList(searchList)
-                    }
-                    
+                    self.delegate.receivedCategoriesList(searchList)
                 } else {
                     // Log details of the failure
-                    NSLog("\(self.logLabel) findToursBySearchValue: Error: ", error!);
+                    NSLog("\(self.logLabel) findCategoriesList: Error: ", error!);
             }
         }
         return self.toursList
@@ -167,6 +158,14 @@ class ParseController {
             locObj["name"] = location.mName
             locObj["longitude"] = location.mLongitude
             locObj["latitude"] = location.mLatitude
+            locObj["description"] = location.mDescription
+            locObj["index"] = location.mIndex
+            if tourObj.objectId == nil {
+                NSLog("\(self.logLabel) addTour: objectId is nil")
+            } else {
+                locObj["tourId"] = tourObj.objectId
+            }
+            
             listOfLocations.append(locObj)
         }
         
@@ -184,7 +183,26 @@ class ParseController {
         tourObj.saveInBackgroundWithBlock {
             (success: Bool,error: NSError?) -> Void in
             if success == true {
+                var locations = tourObj["listOfLocations"]
+                var tourLocs = tour.getListOfLocations()
+                
+                for i in 0...locations.count-1 {
+                    var query = PFQuery(className:"Location")
+                    query.getObjectInBackgroundWithId((locations[i].objectId?!)!) {
+                        (loc: PFObject?, error: NSError?) -> Void in
+                        if error != nil {
+                            print(error)
+                        } else if let loc = loc {
+                            loc["tourId"] = tourObj.objectId
+                            loc.saveInBackground()
+                        }
+                    }
+                    tourLocs[i].mTourId = tourObj.objectId!
+                }
+                tour.objectId = tourObj.objectId!
+                self.toursList.append(tour)
                 print("Tour created with ID: \(tourObj.objectId)")
+                
             } else {
                 print(error)
             }
@@ -248,29 +266,39 @@ class ParseController {
      * parses it into Location objects and returns the list of them.
      *
      * Parameters:
+     *      tourId = the tour object id that the locations correspond to
      *      list = list of objects from Parse database to transfer into this app
      */
-    func parseTourLocations(objId: String, list: [PFObject]) -> [Location] {
-        var locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
+    func parseTourLocations(tourId: String, list: [PFObject]) -> [Location] {
+        var locationObj = Location(name: "",longitude: 0.0,latitude: 0.0, des: "", tourId: "", ind: 0)
         var listOfLocations : [Location] = []
         let locQuery = PFQuery(className:"Location")
         locQuery.limit = list.count  // Default is 100, if not specified
+        locQuery.whereKey("tourId", equalTo: tourId)
         locQuery.findObjectsInBackgroundWithBlock {
             ( locs: [PFObject]?, error: NSError?) -> Void in
             if (error == nil) {
                 for obj in locs! {
-                    locationObj = Location(name: "",longitude: 0.0,latitude: 0.0)
+                    locationObj = Location(name: "",longitude: 0.0,latitude: 0.0, des: "", tourId: "", ind: 0)
                     locationObj.mName = obj["name"] as! String
                     locationObj.mLatitude = obj["latitude"] as! Double
                     locationObj.mLongitude = obj["longitude"] as! Double
+                    if obj["description"] != nil {
+                        locationObj.mDescription = obj["description"] as! String
+                    } else {
+                        locationObj.mDescription = ""
+                    }
+                    locationObj.mTourId = obj["tourId"] as! String
+                    locationObj.mIndex = obj["index"] as! Int
                     listOfLocations.append(locationObj)
                 }
+                listOfLocations.sortInPlace({ $0.mIndex < $1.mIndex })
                 NSLog("\(self.logLabel) locations added = \(listOfLocations.count)")
                 NSLog("\(self.logLabel) total locations added = \(listOfLocations)")
                 if listOfLocations.count > 0 {
-                    self.delegate.loadLocations(objId, list: listOfLocations)
+                    self.delegate.loadLocations(tourId, list: listOfLocations)
                 } else {
-                    self.delegate.loadLocations(objId, list: [])
+                    self.delegate.loadLocations(tourId, list: [])
                 }
             } else {
                 // Log details of the failure
@@ -289,7 +317,7 @@ class ParseController {
             return -1
         }
         for i in 0...list.count-1 {
-            if list[i].parseId == objId {
+            if list[i].objectId == objId {
                 return i
             }
         }
