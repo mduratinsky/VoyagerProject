@@ -10,11 +10,15 @@ import Foundation
 
 class Location {
     //Mandatory attributes
-    var mName: String
-    var mLongitude: Double
-    var mLatitude: Double
-    //var image: UIImage? = UIImage(named: "placeholder_scene.jpg")
+    var mName       : String
+    var mLongitude  : Double
+    var mLatitude   : Double
+    var mDescription: String
+    var mTourId     : String
+    var mIndex      : Int
+    
     //Optional attributes
+    
     
     init(name: String, longitude: Double, latitude: Double, des: String, tourId: String, ind: Int) {
         mName = name
