@@ -14,7 +14,7 @@ class Tour {
     var userId: String = ""
     var mName: String = ""
     var mListOfLocations: [Location] = []
-    var parseId : String = ""
+    var objectId : String = ""      // Object ID as given in Parse
     var mCategory: String = ""
     var mOwnerId: String = ""
     var image: UIImage?

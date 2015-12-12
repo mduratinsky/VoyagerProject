@@ -29,7 +29,7 @@ class SingleLocationViewController: UIViewController, UITextViewDelegate, UIImag
     @IBOutlet weak var imageText: UILabel!
     //@IBOutlet weak var imageText: UILabel!
     
-    var locationObj = Location(name: "", longitude: 0.0, latitude: 0.0)
+    var locationObj = Location(name: "", longitude: 0.0, latitude: 0.0, tourId: "", ind: 0)
     
     var locationLabelText = String()
     var locationFlag = 0
@@ -53,7 +53,9 @@ class SingleLocationViewController: UIViewController, UITextViewDelegate, UIImag
             locationObj.mName = locationName.text!
             locationObj.mLatitude = locationLatitude
             locationObj.mLongitude = locationLongitude
+            locationObj.mIndex = destViewController.locationsHolder.count
             destViewController.locationsHolder.append(locationObj)
+            
             destViewController.passedImage = self.passedImage
             
             print(destViewController.numberOfLocations)

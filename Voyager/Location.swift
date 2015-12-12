@@ -10,16 +10,20 @@ import Foundation
 
 class Location {
     //Mandatory attributes
-    var mName: String
-    var mLongitude: Double
-    var mLatitude: Double
+    var mName       : String
+    var mLongitude  : Double
+    var mLatitude   : Double
+    var mTourId     : String
+    var mIndex      : Int
     
     //Optional attributes
     
-    init(name: String, longitude: Double, latitude: Double) {
+    init(name: String, longitude: Double, latitude: Double, tourId: String, ind: Int) {
         mName = name
         mLongitude = longitude
         mLatitude = latitude
+        mTourId = tourId
+        mIndex = ind
     }
 
     func getName() -> String {
@@ -44,5 +48,21 @@ class Location {
     
     func setLatitude(latitude: Double) {
         mLatitude = latitude
+    }
+    
+    func getTourId() -> String {
+        return mTourId
+    }
+    
+    func setTourId(str: String) {
+        mTourId = str
+    }
+    
+    func getIndex() -> Int {
+        return mIndex
+    }
+    
+    func setIndex(ind: Int) {
+        mIndex = ind
     }
 }
