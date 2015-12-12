@@ -23,7 +23,7 @@ class ConfirmTourViewController: UIViewController, UITableViewDelegate, UITableV
     var tourDescription : String = ""
     var tourCategory : String = ""
     var locationsHolder: [Location] = []
-    var image : UIImage = UIImage(named: "placeholder_scene.png")!
+    var image : UIImage = UIImage(named: "placeholder_scene.jpg")!
     
     
     

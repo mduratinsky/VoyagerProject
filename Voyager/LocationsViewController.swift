@@ -20,7 +20,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     var tourName: String = ""
     var tourDescription: String = ""
     var tourCategories: String = ""
-    var passedImage : UIImage = UIImage(named: "placeholder_scene.png")!
+    var passedImage : UIImage = UIImage(named: "placeholder_scene.jpg")!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
