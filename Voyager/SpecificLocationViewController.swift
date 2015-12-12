@@ -10,6 +10,7 @@ import UIKit
 
 class SpecificLocationViewController: UIViewController {
 
+    @IBOutlet weak var locationDescription: UITextView!
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var mapItButton: MKButton!
@@ -34,6 +35,7 @@ class SpecificLocationViewController: UIViewController {
     
     func setScreen() {
         locationTitle.text = locations[currLocationIndex].getName()
+        locationDescription.text = locations[currLocationIndex].getDescription()
         latitude = locations[currLocationIndex].getLatitude()
         longitude = locations[currLocationIndex].getLongitude()
     }

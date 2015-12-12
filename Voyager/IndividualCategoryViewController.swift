@@ -43,6 +43,7 @@ ParseAPIControllerProtocol {
     }
     
     func receivedCategoriesList(results: [Tour]) {
+        NSLog("IndividualCategoryView: receivedCategoriesList = \(results.count)")
         tours = results 
         tableView.reloadData()
         tableView.hidden = false
@@ -60,7 +61,7 @@ ParseAPIControllerProtocol {
             tour!.mListOfLocations = list
         }
         tableView.reloadData()
-        NSLog("IndividualCategoryView: loadLocations = \(list.count)")
+        //NSLog("IndividualCategoryView: loadLocations = \(list.count)")
         
     }
     

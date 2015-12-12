@@ -74,12 +74,8 @@ class ParseController {
                     self.toursList.append(tourObj)
                     NSLog("\(self.logLabel) tour added = \(tourObj.getName())")
                 }
-                
                 NSLog("\(self.logLabel) # tours added = \(self.toursList.count)")
-                if self.toursList.count > 0 {
-                    self.delegate.receivedToursList(self.toursList)
-                }
-
+                self.delegate.receivedToursList(self.toursList)
             } else {
                 // Log details of the failure
                 NSLog("\(self.logLabel) loadTours: Error: ", error!);
@@ -130,15 +126,10 @@ class ParseController {
                         searchList.append(tourObj)
                         NSLog("\(self.logLabel) search tour added = \(tourObj.getName())")
                     }
-                    
-                    NSLog("\(self.logLabel) # search tours added = \(searchList.count)")
-                    if searchList.count > 0 {
-                        self.delegate.receivedCategoriesList(searchList)
-                    }
-                    
+                    self.delegate.receivedCategoriesList(searchList)
                 } else {
                     // Log details of the failure
-                    NSLog("\(self.logLabel) findToursBySearchValue: Error: ", error!);
+                    NSLog("\(self.logLabel) findCategoriesList: Error: ", error!);
             }
         }
         return self.toursList
@@ -167,6 +158,7 @@ class ParseController {
             locObj["name"] = location.mName
             locObj["longitude"] = location.mLongitude
             locObj["latitude"] = location.mLatitude
+            locObj["description"] = location.mDescription
             locObj["index"] = location.mIndex
             if tourObj.objectId == nil {
                 NSLog("\(self.logLabel) addTour: objectId is nil")
@@ -274,7 +266,7 @@ class ParseController {
      *      list = list of objects from Parse database to transfer into this app
      */
     func parseTourLocations(tourId: String, list: [PFObject]) -> [Location] {
-        var locationObj = Location(name: "",longitude: 0.0,latitude: 0.0, tourId: "", ind: 0)
+        var locationObj = Location(name: "",longitude: 0.0,latitude: 0.0, des: "", tourId: "", ind: 0)
         var listOfLocations : [Location] = []
         let locQuery = PFQuery(className:"Location")
         locQuery.limit = list.count  // Default is 100, if not specified
@@ -283,10 +275,15 @@ class ParseController {
             ( locs: [PFObject]?, error: NSError?) -> Void in
             if (error == nil) {
                 for obj in locs! {
-                    locationObj = Location(name: "",longitude: 0.0,latitude: 0.0, tourId: "", ind: 0)
+                    locationObj = Location(name: "",longitude: 0.0,latitude: 0.0, des: "", tourId: "", ind: 0)
                     locationObj.mName = obj["name"] as! String
                     locationObj.mLatitude = obj["latitude"] as! Double
                     locationObj.mLongitude = obj["longitude"] as! Double
+                    if obj["description"] != nil {
+                        locationObj.mDescription = obj["description"] as! String
+                    } else {
+                        locationObj.mDescription = ""
+                    }
                     locationObj.mTourId = obj["tourId"] as! String
                     locationObj.mIndex = obj["index"] as! Int
                     listOfLocations.append(locationObj)

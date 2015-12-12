@@ -13,15 +13,17 @@ class Location {
     var mName       : String
     var mLongitude  : Double
     var mLatitude   : Double
+    var mDescription: String
     var mTourId     : String
     var mIndex      : Int
     
     //Optional attributes
     
-    init(name: String, longitude: Double, latitude: Double, tourId: String, ind: Int) {
+    init(name: String, longitude: Double, latitude: Double, des: String, tourId: String, ind: Int) {
         mName = name
         mLongitude = longitude
         mLatitude = latitude
+        mDescription = des
         mTourId = tourId
         mIndex = ind
     }
@@ -50,6 +52,14 @@ class Location {
         mLatitude = latitude
     }
     
+    func getDescription() -> String {
+        return mDescription
+    }
+    
+    func setDescription(des: String) {
+        mDescription = des
+    }
+    
     func getTourId() -> String {
         return mTourId
     }
@@ -65,4 +75,5 @@ class Location {
     func setIndex(ind: Int) {
         mIndex = ind
     }
+    
 }
