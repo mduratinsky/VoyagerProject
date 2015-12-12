@@ -161,7 +161,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         
         imageText.text = "Image Saved"
         passedImage = image
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
