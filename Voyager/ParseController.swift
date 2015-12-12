@@ -125,8 +125,8 @@ class ParseController {
                         tourObj.starts = tour["starts"] as! Int
                         tourObj.completes = tour["completes"] as! Int
                         tourObj.mDescription = (tour["description"] as! String)
+                        tourObj.image = self.getParseFileAsUIImage(tour)
                         tourObj.mRating = tour["rating"] as! Int
-//                      tourObj["image"] = getImageAsParseFile(tour)
                         searchList.append(tourObj)
                         NSLog("\(self.logLabel) search tour added = \(tourObj.getName())")
                     }
@@ -179,7 +179,7 @@ class ParseController {
         tourObj["completes"] = tour.completes
         tourObj["description"] = tour.mDescription
         tourObj["rating"] = tour.mRating
-        //tourObj["image"] = getImageAsParseFile(tour)
+        tourObj["image"] = getImageAsParseFile(tour.image)
         
         tourObj.saveInBackgroundWithBlock {
             (success: Bool,error: NSError?) -> Void in
@@ -203,9 +203,9 @@ class ParseController {
       * Parameters:
       *      Tour = tour to get the image file from
       */
-    func getImageAsParseFile(tour: Tour) -> PFFile? {
-        if tour.image != nil {
-            let data = UIImageJPEGRepresentation(tour.image!, 1.0)
+    func getImageAsParseFile(image: UIImage?) -> PFFile? {
+        if image != nil {
+            let data = UIImageJPEGRepresentation(image!, 1.0)
             return PFFile(data: data!)
         } else {
             print("error in reading image")
@@ -214,9 +214,13 @@ class ParseController {
     }
     
     func getParseFileAsUIImage(tour : PFObject) -> UIImage? {
-        let image = tour["image"] as! PFFile
-        let uiimg = try! image.getData()
-        return UIImage(data: uiimg)
+        if tour["image"] != nil {
+            let image = tour["image"] as! PFFile
+            let uiimg = try! image.getData()
+            return UIImage(data: uiimg)
+        } else {
+            return UIImage(named: "placeholder_scene.jpg")
+        }
         
     }
     /*func getImageAsParseFile(tour: PFObject) -> UIImage? {

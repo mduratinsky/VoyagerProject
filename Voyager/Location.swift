@@ -13,7 +13,7 @@ class Location {
     var mName: String
     var mLongitude: Double
     var mLatitude: Double
-    
+    //var image: UIImage? = UIImage(named: "placeholder_scene.jpg")
     //Optional attributes
     
     init(name: String, longitude: Double, latitude: Double) {

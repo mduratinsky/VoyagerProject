@@ -38,7 +38,7 @@ class SingleLocationViewController: UIViewController, UITextViewDelegate, UIImag
     
     var locationLongitude = 0.0
     var locationLatitude = 0.0
-    var passedImage : UIImage = UIImage(named: "placeholder_scene.png")!
+    var passedImage : UIImage = UIImage(named: "placeholder_scene.jpg")!
     
     @IBAction func reset(sender: UIStoryboardSegue) {
         //Do something

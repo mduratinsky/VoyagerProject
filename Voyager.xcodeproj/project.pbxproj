@@ -146,7 +146,7 @@
 		8402E3352D099E38D2425AB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		901E79531BFABC8B00B20149 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = placeholder.jpg; path = Voyager/placeholder.jpg; sourceTree = "<group>"; };
 		908278231BEEBB2800DFB52F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		90AABB571C143842002DF353 /* placeholder_scene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder_scene.jpg; sourceTree = "<group>"; };
+		90AABB571C143842002DF353 /* placeholder_scene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = placeholder_scene.jpg; path = Voyager/placeholder_scene.jpg; sourceTree = "<group>"; };
 		90C442FD1BEEE8A3001A8749 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		90C442FF1BEEE8B3001A8749 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		90C443011BEEE96D001A8749 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -294,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				26B96D081C179FAC00671D39 /* sports.png */,
-				90AABB571C143842002DF353 /* placeholder_scene.jpg */,
 				26B96D021C17970A00671D39 /* VoyagerIcon-new-58.png */,
 				26B96D031C17970A00671D39 /* VoyagerIcon-new-80.png */,
 				26B96D041C17970A00671D39 /* VoyagerIcon-new-120.png */,
@@ -359,6 +358,7 @@
 				267C634A1C000FD9001AFA97 /* dining_updated (2).jpg */,
 				267C63461C000A50001AFA97 /* VoyagerBackground.jpg */,
 				901E79531BFABC8B00B20149 /* placeholder.jpg */,
+				90AABB571C143842002DF353 /* placeholder_scene.jpg */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -420,8 +420,8 @@
 			children = (
 				BDCEDE711C14E02C0094002A /* NewTourViewController.swift */,
 				BD37A71A1BED4E5900F92534 /* MapViewController.swift */,
-				BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */,
 				BDCEDE751C14F09B0094002A /* SingleLocationViewController.swift */,
+				BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */,
 				BD6426F81C1673A7002D87BD /* LocationsViewController.swift */,
 				BD6426FA1C167A32002D87BD /* TourTableListCell.swift */,
 				BD6E5FD81C18D4B200AA50DC /* ConfirmTourViewController.swift */,

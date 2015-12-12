@@ -81,7 +81,7 @@ ParseAPIControllerProtocol {
         cell.rippleLayerColor = UIColor.MKColor.Grey
         
         let title: String = tours![indexPath.row].getName()
-        cell.setCell(title, image: "test")
+        cell.setCell(title, image: tours![indexPath.row].image!)
         print("\(title) has \(tours![indexPath.row].getListOfLocations().count)")
         return cell
     }

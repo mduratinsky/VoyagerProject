@@ -11,6 +11,7 @@ import UIKit
 class TourTableViewCell: MKTableViewCell {
 
     
+    @IBOutlet weak var tourImage: UIImageView!
     @IBOutlet weak var tourName: UILabel!
     
     override var layoutMargins: UIEdgeInsets {
@@ -18,8 +19,8 @@ class TourTableViewCell: MKTableViewCell {
         set(newVal) {}
     }
     
-    func setCell(title: String, image: String) {
+    func setCell(title: String, image: UIImage) {
         self.tourName.text = title
-        //self.imageView!.image = image
+        self.tourImage.image = image
     }
 }
