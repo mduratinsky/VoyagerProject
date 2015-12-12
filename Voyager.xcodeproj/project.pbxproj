@@ -85,6 +85,7 @@
 		BD6E5FD61C18D1D900AA50DC /* RateTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E5FD41C18D1D900AA50DC /* RateTourViewController.swift */; };
 		BD6E5FD71C18D1D900AA50DC /* WrittenDirectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E5FD51C18D1D900AA50DC /* WrittenDirectionsTableViewController.swift */; };
 		BD6E5FD91C18D4B200AA50DC /* ConfirmTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E5FD81C18D4B200AA50DC /* ConfirmTourViewController.swift */; };
+		BDCC41E51C1CD93900805E49 /* TourCreateListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCC41E41C1CD93800805E49 /* TourCreateListCell.swift */; };
 		BDCEDE721C14E02C0094002A /* NewTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCEDE711C14E02C0094002A /* NewTourViewController.swift */; };
 		BDCEDE741C14EF100094002A /* AddingLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */; };
 		BDCEDE761C14F09C0094002A /* SingleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCEDE751C14F09B0094002A /* SingleLocationViewController.swift */; };
@@ -187,6 +188,7 @@
 		BD6E5FD41C18D1D900AA50DC /* RateTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTourViewController.swift; sourceTree = "<group>"; };
 		BD6E5FD51C18D1D900AA50DC /* WrittenDirectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrittenDirectionsTableViewController.swift; sourceTree = "<group>"; };
 		BD6E5FD81C18D4B200AA50DC /* ConfirmTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmTourViewController.swift; sourceTree = "<group>"; };
+		BDCC41E41C1CD93800805E49 /* TourCreateListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourCreateListCell.swift; sourceTree = "<group>"; };
 		BDCEDE711C14E02C0094002A /* NewTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTourViewController.swift; sourceTree = "<group>"; };
 		BDCEDE731C14EF100094002A /* AddingLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingLocationsViewController.swift; sourceTree = "<group>"; };
 		BDCEDE751C14F09B0094002A /* SingleLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLocationViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				BD6426F81C1673A7002D87BD /* LocationsViewController.swift */,
 				BD6426FA1C167A32002D87BD /* TourTableListCell.swift */,
 				BD6E5FD81C18D4B200AA50DC /* ConfirmTourViewController.swift */,
+				BDCC41E41C1CD93800805E49 /* TourCreateListCell.swift */,
 			);
 			name = "Tour Creation";
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				26C429DB1BE3F215001C56DA /* ScrollViewController.swift in Sources */,
 				BD6E5FD71C18D1D900AA50DC /* WrittenDirectionsTableViewController.swift in Sources */,
 				BDCEDE761C14F09C0094002A /* SingleLocationViewController.swift in Sources */,
+				BDCC41E51C1CD93900805E49 /* TourCreateListCell.swift in Sources */,
 				267B8D601C192443005C842B /* LocationTableViewCell.swift in Sources */,
 				BD6E5FD91C18D4B200AA50DC /* ConfirmTourViewController.swift in Sources */,
 			);

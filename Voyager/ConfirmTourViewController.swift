@@ -10,11 +10,15 @@ import Foundation
 import UIKit
 import Parse
 
-class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
+class ConfirmTourViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,ParseAPIControllerProtocol  {
+    
+    
+    @IBOutlet weak var rTourTitle: UILabel!
+    @IBOutlet weak var rTourDescription: UITextView!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     var api : ParseController!
-    
-    
     var tourTitle : String = ""
     var tourDescription : String = ""
     var tourCategory : String = ""
@@ -67,6 +71,10 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        
+        rTourTitle.text = tourTitle
+        rTourDescription.text = tourDescription
+        
     }
     
     //Calls this function when the tap is recognized.
@@ -91,6 +99,35 @@ class ConfirmTourViewController: UIViewController, ParseAPIControllerProtocol  {
     func loadLocations(objId: String, list: [Location]) {
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+        //print(numberOfLocations)
+        //print(locationTitle)
+    }
 
+    /* MARK: - Tableview */
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+        let cell: TourCreateListCell = tableView.dequeueReusableCellWithIdentifier("confirmCell") as! TourCreateListCell
+        
+        cell.rippleLocation = .TapLocation
+        cell.rippleLayerColor = UIColor.MKColor.Grey
+        
+        let title: String = locationsHolder[indexPath.row].getName()
+        
+        cell.setCell(title)
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return locationsHolder.count
+        //return 20
+    }
+    
     
 }

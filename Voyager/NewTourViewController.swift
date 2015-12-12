@@ -20,6 +20,10 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
     
     @IBOutlet weak var tourCategory: MKTextField!
     
+    @IBOutlet weak var imageText: UILabel!
+    
+    var passedImage : UIImage = UIImage(named: "placeholder_scene.jpg")!
+    
     override func viewDidLoad() {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -30,8 +34,6 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         tourCategory.placeholder = "Enter Category Type"
         tourDescription.text = "Enter tour description"
         tourDescription.textColor = UIColor.lightGrayColor()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
     }
     
     /*** Parse Controller API Protocol Functions ***/
@@ -95,6 +97,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
             destViewController.tourName = self.tourName.text!
             destViewController.tourDescription = self.tourDescription.text!
             destViewController.tourCategories = self.tourCategory.text!
+            destViewController.passedImage = self.passedImage
         }
         
         
@@ -138,6 +141,31 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    @IBAction func MediaButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            //imageFlag = 1
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    //Sets imageView to the image selected from the users photo library
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        //self.imageView.image = image
+        //Can Save the image here
+        
+        imageText.text = "Image Saved"
+        passedImage = image
+        
+    }
+    
+    
+    
     
     /*
     // MARK: - Navigation

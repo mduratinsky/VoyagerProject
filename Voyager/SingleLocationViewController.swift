@@ -54,7 +54,7 @@ class SingleLocationViewController: UIViewController, UITextViewDelegate, UIImag
             locationObj.mLatitude = locationLatitude
             locationObj.mLongitude = locationLongitude
             destViewController.locationsHolder.append(locationObj)
-            destViewController.passedImage = self.passedImage
+            //destViewController.passedImage = self.passedImage //For passing location Image
             
             print(destViewController.numberOfLocations)
             print(destViewController.locationTitle)
