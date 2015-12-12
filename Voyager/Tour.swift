@@ -14,10 +14,10 @@ class Tour {
     var userId: String = ""
     var mName: String = ""
     var mListOfLocations: [Location] = []
-    var parseId : String = ""
+    var objectId : String = ""      // Object ID as given in Parse
     var mCategory: String = ""
     var mOwnerId: String = ""
-    var image: UIImage?
+    var image: UIImage? = UIImage(named: "placeholder_scene.jpg")
     var views = 0           //number of times the tour has been viewed
     var starts = 0          //number of times the tour has been taken
     var completes = 0       //number of times the tour has been completed

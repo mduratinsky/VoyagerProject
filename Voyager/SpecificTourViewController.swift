@@ -42,6 +42,7 @@ class SpecificTourViewController: UIViewController, UITableViewDataSource, UITab
     
     func setTourInfo() {
         //1. Set the tours image
+        photoGallery.image = tour.image
         tourTitle.text = tour.getName()
         tourDescription.text = tour.getDescription()
         //tourRating.text = tour.getRating()
