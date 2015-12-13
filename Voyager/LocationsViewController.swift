@@ -20,16 +20,22 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     var tourName: String = ""
     var tourDescription: String = ""
     var tourCategories: String = ""
-    var passedImage : UIImage = UIImage(named: "placeholder_scene.jpg")!
+    var passedImageTwo : UIImage = UIImage(named: "placeholder_scene.jpg")!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let destViewController = segue.destinationViewController as? ConfirmTourViewController {
+            
+            print("Image1", UIImage(named: "placeholder_scene.jpg")!)
+            print("IMAGE!!!!", self.passedImageTwo)
+            
             destViewController.locationsHolder = self.locationsHolder
             destViewController.tourTitle = self.tourName
             destViewController.tourDescription = self.tourDescription
             destViewController.tourCategory = self.tourCategories
-            destViewController.image = passedImage
+            destViewController.imageHolder = self.passedImageTwo
+            
+            
         }
     }
     

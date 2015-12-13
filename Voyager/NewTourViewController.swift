@@ -97,7 +97,7 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
             destViewController.tourName = self.tourName.text!
             destViewController.tourDescription = self.tourDescription.text!
             destViewController.tourCategories = self.tourCategory.text!
-            destViewController.passedImage = self.passedImage
+            destViewController.passedImageTwo = self.passedImage
         }
         
         
@@ -160,7 +160,9 @@ class NewTourViewController: UIViewController, UITextViewDelegate, UIImagePicker
         //Can Save the image here
         
         imageText.text = "Image Saved"
-        passedImage = image
+        self.passedImage = image
+        print(self.passedImage)
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -17,13 +17,13 @@ class ConfirmTourViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var rTourDescription: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var imageHolder : UIImage = UIImage(named: "placeholder_scene.jpg")!
     var api : ParseController!
     var tourTitle : String = ""
     var tourDescription : String = ""
     var tourCategory : String = ""
     var locationsHolder: [Location] = []
-    var image : UIImage = UIImage(named: "placeholder_scene.jpg")!
+
     
     
     
@@ -56,10 +56,14 @@ class ConfirmTourViewController: UIViewController, UITableViewDelegate, UITableV
         
         //api.addTourByUserId(tour)
         
-        tour.image = self.image
+        tour.image = self.imageHolder
         api.addTourByUserId(tour)
         
+        
+        print("Image2", UIImage(named: "placeholder_scene.jpg")!)
+        print("IMAGE!!!!",self.imageHolder)
         print("A TOUR WAS ADDED!!!!!!!!!!!")
+        
         
         self.dismissViewControllerAnimated(true, completion: {})
     }
