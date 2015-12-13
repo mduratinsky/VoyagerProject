@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+
 class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -39,12 +40,16 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
         directionsButton.enabled = false
         
         setIcons()
-        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
         mapView.showsUserLocation = true
+        
         mapView.setUserTrackingMode(MKUserTrackingMode.FollowWithHeading, animated: true)
 //        [mapView setTransform:CGAffineTransformMakeRotation(-1 * currentHeading.magneticHeading * 3.14159 / 180)];        
         let currentLocation =  getUsersCurrentLocation()
-        
+    
         let longitude = currentLocation.coordinate.longitude
         let latitude = currentLocation.coordinate.latitude
         
