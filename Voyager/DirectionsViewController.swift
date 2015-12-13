@@ -39,10 +39,10 @@ class DirectionsViewController: UIViewController, CLLocationManagerDelegate, MKM
         directionsButton.enabled = false
         
         setIcons()
-        let userMode = MKUserTrackingMode.FollowWithHeading
+        
         mapView.showsUserLocation = true
-        mapView.setUserTrackingMode(userMode,animated: true)
-//            = MKUserTrackingModeFollowWithHeading
+        mapView.setUserTrackingMode(MKUserTrackingMode.FollowWithHeading, animated: true)
+//        [mapView setTransform:CGAffineTransformMakeRotation(-1 * currentHeading.magneticHeading * 3.14159 / 180)];        
         let currentLocation =  getUsersCurrentLocation()
         
         let longitude = currentLocation.coordinate.longitude
