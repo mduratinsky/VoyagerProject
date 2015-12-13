@@ -1953,11 +1953,61 @@
                                     <segue destination="2Pe-YS-7x8" kind="show" id="gHr-Zb-0d0"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F4e-45-RET">
+                                <rect key="frame" x="0.0" y="72" width="600" height="477"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="locationCell" id="tV2-nK-Mo3" customClass="TourTableListCell" customModule="Voyager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tV2-nK-Mo3" id="tAD-xI-O5L">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ag2-pC-SC4">
+                                                    <rect key="frame" x="13" y="11" width="43" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="8b2-lJ-Kj8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Specfied" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fef-1X-kbS">
+                                                    <rect key="frame" x="57" y="11" width="101" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ag2-pC-SC4" secondAttribute="bottom" constant="3" id="6tu-tp-W6C"/>
+                                                <constraint firstItem="ag2-pC-SC4" firstAttribute="leading" secondItem="tAD-xI-O5L" secondAttribute="leadingMargin" constant="5" id="79o-Nq-wbx"/>
+                                                <constraint firstItem="ag2-pC-SC4" firstAttribute="top" secondItem="tAD-xI-O5L" secondAttribute="topMargin" constant="3" id="Fvf-3Q-fWh"/>
+                                                <constraint firstItem="Fef-1X-kbS" firstAttribute="top" secondItem="tAD-xI-O5L" secondAttribute="topMargin" constant="3" id="MAQ-Ra-Nu4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Fef-1X-kbS" secondAttribute="bottom" constant="3" id="ZDi-1a-szs"/>
+                                                <constraint firstItem="Fef-1X-kbS" firstAttribute="leading" secondItem="ag2-pC-SC4" secondAttribute="trailing" constant="1" id="xJ1-76-L4x"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="locationTitle" destination="Fef-1X-kbS" id="Kiw-fV-uZI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bSC-xl-kZt" id="HRB-v7-hHn"/>
+                                    <outlet property="delegate" destination="bSC-xl-kZt" id="kKs-gq-1Nq"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Bw-P7-qg1" firstAttribute="leading" secondItem="JnN-5w-f4F" secondAttribute="leadingMargin" constant="-20" id="CMj-Sj-TzP"/>
                             <constraint firstItem="29S-OL-b4Z" firstAttribute="top" secondItem="3Bw-P7-qg1" secondAttribute="bottom" id="DAe-1L-edF"/>
+                            <constraint firstItem="F4e-45-RET" firstAttribute="leading" secondItem="JnN-5w-f4F" secondAttribute="leadingMargin" constant="-20" id="OsC-sN-hlj"/>
+                            <constraint firstItem="3Bw-P7-qg1" firstAttribute="top" secondItem="F4e-45-RET" secondAttribute="bottom" constant="1" id="bj7-Ec-L2O"/>
+                            <constraint firstItem="F4e-45-RET" firstAttribute="top" secondItem="Pz1-gt-Qu8" secondAttribute="bottom" constant="8" id="iCG-aJ-NTc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F4e-45-RET" secondAttribute="trailing" constant="-20" id="kYD-Zv-YKZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Bw-P7-qg1" secondAttribute="trailing" constant="-20" id="md5-qi-LN4"/>
                         </constraints>
                     </view>
@@ -1969,6 +2019,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="F4e-45-RET" id="sit-Ka-CCZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lud-wY-pgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
