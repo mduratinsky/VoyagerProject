@@ -151,7 +151,7 @@ class ParseController {
         var listOfLocations : [PFObject] = []
         tourObj["name"] = tour.mName
         
-        print("Before the for loop")
+//        print("Before the for loop")
         
         for location in tour.mListOfLocations {
             let locObj = PFObject(className: "Location")
@@ -169,7 +169,6 @@ class ParseController {
             listOfLocations.append(locObj)
         }
         
-        print("Past the  for loop")
         tourObj["listOfLocations"] = listOfLocations
         tourObj["category"] = tour.mCategory
         tourObj["ownerId"] = tour.mOwnerId
@@ -226,7 +225,7 @@ class ParseController {
             let data = UIImageJPEGRepresentation(image!, 1.0)
             return PFFile(data: data!)
         } else {
-            print("error in reading image")
+            print("NIL Image found!")
             return nil
         }
     }
