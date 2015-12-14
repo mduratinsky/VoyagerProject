@@ -2052,12 +2052,6 @@
                                     <action selector="createTour:" destination="2Pe-YS-7x8" eventType="touchUpInside" id="q2a-Q9-quR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Title: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mI-Ay-W1Y">
-                                <rect key="frame" x="20" y="139" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Description: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQA-eZ-pIz">
                                 <rect key="frame" x="20" y="168" width="136" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2117,10 +2111,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Title Entered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2C-lm-ouV">
-                                <rect key="frame" x="109" y="139" width="471" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No Title Entered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2C-lm-ouV">
+                                <rect key="frame" x="109" y="139" width="190" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="471" id="piK-Va-dHe"/>
+                                    <constraint firstAttribute="height" constant="21" id="Kww-TX-LY2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2132,10 +2126,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Title: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mI-Ay-W1Y">
+                                <rect key="frame" x="20" y="139" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="A2C-lm-ouV" firstAttribute="baseline" secondItem="0mI-Ay-W1Y" secondAttribute="baseline" id="8Cy-Vj-4ik"/>
                             <constraint firstItem="Xi7-VH-ABd" firstAttribute="top" secondItem="P3X-3e-uaK" secondAttribute="bottom" constant="9" id="G5I-yI-7Zz"/>
                             <constraint firstAttribute="leadingMargin" secondItem="YcJ-PG-U7k" secondAttribute="leading" id="IeU-IG-30i"/>
                             <constraint firstItem="Pxk-OQ-ObZ" firstAttribute="top" secondItem="SF0-vU-WX1" secondAttribute="bottom" id="Ipy-XS-cz6"/>
@@ -2145,15 +2144,16 @@
                             <constraint firstItem="P3X-3e-uaK" firstAttribute="top" secondItem="YcJ-PG-U7k" secondAttribute="bottom" constant="8" id="RdA-wl-7eI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SF0-vU-WX1" secondAttribute="trailing" constant="-20" id="SEU-63-2qA"/>
                             <constraint firstItem="TQA-eZ-pIz" firstAttribute="top" secondItem="0mI-Ay-W1Y" secondAttribute="bottom" constant="8" id="WOV-VQ-gde"/>
-                            <constraint firstItem="A2C-lm-ouV" firstAttribute="trailing" secondItem="XOq-0d-kTE" secondAttribute="trailingMargin" id="YJr-Ah-c4E"/>
                             <constraint firstItem="Xi7-VH-ABd" firstAttribute="trailing" secondItem="XOq-0d-kTE" secondAttribute="trailingMargin" id="a7k-5G-eha"/>
                             <constraint firstItem="YcJ-PG-U7k" firstAttribute="top" secondItem="TQA-eZ-pIz" secondAttribute="bottom" constant="8" id="aIo-ta-1zw"/>
                             <constraint firstItem="SF0-vU-WX1" firstAttribute="leading" secondItem="XOq-0d-kTE" secondAttribute="leadingMargin" constant="-20" id="e5I-3W-cgR"/>
                             <constraint firstItem="Xi7-VH-ABd" firstAttribute="leading" secondItem="XOq-0d-kTE" secondAttribute="leadingMargin" id="g64-Of-wqz"/>
                             <constraint firstItem="TQA-eZ-pIz" firstAttribute="leading" secondItem="XOq-0d-kTE" secondAttribute="leadingMargin" id="htB-dK-c4r"/>
+                            <constraint firstItem="A2C-lm-ouV" firstAttribute="top" secondItem="dYy-Fy-dAP" secondAttribute="bottom" constant="75" id="iXj-Bf-AAh"/>
                             <constraint firstItem="SF0-vU-WX1" firstAttribute="top" secondItem="Xi7-VH-ABd" secondAttribute="bottom" constant="8" id="orJ-Wa-oEi"/>
-                            <constraint firstItem="A2C-lm-ouV" firstAttribute="leading" secondItem="0mI-Ay-W1Y" secondAttribute="trailing" constant="8" id="pjY-rh-A7D"/>
+                            <constraint firstItem="TQA-eZ-pIz" firstAttribute="top" secondItem="A2C-lm-ouV" secondAttribute="bottom" constant="8" id="uDy-fA-VIa"/>
                             <constraint firstItem="P3X-3e-uaK" firstAttribute="leading" secondItem="XOq-0d-kTE" secondAttribute="leadingMargin" id="xQB-Z2-FpY"/>
+                            <constraint firstItem="A2C-lm-ouV" firstAttribute="leading" secondItem="0mI-Ay-W1Y" secondAttribute="trailing" constant="8" id="yoe-jz-Eyj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Review" id="YOa-2H-9IV"/>
